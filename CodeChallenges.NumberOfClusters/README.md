@@ -8,9 +8,9 @@ formed by connecting adjacent lands horizontally or vertically. You may assume a
 
 Input:
 
-11110
-11010
-11000
+11110 <br />
+11010 <br />
+11000 <br />
 00000
 
 Output: 1
@@ -18,9 +18,10 @@ Output: 1
 ## Example 2:
 
 Input:
-11000
-11000
-00100
+
+11000 <br />
+11000 <br />
+00100 <br />
 00011
 
 Output: 3
