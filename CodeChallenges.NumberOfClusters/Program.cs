@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace CodeChallenges.NumberOfClusters
 {
@@ -32,12 +30,11 @@ namespace CodeChallenges.NumberOfClusters
         public static int NumIslands(char[][] grid)
         {
             if (grid == null || grid.Length <= 0) return 0;
-
             int count = 0;
 
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < grid.Length; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < grid[i].Length; j++)
                 {
                     if (grid[i][j] == '1')
                     {
@@ -51,7 +48,7 @@ namespace CodeChallenges.NumberOfClusters
 
         private static void DiscoverClusterRecursively(char[][] grid, int i, int j)
         {
-            if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] == '0') return;
+            if (i < 0 || i >= grid.Length || j < 0 || j >= grid[i].Length || grid[i][j] == '0') return;
             grid[i][j] = '0';
 
             DiscoverClusterRecursively(grid, i + 1, j);
