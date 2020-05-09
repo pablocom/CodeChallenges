@@ -18,6 +18,7 @@ Output: 1
 ## Example 2:
 
 Input:
+
 11000 <br />
 11000 <br />
 00100 <br />
