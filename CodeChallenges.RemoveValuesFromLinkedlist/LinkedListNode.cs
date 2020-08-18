@@ -4,12 +4,12 @@ namespace CodeChallenges.RemoveValuesFromLinkedlist
 {
     public class LinkedListNode
     {
-        public int Val { get; }
+        public int Value { get; }
         public LinkedListNode Next { get; set; }
 
         public LinkedListNode(int value)
         {
-            Val = value;
+            Value = value;
         }
 
         public void AppendNode(int value)
@@ -30,7 +30,7 @@ namespace CodeChallenges.RemoveValuesFromLinkedlist
             var node = this;
             while (node != null)
             {
-                Console.Write(node.Val + ", ");
+                Console.Write(node.Value + ", ");
                 node = node.Next;
             }
             Console.WriteLine();

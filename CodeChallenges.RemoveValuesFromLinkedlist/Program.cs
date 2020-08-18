@@ -28,14 +28,14 @@
             if (firstNode == null)
                 return null;
 
-            while (firstNode.Val == value)
+            while (firstNode.Value == value)
                 firstNode = firstNode.Next;
 
             LinkedListNode previousNode = null;
             var currentNode = firstNode;
             while (currentNode != null)
             {
-                if (currentNode.Val == value)
+                if (currentNode.Value == value)
                     previousNode.Next = currentNode.Next;
                 else
                     previousNode = currentNode;
