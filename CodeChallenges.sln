@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.MinDeletions
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.GoodNodes", "CodeChallenges.GoodNodes\CodeChallenges.GoodNodes.csproj", "{461041A8-755A-4AED-89CE-ADC5E5BA6E4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuying", "StockBuying\StockBuying.csproj", "{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{461041A8-755A-4AED-89CE-ADC5E5BA6E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461041A8-755A-4AED-89CE-ADC5E5BA6E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{461041A8-755A-4AED-89CE-ADC5E5BA6E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
