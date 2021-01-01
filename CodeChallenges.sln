@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.NumberOfClus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.ReorderLogFiles", "CodeChallenges.ReorderLogFiles\CodeChallenges.ReorderLogFiles.csproj", "{D11B1953-EF92-4056-8B0C-15CC83F92472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.RemoveValuesFromLinkedlist", "CodeChallenges.RemoveValuesFromLinkedlist\CodeChallenges.RemoveValuesFromLinkedlist.csproj", "{5E4B119C-8EFA-4CE2-BE25-D5C809F73D7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.RemoveValuesFromLinkedlist", "CodeChallenges.RemoveValuesFromLinkedlist\CodeChallenges.RemoveValuesFromLinkedlist.csproj", "{5E4B119C-8EFA-4CE2-BE25-D5C809F73D7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.GoodNodes", "CodeChallenges.GoodNodes\CodeChallenges.GoodNodes.csproj", "{461041A8-755A-4AED-89CE-ADC5E5BA6E4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.GoodNodes", "CodeChallenges.GoodNodes\CodeChallenges.GoodNodes.csproj", "{461041A8-755A-4AED-89CE-ADC5E5BA6E4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuying", "StockBuying\StockBuying.csproj", "{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockBuying", "StockBuying\StockBuying.csproj", "{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.MaxSubstring", "CodeChallenges.MaxSubstring\CodeChallenges.MaxSubstring.csproj", "{69852823-6510-4268-BECB-BD7CFEEA3A5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.MaxSubstring", "CodeChallenges.MaxSubstring\CodeChallenges.MaxSubstring.csproj", "{69852823-6510-4268-BECB-BD7CFEEA3A5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LongestPalindrome", "CodeChallenges.LongestPalindrome\CodeChallenges.LongestPalindrome.csproj", "{6B3182E8-783B-4F7A-A5FF-453820E5721F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,13 +59,15 @@ Global
 		{69852823-6510-4268-BECB-BD7CFEEA3A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69852823-6510-4268-BECB-BD7CFEEA3A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69852823-6510-4268-BECB-BD7CFEEA3A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B3182E8-783B-4F7A-A5FF-453820E5721F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3182E8-783B-4F7A-A5FF-453820E5721F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3182E8-783B-4F7A-A5FF-453820E5721F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3182E8-783B-4F7A-A5FF-453820E5721F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0046D01B-83E0-4DC5-850A-F28C16A55942}
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
