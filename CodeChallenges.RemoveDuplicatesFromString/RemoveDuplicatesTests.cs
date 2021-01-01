@@ -23,5 +23,15 @@ namespace CodeChallenges.RemoveDuplicatesFromString
 
             Assert.That(result, Is.EqualTo("acdb"));
         }
+        
+        [Test]
+        public void Test3()
+        {
+            var text = "cdadabcc";
+
+            var result = new Solution().RemoveDuplicateLetters(text);
+
+            Assert.That(result, Is.EqualTo("adbc"));
+        }
     }
 }

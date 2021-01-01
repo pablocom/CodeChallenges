@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace CodeChallenges.RemoveDuplicatesFromString
 {
@@ -10,33 +12,46 @@ namespace CodeChallenges.RemoveDuplicatesFromString
             var occurrencesByLetter = new Dictionary<char, int>();
             for (var letter = 'a'; letter <= 'z'; letter++)
             {
-                var occurrences = s.Count(character => character == letter);
-                occurrencesByLetter.Add(letter, occurrences);
-            }
-
-            var resultString = s;
-            for (var letter = 'z'; letter >= 'a'; letter--) 
-            {
-                while (occurrencesByLetter[letter] > 1)
+                if (s.Contains(letter))
                 {
-                    resultString = RemoveFirstChar(resultString, letter);
-                    occurrencesByLetter[letter]--;
+                    var occurrences = s.Count(character => character == letter);
+                    occurrencesByLetter.Add(letter, occurrences);
                 }
-
             }
 
-            return resultString;
-        }
+            var lettersByIndex = new Dictionary<char, int>();
+            var lastAdditionIndex = int.MaxValue;
+            var letters = s.ToCharArray().ToHashSet().OrderBy(x => x);
 
-        public string RemoveFirstChar(string text, char letter)
-        {
-            for (int i = 0; i < text.Length; i++)
+            foreach (var letter in letters)
             {
-                if (text[i] == letter)
-                    return text.Remove(i, 1);
+                for (var i = 0; i < s.Length; i++)
+                {
+                    if (s[i] == letter && occurrencesByLetter[letter] > 1 && i <= lastAdditionIndex)
+                    {
+                        occurrencesByLetter[letter]--;
+                        continue;
+                    }
+
+                    if (s[i] == letter && occurrencesByLetter[letter] > 1 && i > lastAdditionIndex)
+                    {
+                        lettersByIndex.Add(letter, i);
+                        lastAdditionIndex = i;
+                        break;
+                    }
+
+                    if (s[i] == letter && occurrencesByLetter[letter] == 1 || s[i] == letter && i > lastAdditionIndex)
+                    {
+                        lettersByIndex.Add(letter, i);
+                        lastAdditionIndex = Math.Min(i, lastAdditionIndex);
+                        break;
+                    }
+                }
             }
 
-            return text;
+            var removeDuplicateLetters = lettersByIndex.OrderBy(x => x.Value)
+                .Select(x => x.Key).ToArray();
+            return new string(removeDuplicateLetters);
         }
     }
 }
