@@ -4,10 +4,11 @@ namespace CodeChallenges.CopyOfLinkedListWithRandomPointers
     {
         public Node CopyRandomList(Node head)
         {
-            var newHead = CreateCopyOfLinkedList(head);
+            var headCopy = head;
+            var newHead = CreateCopyOfLinkedList(headCopy);
 
-            FillRandomPointersInCopy(head, newHead);
-            PointOldNodesNextPointersToNewNodes(head, newHead);
+            FillRandomPointersInCopy(headCopy, newHead);
+            PointOldNodesNextPointersToNewNodes(headCopy, newHead);
             ChangeNewRandomPointerToNextPointers(newHead);
 
             return newHead;
@@ -49,6 +50,7 @@ namespace CodeChallenges.CopyOfLinkedListWithRandomPointers
             {
                 var tempCurrentNext = currentNode.next;
                 currentNode.next = currentNewNode;
+
                 currentNode = tempCurrentNext;
                 currentNewNode = currentNewNode.next;
             }
@@ -62,6 +64,26 @@ namespace CodeChallenges.CopyOfLinkedListWithRandomPointers
                 currentNewNode.random = currentNewNode.random?.next;
                 currentNewNode = currentNewNode.next;
             }
+        }
+
+        private Node CreateCopyOfLinkedListWithRandomPointers(Node head)
+        {
+            var newHead = new Node(head.val);
+            newHead.random = head.random != null ? new Node(head.random.val) : null;
+
+            var currentNode = newHead;
+            var currentOldNode = head;
+
+            while (currentOldNode != null)
+            {
+                currentNode.next = currentOldNode.next != null ? new Node(currentOldNode.next.val) : null;
+                currentNode.random = currentOldNode != null ? new Node(currentOldNode.random.val) : null;
+
+                currentOldNode = currentOldNode.next;
+                currentNode = currentNode.next;
+            }
+
+            return newHead;
         }
     }
 }

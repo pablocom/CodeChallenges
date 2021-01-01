@@ -22,6 +22,7 @@ namespace CodeChallenges.CopyOfLinkedListWithRandomPointers
             Assert.That(newHead.val, Is.EqualTo(firstNodeValue));
 
             Assert.That(newHead.next.val, Is.EqualTo(secondNodeValue));
+            Assert.That(newHead.next.random.GetHashCode(), Is.EqualTo(newHead.GetHashCode()));
         }
     }
 }
