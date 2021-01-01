@@ -33,5 +33,15 @@ namespace CodeChallenges.RemoveDuplicatesFromString
 
             Assert.That(result, Is.EqualTo("adbc"));
         }
+        
+        [Test]
+        public void Test4()
+        {
+            var text = "leetcode";
+
+            var result = new Solution().RemoveDuplicateLetters(text);
+
+            Assert.That(result, Is.EqualTo("letcod"));
+        }
     }
 }
