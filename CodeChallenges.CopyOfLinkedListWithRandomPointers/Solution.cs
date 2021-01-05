@@ -65,25 +65,5 @@ namespace CodeChallenges.CopyOfLinkedListWithRandomPointers
                 currentNewNode = currentNewNode.next;
             }
         }
-
-        private Node CreateCopyOfLinkedListWithRandomPointers(Node head)
-        {
-            var newHead = new Node(head.val);
-            newHead.random = head.random != null ? new Node(head.random.val) : null;
-
-            var currentNode = newHead;
-            var currentOldNode = head;
-
-            while (currentOldNode != null)
-            {
-                currentNode.next = currentOldNode.next != null ? new Node(currentOldNode.next.val) : null;
-                currentNode.random = currentOldNode != null ? new Node(currentOldNode.random.val) : null;
-
-                currentOldNode = currentOldNode.next;
-                currentNode = currentNode.next;
-            }
-
-            return newHead;
-        }
     }
 }
