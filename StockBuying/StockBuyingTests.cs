@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace StockBuying
 {
-    public class Tests
+    public class StockBuyingTests
     {
         [Test]
         public void Test1()
@@ -11,7 +11,7 @@ namespace StockBuying
 
             var result = Solution.MaxProfit(stocks);
             
-            Assert.That(result, Is.EqualTo(5));
+            Assert.That(result, Is.EqualTo(4));
         }
         
         [Test]
