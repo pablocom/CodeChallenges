@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace CodeChallenges.GoodNodes
 {
-    public class Tests
+    public class GoodNodesTests
     {
         [Test]
         public void Test1()
