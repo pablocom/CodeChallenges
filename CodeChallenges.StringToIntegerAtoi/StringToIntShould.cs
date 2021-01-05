@@ -16,6 +16,8 @@ namespace CodeChallenges.StringToIntegerAtoi
         [TestCase("+1", 1)]
         [TestCase("+-12", 0)]
         [TestCase("21474836460", 2147483647)]
+        [TestCase("00000-42a1234", 0)]
+        [TestCase("  -0012a42", -12)]
         public void ConvertStringIntoIntegerIfPossible(string numberInString, int expectedResult)
         {
             var number = new Solution().MyAtoi(numberInString);
