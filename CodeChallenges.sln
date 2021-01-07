@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.CopyOfLinked
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.StringToIntegerAtoi", "CodeChallenges.StringToIntegerAtoi\CodeChallenges.StringToIntegerAtoi.csproj", "{39C32549-E402-48C4-964A-E2FC1EA7FEC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LongestCommonSubsequence", "CodeChallenges.LongestCommonSubsequence\CodeChallenges.LongestCommonSubsequence.csproj", "{4525D422-6F95-42C1-870B-FF803AF491A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.LongestCommonSubsequence", "CodeChallenges.LongestCommonSubsequence\CodeChallenges.LongestCommonSubsequence.csproj", "{4525D422-6F95-42C1-870B-FF803AF491A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LevenshteinDistance", "CodeChallenges.LevenshteinDistance\CodeChallenges.LevenshteinDistance.csproj", "{356A7742-F824-423D-9B84-32735632D693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{4525D422-6F95-42C1-870B-FF803AF491A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4525D422-6F95-42C1-870B-FF803AF491A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4525D422-6F95-42C1-870B-FF803AF491A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356A7742-F824-423D-9B84-32735632D693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356A7742-F824-423D-9B84-32735632D693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356A7742-F824-423D-9B84-32735632D693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356A7742-F824-423D-9B84-32735632D693}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

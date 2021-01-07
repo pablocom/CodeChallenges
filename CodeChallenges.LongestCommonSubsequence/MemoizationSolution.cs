@@ -5,18 +5,21 @@ namespace CodeChallenges.LongestCommonSubsequence
     public class MemoizationSolution : Solution
     {
         private int?[,] memoization;
+        private int numberOfCalls = 0;
 
         protected override string SolutionName => "Memoization";
 
         protected override int LongestCommonSubsequence(string X, string Y)
         {
             memoization = new int?[X.Length, Y.Length];
-            return LongestCommonSubsequenceRecursive(X, Y, X.Length, Y.Length);
+            var longestCommonSubsequenceRecursive = LongestCommonSubsequenceRecursive(X, Y, X.Length, Y.Length);
+            Console.WriteLine($"Number of calls: {numberOfCalls}");
+            return longestCommonSubsequenceRecursive;
         }
 
         protected int LongestCommonSubsequenceRecursive(string X, string Y, int m, int n)
         {
-            Console.WriteLine($"Calculating for X[{m}] Y[{n}]");
+            numberOfCalls++;
 
             if (m == 0 || n == 0)
                 return 0;
