@@ -2,7 +2,7 @@
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public class MemoizationSolution : LongestCommonSubsequenceSolution
+    public class MemoizationSolution : Solution
     {
         private int?[,] memoization;
 

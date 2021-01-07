@@ -3,17 +3,17 @@ using System.Diagnostics;
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public abstract class LongestCommonSubsequenceSolution
+    public abstract class Solution
     {
         protected abstract string SolutionName { get; }
         private readonly Stopwatch stopwatch;
 
-        protected LongestCommonSubsequenceSolution()
+        protected Solution()
         {
             stopwatch = new Stopwatch();
         }
 
-        public int CalculateLongestCommonSubsequence(string text1, string text2)
+        public int CalculateWithPerformanceTrackingLongestCommonSubsequence(string text1, string text2)
         {
             stopwatch.Restart();
 

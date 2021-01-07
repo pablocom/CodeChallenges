@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public class TabulationLongestCommonSubsequenceSolution : LongestCommonSubsequenceSolution
+    public class TabulationSolution : Solution
     {
         protected override string SolutionName => "Tabulation";
 

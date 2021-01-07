@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public class BruteForceSolution : LongestCommonSubsequenceSolution
+    public class BruteForceSolution : Solution
     {
         protected override string SolutionName => "Brute force";
 
