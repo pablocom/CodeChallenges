@@ -3,13 +3,14 @@ using System.Diagnostics;
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public class TabulationSolution
+    public class TabulationLongestCommonSubsequenceSolution : LongestCommonSubsequenceSolution
     {
-        
-        public int LongestCommonSubsequence(string X, string Y, int m, int n)
+        protected override string SolutionName => "Tabulation";
+
+        protected override int LongestCommonSubsequence(string text1, string text2)
         {
-            var stopwatch = new Stopwatch();
-            stopwatch.Restart();
+            var m = text1.Length;
+            var n = text2.Length;
 
             var resultsTable = new int[m + 1, n + 1];
 
@@ -19,15 +20,12 @@ namespace CodeChallenges.LongestCommonSubsequence
                 {
                     if (i == 0 || j == 0)
                         resultsTable[i, j] = 0;
-                    else if (X[i - 1] == Y[j - 1])
+                    else if (text1[i - 1] == text2[j - 1])
                         resultsTable[i, j] = resultsTable[i - 1, j - 1] + 1;
                     else
                         resultsTable[i, j] = Math.Max(resultsTable[i - 1, j], resultsTable[i, j - 1]);
                 }
             }
-
-            stopwatch.Stop();
-            Console.WriteLine($"Tabulation: {stopwatch.Elapsed}");
 
             return resultsTable[m, n];
         }

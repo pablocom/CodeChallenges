@@ -3,9 +3,11 @@ using System.Diagnostics;
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public class BruteForceSolution
+    public class BruteForceSolution : LongestCommonSubsequenceSolution
     {
-        public int LongestCommonSubsequence(string X, string Y)
+        protected override string SolutionName => "Brute force";
+
+        protected override int LongestCommonSubsequence(string X, string Y)
         {
             var stopwatch = new Stopwatch();
             stopwatch.Start();
