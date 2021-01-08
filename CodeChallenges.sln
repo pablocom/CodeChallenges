@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.LongestCommo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LevenshteinDistance", "CodeChallenges.LevenshteinDistance\CodeChallenges.LevenshteinDistance.csproj", "{356A7742-F824-423D-9B84-32735632D693}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LevelOrderTraversal", "CodeChallenges.LevelOrderTraversal\CodeChallenges.LevelOrderTraversal.csproj", "{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{356A7742-F824-423D-9B84-32735632D693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{356A7742-F824-423D-9B84-32735632D693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{356A7742-F824-423D-9B84-32735632D693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
