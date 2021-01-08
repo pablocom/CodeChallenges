@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.TopKFrequentWords", "CodeChallenges\CodeChallenges.TopKFrequentWords.csproj", "{A5BF548A-1DD2-4337-B738-75791480A559}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.TopKFrequentWords", "CodeChallenges.TopKFrequentWords\CodeChallenges.TopKFrequentWords.csproj", "{A5BF548A-1DD2-4337-B738-75791480A559}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.TopKFrecuentNumbers", "TopKFrecuentNumbers\CodeChallenges.TopKFrecuentNumbers.csproj", "{66802083-9FC5-42A3-B1BD-9A40EE04B4C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.TopKFrecuentNumbers", "CodeChallenges.TopKFrecuentNumbers\CodeChallenges.TopKFrecuentNumbers.csproj", "{66802083-9FC5-42A3-B1BD-9A40EE04B4C2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.NumberOfClusters", "CodeChallenges.NumberOfClusters\CodeChallenges.NumberOfClusters.csproj", "{9CE7B248-7F7E-41F0-B9E7-85141610E92F}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.RemoveValues
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.GoodNodes", "CodeChallenges.GoodNodes\CodeChallenges.GoodNodes.csproj", "{461041A8-755A-4AED-89CE-ADC5E5BA6E4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.StockBuying", "StockBuying\CodeChallenges.StockBuying.csproj", "{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.StockBuying", "CodeChallenges.StockBuying\CodeChallenges.StockBuying.csproj", "{C49A9AED-C9F3-4C36-B00A-AC117FE98B5B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.MaxSubstring", "CodeChallenges.MaxSubstring\CodeChallenges.MaxSubstring.csproj", "{69852823-6510-4268-BECB-BD7CFEEA3A5B}"
 EndProject
