@@ -1,10 +1,8 @@
-using System;
-using System.Linq;
 using NUnit.Framework;
 
 namespace CodeChallenges.KthLargestElement
 {
-    public class Tests
+    public class KthLargestTests
     {
         [Test]
         public void Test1()
@@ -26,16 +24,6 @@ namespace CodeChallenges.KthLargestElement
             var result = new Solution().FindKthLargest(inputArray, kthLargestNumber);
 
             Assert.That(result, Is.EqualTo(4));
-        }
-    }
-
-    public class Solution
-    {
-        public int FindKthLargest(int[] nums, int k)
-        {
-            Array.Sort(nums); // O(n*logn)
-
-            return nums[(nums.Length - 1) - (k - 1)];
         }
     }
 }
