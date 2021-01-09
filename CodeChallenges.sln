@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.StringToInte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.LongestCommonSubsequence", "CodeChallenges.LongestCommonSubsequence\CodeChallenges.LongestCommonSubsequence.csproj", "{4525D422-6F95-42C1-870B-FF803AF491A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LevenshteinDistance", "CodeChallenges.LevenshteinDistance\CodeChallenges.LevenshteinDistance.csproj", "{356A7742-F824-423D-9B84-32735632D693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.LevenshteinDistance", "CodeChallenges.LevenshteinDistance\CodeChallenges.LevenshteinDistance.csproj", "{356A7742-F824-423D-9B84-32735632D693}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LevelOrderTraversal", "CodeChallenges.LevelOrderTraversal\CodeChallenges.LevelOrderTraversal.csproj", "{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.LevelOrderTraversal", "CodeChallenges.LevelOrderTraversal\CodeChallenges.LevelOrderTraversal.csproj", "{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.FindAndReplaceString", "CodeChallenges.FindAndReplaceString\CodeChallenges.FindAndReplaceString.csproj", "{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7327EAC-69ED-4AE6-8439-4E3F85728F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
