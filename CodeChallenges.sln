@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenges.LevelOrderTr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.FindAndReplaceString", "CodeChallenges.FindAndReplaceString\CodeChallenges.FindAndReplaceString.csproj", "{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.KthLargestElement", "CodeChallenges.KthLargestElement\CodeChallenges.KthLargestElement.csproj", "{479479DC-8B07-4032-B984-1983F4B3D32D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08CA2D96-0D03-4D36-A245-05F9BFA73E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{479479DC-8B07-4032-B984-1983F4B3D32D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479479DC-8B07-4032-B984-1983F4B3D32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479479DC-8B07-4032-B984-1983F4B3D32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479479DC-8B07-4032-B984-1983F4B3D32D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
