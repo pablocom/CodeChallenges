@@ -8,7 +8,7 @@ namespace CodeChallenges.KthLargestElement
         {
             Array.Sort(nums); // O(n*logn)
 
-            return nums[(nums.Length - 1) - (k - 1)];
+            return nums[nums.Length - 1 - (k - 1)];
         }
     }
 }
