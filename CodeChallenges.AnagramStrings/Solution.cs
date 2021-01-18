@@ -6,7 +6,6 @@
         {
             if (s == null || t == null)
                 return false;
-        
             if (s.Length != t.Length)
                 return false;
         
