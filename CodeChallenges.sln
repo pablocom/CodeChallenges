@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.KthLargestEl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.InterleavingString", "CodeChallenges.InterleavingString\CodeChallenges.InterleavingString.csproj", "{918FA9F6-3D88-45BC-B041-45621CCAB55D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.AnagramStrings", "CodeChallenges.AnagramStrings\CodeChallenges.AnagramStrings.csproj", "{3AB21C02-AD28-4009-878E-3CF26288A453}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{918FA9F6-3D88-45BC-B041-45621CCAB55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{918FA9F6-3D88-45BC-B041-45621CCAB55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{918FA9F6-3D88-45BC-B041-45621CCAB55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB21C02-AD28-4009-878E-3CF26288A453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB21C02-AD28-4009-878E-3CF26288A453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB21C02-AD28-4009-878E-3CF26288A453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB21C02-AD28-4009-878E-3CF26288A453}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
