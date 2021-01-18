@@ -30,7 +30,7 @@ namespace CodeChallenges.RemoveDuplicatesFromString
                 addedCharacters.Add(character);
                 lexiStack.Push(character);
             }
-
+            
             var result = string.Empty;
             while (lexiStack.Count > 0) 
                 result = lexiStack.Pop() + result;

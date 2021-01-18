@@ -16,7 +16,7 @@ namespace CodeChallenges.CopyOfLinkedListWithRandomPointers
             head.random = head.next;
             head.next.random = head;
 
-            var newHead = new Solution().CopyRandomList(head);
+            var newHead = new HashTableSolution().CopyRandomList(head);
 
             Assert.That(newHead.GetHashCode(), Is.Not.EqualTo(head.GetHashCode()));
             Assert.That(newHead.val, Is.EqualTo(firstNodeValue));

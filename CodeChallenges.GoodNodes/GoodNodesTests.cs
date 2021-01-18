@@ -7,14 +7,18 @@ namespace CodeChallenges.GoodNodes
         [Test]
         public void Test1()
         {
-            var root = new TreeNode(3);
-            
-            root.left = new TreeNode(1);
-            root.left.left = new TreeNode(3);
-            
-            root.right = new TreeNode(4);
-            root.right.left = new TreeNode(1);
-            root.right.right = new TreeNode(5);
+            var root = new TreeNode(3)
+            {
+                left = new TreeNode(1)
+                {
+                    left = new TreeNode(3)
+                },
+                right = new TreeNode(4)
+                {
+                    left = new TreeNode(1), 
+                    right = new TreeNode(5)
+                }
+            };
 
             var result = Solution.GoodNodes(root);
 
