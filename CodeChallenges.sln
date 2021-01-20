@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.Interleaving
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.AnagramStrings", "CodeChallenges.AnagramStrings\CodeChallenges.AnagramStrings.csproj", "{3AB21C02-AD28-4009-878E-3CF26288A453}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.RemoveDuplicatesFromSortedArray", "CodeChallenges.RemoveDuplicatesFromSortedArray\CodeChallenges.RemoveDuplicatesFromSortedArray.csproj", "{27A23E04-C7F4-49CE-BF25-5DCBF45A2222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{3AB21C02-AD28-4009-878E-3CF26288A453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AB21C02-AD28-4009-878E-3CF26288A453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AB21C02-AD28-4009-878E-3CF26288A453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A23E04-C7F4-49CE-BF25-5DCBF45A2222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A23E04-C7F4-49CE-BF25-5DCBF45A2222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A23E04-C7F4-49CE-BF25-5DCBF45A2222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A23E04-C7F4-49CE-BF25-5DCBF45A2222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
