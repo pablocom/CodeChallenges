@@ -30,7 +30,7 @@ namespace CodeChallenges.Concurrency.PrecedenceSync
             task2.Start();
             task1.Start();
 
-            await Task.WhenAll(task1, task2, task3);
+            await Task.WhenAll(task2, task3);
             
             Assert.Pass();
         }

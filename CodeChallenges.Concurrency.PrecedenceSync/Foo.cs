@@ -5,8 +5,8 @@ namespace CodeChallenges.Concurrency.PrecedenceSync
 {
     public class Foo
     {
-        private readonly Semaphore _semaphoreA = new Semaphore(0, 1);
-        private readonly Semaphore _semaphoreB = new Semaphore(0, 1);
+        private readonly Semaphore semaphoreA = new Semaphore(0, 1);
+        private readonly Semaphore semaphoreB = new Semaphore(0, 1);
         
         public Foo() 
         {
@@ -15,23 +15,20 @@ namespace CodeChallenges.Concurrency.PrecedenceSync
 
         public void First(Action printFirst)
         {
-            // printFirst() outputs "first". Do not change or remove this line.
             printFirst.Invoke();
-            _semaphoreA.Release();
+            semaphoreA.Release(1);
         }
 
         public void Second(Action printSecond)
         {
-            _semaphoreA.WaitOne();
-            // printSecond() outputs "second". Do not change or remove this line.
+            semaphoreA.WaitOne();
             printSecond.Invoke();
-            _semaphoreB.Release();
+            semaphoreB.Release(1);
         }
 
         public void Third(Action printThird)
         {
-            _semaphoreB.WaitOne();
-            // printThird() outputs "third". Do not change or remove this line.
+            semaphoreB.WaitOne();
             printThird.Invoke();
         }
     }
