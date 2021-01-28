@@ -1,6 +1,6 @@
 ﻿# Semaphores
 
-In this exercise sempahores are used to force syncronization regarding execution order for methods that cun run in different 
+In this exercise sempahores are used to force syncronization regarding execution order for methods that can run in different 
 threads with different schedules. <br>
 
 The order of execution we want is `FirstMethod(), SecondMethod() and ThirdMethod()`.
