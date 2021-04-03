@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.GroupAnagram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.Concurrency.PrecedenceSync", "CodeChallenges.Concurrency.PrecedenceSync\CodeChallenges.Concurrency.PrecedenceSync.csproj", "{567CCC9E-D40C-4A5C-89D9-CD790E0E38E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenges.LruCache", "CodeChallenges.LruCache\CodeChallenges.LruCache.csproj", "{36DEB88E-A9B8-412C-B8D8-852B861C62BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{567CCC9E-D40C-4A5C-89D9-CD790E0E38E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{567CCC9E-D40C-4A5C-89D9-CD790E0E38E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{567CCC9E-D40C-4A5C-89D9-CD790E0E38E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36DEB88E-A9B8-412C-B8D8-852B861C62BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36DEB88E-A9B8-412C-B8D8-852B861C62BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36DEB88E-A9B8-412C-B8D8-852B861C62BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36DEB88E-A9B8-412C-B8D8-852B861C62BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
