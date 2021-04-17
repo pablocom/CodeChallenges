@@ -1,9 +1,38 @@
 using System;
+using System.Collections.Generic;
 
 namespace CodeChallenges.Tests
 {
-    public class LongestSubset
+    public static class LongestSubset
     {
+        public static int SolveOptimized(int[] A, int M)
+        {
+            var maximumSubsetCount = 1;
+            var solvedSubProblems = new HashSet<int>();
+            
+            for (var i = 0; i < A.Length - 1 && !solvedSubProblems.Contains(i); i++)
+            {
+                var anySubset = false;
+                var currentValue = A[i];
+                var currentCount = 1;
+                
+                for (var j = i + 1; j < A.Length - 1; j++)
+                {
+                    if (Math.Abs(currentValue - A[j]) % M == 0)
+                    {
+                        if (!anySubset)
+                            anySubset = true;
+                        currentCount++;
+                        solvedSubProblems.Add(j);
+                    }
+                }
+                
+                maximumSubsetCount = anySubset ? Math.Max(maximumSubsetCount, ++currentCount) : 1;
+            }
+            
+            return maximumSubsetCount;
+        }
+        
         public static int Solve(int[] A, int M)
         {
             var maximumSubsetCount = 1;
