@@ -2,7 +2,7 @@
 
 namespace CodeChallenges.RemoveDuplicatesFromString
 {
-    public class Solution
+    public class RemoveDuplicatesFromString
     {
         public string RemoveDuplicateLetters(string text)
         {

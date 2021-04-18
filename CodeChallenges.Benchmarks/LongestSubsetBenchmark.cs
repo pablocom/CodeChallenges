@@ -1,7 +1,7 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
-using CodeChallenges.Tests;
+using CodeChallenges.Solutions;
 
 namespace CodeChallenges.Benchmarks
 {

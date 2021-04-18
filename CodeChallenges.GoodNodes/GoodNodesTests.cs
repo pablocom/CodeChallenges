@@ -53,8 +53,8 @@ namespace CodeChallenges.GoodNodes
 
             var result = Solution.GoodNodes(root);
 
-            var expected = 3;
-            Assert.That(result, Is.EqualTo(2));
+            var expected = 2;
+            Assert.That(result, Is.EqualTo(expected));
         }
     }
 }

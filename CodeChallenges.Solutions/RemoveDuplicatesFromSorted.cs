@@ -1,6 +1,6 @@
 ﻿namespace CodeChallenges.RemoveDuplicatesFromSortedArray
 {
-    public class Solution
+    public class RemoveDuplicatesFromSortedArray
     {
         public int RemoveDuplicates(int[] array)
         {

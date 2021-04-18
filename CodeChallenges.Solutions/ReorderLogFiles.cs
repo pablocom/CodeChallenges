@@ -4,18 +4,9 @@ using System.Linq;
 
 namespace CodeChallenges.ReorderLogFiles
 {
-    class Program
+    public class ReorderLogFiles
     {
-        static void Main(string[] args)
-        {
-            var logs = new[] { "dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero" };
-
-            ReorderLogFiles(logs);
-
-            logs.ToList().ForEach(Console.WriteLine);
-        }
-
-        public static string[] ReorderLogFiles(string[] logs)
+        public static string[] Solve(string[] logs)
         {
             Array.Sort(logs, new LogsComparer());
             return logs;

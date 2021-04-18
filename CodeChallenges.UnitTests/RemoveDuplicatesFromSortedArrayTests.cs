@@ -9,7 +9,7 @@ namespace CodeChallenges.RemoveDuplicatesFromSortedArray
         {
             var array = new[] {1, 2, 2};
 
-            var resultArrayLength = new Solution().RemoveDuplicates(array);
+            var resultArrayLength = new RemoveDuplicatesFromSortedArray().RemoveDuplicates(array);
             
             Assert.That(resultArrayLength, Is.EqualTo(2));
             Assert.That(array[0], Is.EqualTo(1));
@@ -21,7 +21,7 @@ namespace CodeChallenges.RemoveDuplicatesFromSortedArray
         {
             var array = new[] {1, 2, 2, 3};
 
-            var resultArrayLength = new Solution().RemoveDuplicates(array);
+            var resultArrayLength = new RemoveDuplicatesFromSortedArray().RemoveDuplicates(array);
             
             Assert.That(resultArrayLength, Is.EqualTo(3));
             Assert.That(array[0], Is.EqualTo(1));

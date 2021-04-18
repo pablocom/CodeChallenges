@@ -2,14 +2,14 @@ using NUnit.Framework;
 
 namespace CodeChallenges.RemoveDuplicatesFromString
 {
-    public class RemoveDuplicatesTests
+    public class RemoveDuplicatesFromStringTests
     {
         [Test]
         public void Test1()
         {
             var text = "bcabc";
 
-            var result = new Solution().RemoveDuplicateLetters(text);
+            var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
             Assert.That(result, Is.EqualTo("abc"));
         } 
@@ -19,7 +19,7 @@ namespace CodeChallenges.RemoveDuplicatesFromString
         {
             var text = "cbacdcbc";
 
-            var result = new Solution().RemoveDuplicateLetters(text);
+            var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
             Assert.That(result, Is.EqualTo("acdb"));
         }
@@ -29,7 +29,7 @@ namespace CodeChallenges.RemoveDuplicatesFromString
         {
             var text = "cdadabcc";
 
-            var result = new Solution().RemoveDuplicateLetters(text);
+            var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
             Assert.That(result, Is.EqualTo("adbc"));
         }
@@ -39,7 +39,7 @@ namespace CodeChallenges.RemoveDuplicatesFromString
         {
             var text = "leetcode";
 
-            var result = new Solution().RemoveDuplicateLetters(text);
+            var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
             Assert.That(result, Is.EqualTo("letcod"));
         }
