@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CodeChallenges.RemoveDuplicatesFromString
+namespace CodeChallenges.Solutions
 {
     public class RemoveDuplicatesFromString
     {

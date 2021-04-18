@@ -1,4 +1,4 @@
-﻿namespace CodeChallenges.RemoveDuplicatesFromSortedArray
+﻿namespace CodeChallenges.Solutions
 {
     public class RemoveDuplicatesFromSortedArray
     {

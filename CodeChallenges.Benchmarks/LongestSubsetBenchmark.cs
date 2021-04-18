@@ -13,8 +13,7 @@ namespace CodeChallenges.Benchmarks
         [Benchmark]
         public void SolveLongestSubset()
         {
-            var integerArray = new int[2000];
-
+            var integerArray = new int[300];
             var randNum = new Random();
             for (var i = 0; i < integerArray.Length; i++)
             {

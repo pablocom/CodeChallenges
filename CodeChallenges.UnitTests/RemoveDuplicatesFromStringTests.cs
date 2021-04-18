@@ -1,6 +1,7 @@
+using CodeChallenges.Solutions;
 using NUnit.Framework;
 
-namespace CodeChallenges.RemoveDuplicatesFromString
+namespace CodeChallenges.UnitTests
 {
     public class RemoveDuplicatesFromStringTests
     {
