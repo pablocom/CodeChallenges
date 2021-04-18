@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace CodeChallenges.MaxSubstring
 {
-    public class Tests
+    public class MaxSubstringTests
     {
         [Test]
         public void Test1()

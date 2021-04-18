@@ -2,11 +2,9 @@
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public class TabulationSolution : Solution
+    public static class TabulationSolution
     {
-        protected override string SolutionName => "Tabulation";
-
-        protected override int LongestCommonSubsequence(string text1, string text2)
+        public static int LongestCommonSubsequence(string text1, string text2)
         {
             int numberOfCalls = 0;
             var m = text1.Length;

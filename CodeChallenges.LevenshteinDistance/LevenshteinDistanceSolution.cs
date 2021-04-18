@@ -1,22 +1,8 @@
-using System.Linq;
-using CodeChallenges.LongestCommonSubsequence;
-using NUnit.Framework;
+﻿using System.Linq;
 
 namespace CodeChallenges.LevenshteinDistance
 {
-    public class LevenshteinDistanceTests
-    {
-        [TestCase("pablo", "company", 6)]
-        [TestCase("zoologicoarchaeologist", "zoogeologist", 10)]
-        public void Test1(string originalString, string destinationString, int expectedResult)
-        {
-            var result = new Solution().LevenshteinDistance(originalString, destinationString);
-
-            Assert.That(result, Is.EqualTo(expectedResult));
-        }
-    }
-
-    public class Solution
+    public class LevenshteinDistanceSolution
     {
         public int LevenshteinDistance(string originalString, string destinationString)
         {

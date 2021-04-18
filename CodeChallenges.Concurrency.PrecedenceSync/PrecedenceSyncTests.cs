@@ -9,7 +9,7 @@ namespace CodeChallenges.Concurrency.PrecedenceSync
         [Test]
         public async Task Test1()
         {
-            var foo = new Foo();
+            var foo = new PrecedenceSync();
 
             var task1 = new Task(() =>
             {

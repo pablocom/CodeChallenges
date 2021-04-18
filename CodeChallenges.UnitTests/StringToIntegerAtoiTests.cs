@@ -1,8 +1,9 @@
+using CodeChallenges.Solutions;
 using NUnit.Framework;
 
-namespace CodeChallenges.StringToIntegerAtoi
+namespace CodeChallenges.UnitTests
 {
-    public class StringToIntShould
+    public class StringToIntegerAtoiTests
     {
         [TestCase("42", 42)]
         [TestCase("7", 7)]
@@ -20,7 +21,7 @@ namespace CodeChallenges.StringToIntegerAtoi
         [TestCase("  -0012a42", -12)]
         public void ConvertStringIntoIntegerIfPossible(string numberInString, int expectedResult)
         {
-            var number = new Solution().MyAtoi(numberInString);
+            var number = new StringToIntegerAtoi().MyAtoi(numberInString);
 
             Assert.That(number, Is.EqualTo(expectedResult));
         }

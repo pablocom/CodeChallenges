@@ -1,8 +1,8 @@
 using System;
 
-namespace StockBuying
+namespace CodeChallenges.Solutions
 {
-    public static class Solution
+    public static class StockBuying
     {
         public static int MaxProfit(int[] prices)
         {

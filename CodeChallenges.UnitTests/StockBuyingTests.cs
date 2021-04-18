@@ -1,6 +1,7 @@
+using CodeChallenges.Solutions;
 using NUnit.Framework;
 
-namespace StockBuying
+namespace CodeChallenges.UnitTests
 {
     public class StockBuyingTests
     {
@@ -9,7 +10,7 @@ namespace StockBuying
         {
             var stocks = new [] { 1, 2, 3, 4, 5 };
 
-            var result = Solution.MaxProfit(stocks);
+            var result = StockBuying.MaxProfit(stocks);
             
             Assert.That(result, Is.EqualTo(4));
         }
@@ -19,7 +20,7 @@ namespace StockBuying
         {
             var stocks = new [] { 7, 1, 5, 3, 6, 4 };
 
-            var result = Solution.MaxProfit(stocks);
+            var result = StockBuying.MaxProfit(stocks);
             
             Assert.That(result, Is.EqualTo(5));
         }

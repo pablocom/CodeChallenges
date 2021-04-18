@@ -3,12 +3,12 @@ using System.Threading;
 
 namespace CodeChallenges.Concurrency.PrecedenceSync
 {
-    public class Foo
+    public class PrecedenceSync
     {
         private readonly Semaphore semaphoreA = new Semaphore(0, 1);
         private readonly Semaphore semaphoreB = new Semaphore(0, 1);
         
-        public Foo() 
+        public PrecedenceSync() 
         {
         
         }

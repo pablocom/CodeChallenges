@@ -2,14 +2,14 @@
 
 namespace CodeChallenges.LongestCommonSubsequence
 {
-    public class MemoizationSolution : Solution
+    public class MemoizationSolution
     {
         private int?[,] memoization;
         private int numberOfCalls = 0;
 
-        protected override string SolutionName => "Memoization";
+        protected string SolutionName => "Memoization";
 
-        protected override int LongestCommonSubsequence(string X, string Y)
+        public int LongestCommonSubsequence(string X, string Y)
         {
             memoization = new int?[X.Length, Y.Length];
             var longestCommonSubsequenceRecursive = LongestCommonSubsequenceRecursive(X, Y, X.Length, Y.Length);
@@ -17,7 +17,7 @@ namespace CodeChallenges.LongestCommonSubsequence
             return longestCommonSubsequenceRecursive;
         }
 
-        protected int LongestCommonSubsequenceRecursive(string X, string Y, int m, int n)
+        public int LongestCommonSubsequenceRecursive(string X, string Y, int m, int n)
         {
             numberOfCalls++;
 

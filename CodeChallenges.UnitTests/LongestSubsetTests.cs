@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace CodeChallenges.Tests
 {
-    public class Tests
+    public class LongestSubsetTests
     {
         [Test]
         public void Test1()

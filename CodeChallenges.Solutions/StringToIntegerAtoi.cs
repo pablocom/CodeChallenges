@@ -1,9 +1,6 @@
-using System;
-using System.Text.RegularExpressions;
-
-namespace CodeChallenges.StringToIntegerAtoi
+namespace CodeChallenges.Solutions
 {
-    public class Solution
+    public class StringToIntegerAtoi
     {
         public int MyAtoi(string str)
         {

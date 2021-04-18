@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeChallenges.LongestCommonSubsequence
+namespace CodeChallenges.LevenshteinDistance
 {
     public static class MatrixExtensions
     {

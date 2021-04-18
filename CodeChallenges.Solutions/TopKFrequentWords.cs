@@ -3,17 +3,7 @@ using System.Linq;
 
 namespace CodeChallenges.TopKFrequentWords
 {
-    class Program
-    {
-        static void Main()
-        {
-            var wordList = new[] {"i", "love", "leetcode", "i", "love", "coding"};
-            var result = Solution.TopKFrequent(wordList, 2);
-
-        }
-    }
-
-    public static class Solution
+    public static class TopKFrequentWords
     {
         public static IList<string> TopKFrequent(string[] words, int k)
         {
