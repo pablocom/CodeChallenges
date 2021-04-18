@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace CodeChallenges.TopKFrequentWords
+namespace CodeChallenges.Solutions
 {
     public static class TopKFrequentWords
     {

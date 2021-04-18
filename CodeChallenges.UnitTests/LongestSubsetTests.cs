@@ -1,6 +1,7 @@
+using CodeChallenges.Solutions;
 using NUnit.Framework;
 
-namespace CodeChallenges.Tests
+namespace CodeChallenges.UnitTests
 {
     public class LongestSubsetTests
     {

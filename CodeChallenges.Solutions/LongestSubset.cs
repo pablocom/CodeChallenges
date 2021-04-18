@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CodeChallenges.Tests
+namespace CodeChallenges.Solutions
 {
     public static class LongestSubset
     {
