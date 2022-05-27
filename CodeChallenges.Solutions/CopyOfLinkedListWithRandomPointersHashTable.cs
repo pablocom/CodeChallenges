@@ -4,14 +4,14 @@ namespace CodeChallenges.Solutions
 {
     public class CopyOfLinkedListWithRandomPointersHashTable
     {
-        public Node CopyRandomList(Node head)
+        public ListNode CopyRandomList(ListNode head)
         {
-            var newNodesMap = new Dictionary<Node, Node>();
+            var newNodesMap = new Dictionary<ListNode, ListNode>();
 
             var currentNode = head;
             while (currentNode != null)
             {
-                newNodesMap.Add(currentNode, new Node(currentNode.val));
+                newNodesMap.Add(currentNode, new ListNode(currentNode.val));
                 currentNode = currentNode.next;
             }
 

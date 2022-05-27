@@ -3,13 +3,13 @@ using System.Diagnostics;
 namespace CodeChallenges.Solutions
 {
     [DebuggerDisplay("Node {GetHashCode()}")]
-    public class Node {
+    public class ListNode {
         public int val;
-        public Node next;
-        public Node random;
+        public ListNode next;
+        public ListNode random;
         
-        public Node(int _val) {
-            val = _val;
+        public ListNode(int val) {
+            val = val;
             next = null;
             random = null;
         }

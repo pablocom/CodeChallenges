@@ -11,8 +11,8 @@ namespace CodeChallenges.UnitTests
             var firstNodeValue = 6;
             var secondNodeValue = 32;
 
-            var head = new Node(firstNodeValue);
-            head.next = new Node(secondNodeValue);
+            var head = new ListNode(firstNodeValue);
+            head.next = new ListNode(secondNodeValue);
 
             head.random = head.next;
             head.next.random = head;
