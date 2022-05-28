@@ -1,13 +1,12 @@
 ﻿using System;
 using BenchmarkDotNet.Running;
 
-namespace CodeChallenges.Benchmarks
+namespace CodeChallenges.Benchmarks;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            BenchmarkRunner.Run<LongestSubsetBenchmark>();
-        }
+        BenchmarkRunner.Run<LongestSubsetBenchmark>();
     }
 }
