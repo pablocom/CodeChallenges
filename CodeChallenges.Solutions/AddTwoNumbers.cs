@@ -1,59 +1,56 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-
 namespace CodeChallenges.Solutions;
 
 public static class AddTwoNumbers
 {
-    public static ListNode Solve(ListNode firstNumber, ListNode secondNumber)
+    public static ListNode Solve(ListNode numberOne, ListNode numberTwo)
     {
-        var firstNumberStack = BuildStackFrom(firstNumber);
-        var secondNumberStack = BuildStackFrom(secondNumber);
+        var dummyHead = new ListNode(0);
+        var iterableOne = numberOne;
+        var iterableTwo = numberTwo;
+        var resultAppendingHead = dummyHead;
 
-        var firstResult = ConvertToNumber(firstNumberStack);
-        var secondResult = ConvertToNumber(secondNumberStack);
-        
-        return ConvertToReversedLinkedList(firstResult + secondResult);
-    }
-
-    private static Stack<int> BuildStackFrom(ListNode linkedList)
-    {
-        var stack = new Stack<int>();
-        while (linkedList != null)
+        var sumCarry = 0;
+        while (iterableOne is not null && iterableTwo is not null)
         {
-            stack.Push(linkedList.val);
-            linkedList = linkedList.next;
-        }
-        
-        return stack;
-    }
-
-    private static double ConvertToNumber(Stack<int> firstNumberStack)
-    {
-        double result = 0;
-        while (firstNumberStack.Any())
-        {
-            result += firstNumberStack.Peek() * Math.Pow(10, firstNumberStack.Count - 1);
-            firstNumberStack.Pop();
+            var sum = iterableOne.val + iterableTwo.val + sumCarry;
+            resultAppendingHead.next = new ListNode(sum % 10);
+            
+            if (sum >= 10)
+                sumCarry = 1;
+            else
+                sumCarry = 0;
+            
+            iterableOne = iterableOne.next;
+            iterableTwo = iterableTwo.next;
+            resultAppendingHead = resultAppendingHead.next;
         }
 
-        return result;
-    }
-
-    private static ListNode ConvertToReversedLinkedList(double number)
-    {
-        var numberAsString = number.ToString(CultureInfo.InvariantCulture).Reverse().ToArray();
-        
-        var rootNode = new ListNode(numberAsString.First() - '0');
-        var iterableNode = rootNode;
-        foreach (var num in numberAsString.Skip(1))
+        while (iterableOne is not null)
         {
-            iterableNode.next = new ListNode(num - '0');
-            iterableNode = iterableNode.next;
+            var valueWithCarry = iterableOne.val + sumCarry;
+            resultAppendingHead.next = new ListNode(valueWithCarry % 10);
+            
+            sumCarry = valueWithCarry >= 10 ? 1 : 0;
+            
+            resultAppendingHead = resultAppendingHead.next;
+            iterableOne = iterableOne.next;
+            
+        }
+        
+        while (iterableTwo is not null)
+        {
+            var valueWithCarry = iterableTwo.val + sumCarry;
+            resultAppendingHead.next = new ListNode(valueWithCarry % 10);
+            
+            sumCarry = valueWithCarry >= 10 ? 1 : 0;
+            
+            resultAppendingHead = resultAppendingHead.next;
+            iterableTwo = iterableTwo.next;
         }
 
-        return rootNode;
+        if (sumCarry == 1)
+            resultAppendingHead.next = new ListNode(1);
+        
+        return dummyHead.next;
     }
 }   

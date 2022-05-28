@@ -9,7 +9,7 @@ namespace CodeChallenges.UnitTests
         [TestCase(2, 4, 6)]
         [TestCase(0, 1, 1)]
         [TestCase(1, 0, 1)]
-        public void TwoSingleDigitNumbers(int a, int b, int expected)
+        public void SingleDigitNumbers(int a, int b, int expected)
         {
             var l1 = new ListNode(a);
             var l2 = new ListNode(b);
@@ -20,8 +20,8 @@ namespace CodeChallenges.UnitTests
         }
         
         [Test]
-        public void TwoSingleNumbersWithSameLength()
-        {
+        public void NumbersWithSameLength()
+        {   
             var l1 = new ListNode(2){ next = new ListNode(4){ next = new ListNode(3)}};
             var l2 = new ListNode(5){ next = new ListNode(6){ next = new ListNode(4)}};
             var actual = AddTwoNumbers.Solve(l1, l2);
@@ -30,7 +30,7 @@ namespace CodeChallenges.UnitTests
         }
         
         [Test]
-        public void TwoSingleNumbersWithSameLength1()
+        public void NumbersWithDifferentLength()
         {
             var l1 = new ListNode(0){ next = new ListNode(0){ next = new ListNode(3)}};
             var l2 = new ListNode(0){ next = new ListNode(0){ next = new ListNode(0){next = new ListNode(1)}}};

@@ -9,7 +9,7 @@ namespace CodeChallenges.Solutions
         public ListNode random;
         
         public ListNode(int val) {
-            val = val;
+            this.val = val;
             next = null;
             random = null;
         }
