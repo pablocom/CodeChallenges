@@ -7,6 +7,17 @@ namespace CodeChallenges.UnitTests;
 public class FindMedianSortedArraysTests
 {
     [Test]
+    public void Test0()
+    {
+        var firstArray = new[] { 2, 3 };
+        var secondArray = new[] { 1 };
+
+        var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
+        
+        Assert.That(median, Is.EqualTo(2d));
+    }
+    
+    [Test]
     public void Test1()
     {
         var firstArray = new[] { 1, 3 };
@@ -146,6 +157,39 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        Assert.That(median, Is.EqualTo(3d));
+        Assert.That(median, Is.EqualTo(1.5d));
+    }
+    
+    [Test]
+    public void Test14()
+    {
+        var firstArray = new[] { 100001};
+        var secondArray = new[] { 100000};
+
+        var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
+        
+        Assert.That(median, Is.EqualTo(100000.5d));
+    }
+    
+    [Test]
+    public void Test15()
+    {
+        var firstArray = new[] { 2, 3, 4 };
+        var secondArray = new[] { 1 };
+
+        var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
+        
+        Assert.That(median, Is.EqualTo(2.5d));
+    }
+    
+    [Test]
+    public void Test16()
+    {
+        var firstArray = new[] { 4 };
+        var secondArray = new[] { 1, 2, 3 };
+
+        var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
+        
+        Assert.That(median, Is.EqualTo(2.5d));
     }
 }

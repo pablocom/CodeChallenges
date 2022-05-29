@@ -38,7 +38,7 @@ public class FindMedianSortedArrays
             numbersAtLeftOfMedianCount++;
             numbersAtRightOfMedianCount--;
             
-            if (iteratorOne != nums1.Length && nums1[iteratorOne] <= nums2[iteratorTwo])
+            if (iteratorTwo == nums2.Length || (iteratorOne != nums1.Length && nums1[iteratorOne] <= nums2[iteratorTwo]))
             {
                 iteratorOne++;
                 lastIterationWasInOne = true;
@@ -57,6 +57,9 @@ public class FindMedianSortedArrays
                 if (isAtLastPositionOfArray)
                     return (double)(nums1[iteratorOne - 1] + nums2[iteratorTwo]) / 2;
                 
+                if (iteratorTwo == nums2.Length)
+                    return (double)(nums1[iteratorOne - 1] + nums1[iteratorOne]) / 2;
+                
                 var nextOnOne = nums1[iteratorOne];
                 if (nextOnOne >= nums2[iteratorTwo])
                 {
@@ -65,6 +68,10 @@ public class FindMedianSortedArrays
             }
             else
             {
+                var isAtLastPositionOfArray = iteratorTwo == nums2.Length;
+                if (isAtLastPositionOfArray)
+                    return (double)(nums2[iteratorTwo - 1] + nums1[iteratorOne]) / 2;
+                
                 if (iteratorOne >= nums1.Length)
                     return (double)(nums2[iteratorTwo - 1] + nums2[iteratorTwo]) / 2;
                 
@@ -77,7 +84,15 @@ public class FindMedianSortedArrays
         }
 
         if (lastIterationWasInOne)
+        {
+            if (MergedArraysCountIsEven(nums1, nums2))
+                return (double)(nums1[iteratorOne - 1] + nums1[iteratorOne]) / 2;
+            
             return nums1[iteratorOne - 1];
+        }
+        
+        if (MergedArraysCountIsEven(nums1, nums2))
+            return (double)(nums2[iteratorTwo - 1] + nums2[iteratorTwo]) / 2;
         
         return nums2[iteratorTwo - 1];
     }
