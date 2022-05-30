@@ -5,9 +5,12 @@ namespace CodeChallenges.UnitTests;
 
 public class LongestCommonSubsequenceTests
 {
+    [TestCase("abcde", "ace", 3)]
     [TestCase("ACB", "AIB", 2)]
     [TestCase("AGGTAB", "GXTXAYB", 4)]
     [TestCase("ABCDGH", "AEDFHR", 3)]
+    [TestCase("ABCDGH", "", 0)]
+    [TestCase("", "ADV", 0)]
     public void FindLongestCommonSubsequenceGivenTwoStrings(string text1, string text2, int expectedResult)
     {
         var tabulationSolution = TabulationSolution.LongestCommonSubsequence(text1, text2);

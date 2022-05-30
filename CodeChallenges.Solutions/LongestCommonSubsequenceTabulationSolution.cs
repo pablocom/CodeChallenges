@@ -26,7 +26,7 @@ public static class TabulationSolution
             }
         }
             
-        Console.WriteLine($"Number of calls: {numberOfCalls}");
+        Console.WriteLine($"Tabulation Number of calls: {numberOfCalls}");
 
         return resultsTable[m, n];
     }

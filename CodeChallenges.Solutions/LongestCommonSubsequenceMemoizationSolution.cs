@@ -7,13 +7,11 @@ public class MemoizationSolution
     private int?[,] memoization;
     private int numberOfCalls = 0;
 
-    protected string SolutionName => "Memoization";
-
-    public int LongestCommonSubsequence(string X, string Y)
+    public int LongestCommonSubsequence(string text1, string text2)
     {
-        memoization = new int?[X.Length, Y.Length];
-        var longestCommonSubsequenceRecursive = LongestCommonSubsequenceRecursive(X, Y, X.Length, Y.Length);
-        Console.WriteLine($"Number of calls: {numberOfCalls}");
+        memoization = new int?[text1.Length, text2.Length];
+        var longestCommonSubsequenceRecursive = LongestCommonSubsequenceRecursive(text1, text2, text1.Length, text2.Length);
+        Console.WriteLine($"Memoization Number of calls: {numberOfCalls}");
         return longestCommonSubsequenceRecursive;
     }
 
@@ -27,7 +25,7 @@ public class MemoizationSolution
         if (memoization[m - 1, n - 1] != null)
             return memoization[m - 1, n - 1].Value;
 
-        var longestCommonSubsequence = 0;
+        int longestCommonSubsequence;
         if (X[m - 1] == Y[n - 1])
         {
             longestCommonSubsequence = 1 + LongestCommonSubsequenceRecursive(X, Y, m - 1, n - 1);
