@@ -7,27 +7,11 @@ public class FindMedianSortedArrays
     public double Solve(int[] nums1, int[] nums2)
     {
         if (!nums2.Any())
-        {
-            var middlePosition = nums1.Length / 2;
-            if (nums1.Length % 2 == 0)
-            {
-                return (double)(nums1[middlePosition - 1] + nums1[middlePosition]) / 2;
-            }
-            
-            return nums1[middlePosition];
-        }
-        
+            return GetMedian(nums1);
+
         if (!nums1.Any())
-        {
-            var middlePosition = nums2.Length / 2;
-            if (nums2.Length % 2 == 0)
-            {
-                return (double)(nums2[middlePosition - 1] + nums2[middlePosition]) / 2;
-            }
-            
-            return nums2[middlePosition];
-        }
-        
+            return GetMedian(nums2);
+
         var numbersAtLeftOfMedianCount = 0;
         var numbersAtRightOfMedianCount = nums1.Length + nums2.Length;
 
@@ -95,6 +79,17 @@ public class FindMedianSortedArrays
             return (double)(nums2[iteratorTwo - 1] + nums2[iteratorTwo]) / 2;
         
         return nums2[iteratorTwo - 1];
+    }
+
+    private static double GetMedian(int[] nums)
+    {
+        var middlePosition = nums.Length / 2;
+        if (nums.Length % 2 == 0)
+        {
+            return (double)(nums[middlePosition - 1] + nums[middlePosition]) / 2;
+        }
+            
+        return nums[middlePosition];
     }
 
     private static bool MergedArraysCountIsEven(int[] nums1, int[] nums2)
