@@ -7,6 +7,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        BenchmarkRunner.Run<LongestSubsetBenchmark>();
+        BenchmarkRunner.Run<RomanToIntBenchmarks>();
     }
 }

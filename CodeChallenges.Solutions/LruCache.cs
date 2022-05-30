@@ -13,7 +13,6 @@ public class LRUCache
     {
         this.capacity = capacity;
         dictionary = new Dictionary<int, Node>();
-        dictionary = new Dictionary<int, Node>();
         head = new Node();
         tail = new Node();
             

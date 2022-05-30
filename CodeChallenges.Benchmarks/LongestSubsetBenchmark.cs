@@ -5,7 +5,7 @@ using CodeChallenges.Solutions;
 
 namespace CodeChallenges.Benchmarks;
 
-[MemoryDiagnoser]
+[MemoryDiagnoser(false)]
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
 [RankColumn]
 public class LongestSubsetBenchmark
