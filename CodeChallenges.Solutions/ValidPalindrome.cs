@@ -5,10 +5,10 @@ public class ValidPalindrome2
 {
     public bool Solve(string text)
     {
-        int decisionsMade = 0;
-        (int Left, int Right) decisionPoint = (0, 0);
-        int leftToRightIterator = 0;
-        int rightToLeftIterator = text.Length - 1;
+        var decisionsMade = 0;
+        (int Left, int Right) decisionPoint = default;
+        var leftToRightIterator = 0;
+        var rightToLeftIterator = text.Length - 1;
 
         while (leftToRightIterator < rightToLeftIterator && leftToRightIterator < text.Length && rightToLeftIterator >= 0)
         {
