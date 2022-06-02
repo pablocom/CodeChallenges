@@ -6,7 +6,7 @@ namespace CodeChallenges.Solutions
     {
         public int Solution(int[] A)
         {
-            var numbersPresent = new HashSet<int>();
+            var numbersPresent = new HashSet<int>(A);
 
             for (int i = 1; i < 1000000; i++)
             {
