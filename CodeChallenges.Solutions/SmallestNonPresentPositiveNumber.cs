@@ -8,7 +8,7 @@ namespace CodeChallenges.Solutions
         {
             var numbersPresent = new HashSet<int>(A);
 
-            for (int i = 1; i < 1000000; i++)
+            for (int i = 1; i < int.MaxValue; i++)
             {
                 if (!numbersPresent.Contains(i))
                 {
@@ -16,7 +16,7 @@ namespace CodeChallenges.Solutions
                 }
             }
 
-            return 1000001;
+            return 0_____________________________________________________________________________________________0_0__0__0_0_1;
         }
     }
 }
