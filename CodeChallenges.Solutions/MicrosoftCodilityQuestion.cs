@@ -6,54 +6,65 @@ namespace CodeChallenges.Solutions;
 
 public class MicrosoftCodilityQuestion
 {
-    public int Solution(string text, int[] costs)
+    public int Question2(int[] A, int K)
     {
-        var encounteredLetters = new HashSet<char>();
-        var seenCharsMinCost = new Dictionary<char, CharsByCostLocator>();
-        
-        for (var i = 0; i < costs.Length; i++)
+        var result = 0;
+        var addedNumbersCount = 0;
+        var lastMinNumberAdded = int.MinValue;
+
+        for (var i = 0; i < A.Length; i++)
         {
-            if (!seenCharsMinCost.ContainsKey(text[i]))
+            if ((i + 1) % 2 == 0)
+                continue;
+
+            if (addedNumbersCount < K)
             {
-                seenCharsMinCost.Add(text[i], new CharsByCostLocator(i, costs[i]));
+                result += A[i];
+                addedNumbersCount++;
+                lastMinNumberAdded = Math.Min(lastMinNumberAdded, A[i]);
                 continue;
             }
 
-            if (seenCharsMinCost[text[i]].Cost > costs[i])
+            if (addedNumbersCount == K && lastMinNumberAdded < A[i])
             {
-                seenCharsMinCost[text[i]].Cost = costs[i];
-                seenCharsMinCost[text[i]].Position = i;
+                result = result + lastMinNumberAdded + A[i];
+                lastMinNumberAdded = A[i];
             }
         }
-        
-        int totalCost = 0;
-        for (int i = 0; i < costs.Length; i++)
-        {
-            if (encounteredLetters.Contains(text[i]))
-            {
-                if (i != seenCharsMinCost[text[i]].Position)
-                {
-                    totalCost += costs[i];
-                }
-                    
-            }
 
-            encounteredLetters.Add(text[i]);
-        }
-
-
-        return 0;
+        return result;
     }
-
-    private class CharsByCostLocator
+    
+    public int Question1(string S, int[] C)
     {
-        public int Position { get; set; }
-        public int Cost { get; set; }
-
-        public CharsByCostLocator(int position, int cost)
+        var maxCost = int.MaxValue;
+        var currentCosts = 0;
+        var totalCost = 0;
+        var lastSeenChar = ':';
+        
+        for (var i = 0; i < S.Length; i++)
         {
-            Position = position;
-            Cost = cost;
+            if (S[i] == lastSeenChar)
+            {
+                maxCost = maxCost < C[i] ? C[i] : maxCost;
+                
+                currentCosts += C[i];
+                if (i + 1 >= S.Length || S[i + 1] != lastSeenChar)
+                {
+                    totalCost += currentCosts - maxCost;
+                    currentCosts = C[i];
+                    maxCost = C[i];
+                }
+                
+                continue;
+            }
+
+            currentCosts = C[i];
+            lastSeenChar = S[i];
+            maxCost = C[i];
         }
+
+        return totalCost;
     }
+    
 }
