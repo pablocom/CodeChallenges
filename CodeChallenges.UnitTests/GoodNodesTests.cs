@@ -9,16 +9,16 @@ public class GoodNodesTests
     [Test]
     public void Test1()
     {
-        var root = new TreeNode(3)
+        var root = new LeetCodeTreeNode(3)
         {
-            left = new TreeNode(1)
+            left = new LeetCodeTreeNode(1)
             {
-                left = new TreeNode(3)
+                left = new LeetCodeTreeNode(3)
             },
-            right = new TreeNode(4)
+            right = new LeetCodeTreeNode(4)
             {
-                left = new TreeNode(1), 
-                right = new TreeNode(5)
+                left = new LeetCodeTreeNode(1), 
+                right = new LeetCodeTreeNode(5)
             }
         };
 
@@ -31,12 +31,12 @@ public class GoodNodesTests
     [Test]
     public void Test2()
     {
-        var root = new TreeNode(3);
+        var root = new LeetCodeTreeNode(3);
             
-        root.left = new TreeNode(3);
+        root.left = new LeetCodeTreeNode(3);
             
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(2);
+        root.left.left = new LeetCodeTreeNode(4);
+        root.left.right = new LeetCodeTreeNode(2);
 
         var result = GoodNodesFinder.GoodNodes(root);
 
@@ -47,11 +47,11 @@ public class GoodNodesTests
     [Test]
     public void Test3()
     {
-        var root = new TreeNode(3);
+        var root = new LeetCodeTreeNode(3);
             
-        root.left = new TreeNode(4);
+        root.left = new LeetCodeTreeNode(4);
             
-        root.left.left = new TreeNode(3);
+        root.left.left = new LeetCodeTreeNode(3);
 
         var result = GoodNodesFinder.GoodNodes(root);
 

@@ -4,11 +4,11 @@ namespace CodeChallenges.Solutions.BinaryTrees;
 
 public class LevelOrderTraversal
 {
-    public IList<IList<int>> LevelOrder(TreeNode root)
+    public IList<IList<int>> LevelOrder(LeetCodeTreeNode root)
     {
         var nodesByLevel = new Dictionary<int, List<int>>();
 
-        var queue = new Queue<TreeNode>();
+        var queue = new Queue<LeetCodeTreeNode>();
         var levelQueue = new Queue<int>();
 
         int? currentLevel = 1;

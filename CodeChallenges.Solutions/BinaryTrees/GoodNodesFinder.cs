@@ -4,12 +4,12 @@ namespace CodeChallenges.Solutions.BinaryTrees;
 
 public class GoodNodesFinder
 {
-    public static int GoodNodes(TreeNode root) 
+    public static int GoodNodes(LeetCodeTreeNode root) 
     {
         return GoToNode(root, long.MinValue);
     }
     
-    public static int GoToNode(TreeNode node, long max)
+    public static int GoToNode(LeetCodeTreeNode node, long max)
     {
         if (node == null) return 0;
         max = Math.Max((long) node.val, max);

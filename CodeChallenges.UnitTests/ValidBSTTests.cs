@@ -10,25 +10,25 @@ public class ValidBstTests
     [Test]
     public void ValidatesBinarySearchTree()
     {
-        var binarySearchTreeRoot = new TreeNode(1);
+        var binarySearchTreeRoot = new LeetCodeTreeNode(1);
 
-        binarySearchTreeRoot.left = new TreeNode(0, new TreeNode(-2));
-        binarySearchTreeRoot.right = new TreeNode(3);
+        binarySearchTreeRoot.left = new LeetCodeTreeNode(0, new LeetCodeTreeNode(-2));
+        binarySearchTreeRoot.right = new LeetCodeTreeNode(3);
 
-        var result = ValidBST.IsValidBST(binarySearchTreeRoot);
+        var result = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
             
-        Assert.False(result);
+        Assert.True(result);
     }
         
     [Test]
     public void NotValidBst()
     {
-        var binarySearchTreeRoot = new TreeNode(5);
+        var binarySearchTreeRoot = new LeetCodeTreeNode(5);
 
-        binarySearchTreeRoot.left = new TreeNode(1, new TreeNode(3));
-        binarySearchTreeRoot.right = new TreeNode(6);
+        binarySearchTreeRoot.left = new LeetCodeTreeNode(1, new LeetCodeTreeNode(3));
+        binarySearchTreeRoot.right = new LeetCodeTreeNode(6);
 
-        var result = ValidBST.IsValidBST(binarySearchTreeRoot);
+        var result = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
             
         Assert.IsFalse((bool) result);
     }
