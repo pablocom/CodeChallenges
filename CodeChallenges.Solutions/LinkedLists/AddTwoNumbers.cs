@@ -1,4 +1,4 @@
-namespace CodeChallenges.Solutions;
+namespace CodeChallenges.Solutions.LinkedLists;
 
 public static class AddTwoNumbers
 {

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CodeChallenges.Solutions;
+using CodeChallenges.Solutions.LinkedLists;
 
 namespace CodeChallenges.UnitTests.Builders;
 

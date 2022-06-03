@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace CodeChallenges.Solutions;
+namespace CodeChallenges.Solutions.LinkedLists;
 
 [DebuggerDisplay("Node {GetHashCode()}")]
 public class ListNode {

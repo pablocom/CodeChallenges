@@ -15,6 +15,6 @@ public class RemoveNthFromEndTests
 
         var result = new RemoveNthFromEnd().Solve(linkedList, 3);
 
-        LinkedListAssert.HasValues(result, new[] {1, 2, 3, 4, 5, 6, 7});
+        LinkedListAssert.HasValues(result, new[] { 1, 2, 3, 4, 5, 6, 7 });
     }
 }
