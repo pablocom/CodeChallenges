@@ -1,4 +1,5 @@
 using CodeChallenges.Solutions;
+using CodeChallenges.Solutions.BinaryTrees;
 using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;

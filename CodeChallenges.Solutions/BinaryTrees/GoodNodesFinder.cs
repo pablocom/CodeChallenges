@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeChallenges.Solutions;
+namespace CodeChallenges.Solutions.BinaryTrees;
 
 public class GoodNodesFinder
 {
