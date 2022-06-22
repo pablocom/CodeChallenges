@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CodeChallenges.Solutions;
 
 public class ThreeSum
 {
-    public ThreeSum()
-    {
-    }
-
     public IList<IList<int>> Solve(int[] nums)
     {
         Array.Sort(nums);

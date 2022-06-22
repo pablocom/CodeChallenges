@@ -2,7 +2,6 @@ using CodeChallenges.Solutions;
 using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
-
 public class KthLargestTests
 {
     [Test]
