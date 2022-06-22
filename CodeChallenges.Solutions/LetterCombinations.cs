@@ -6,16 +6,16 @@ namespace CodeChallenges.Solutions;
 
 public class LetterCombinations
 {
-    private static readonly IReadOnlyDictionary<char, char[]> LettersByDigit = new Dictionary<char, char[]>()
+    private static readonly Dictionary<char, string> LettersByDigit = new Dictionary<char, string>()
     {
-        {'2', new char[]{ 'a', 'b', 'c' } },
-        {'3', new char[]{ 'd', 'e', 'f' } },
-        {'4', new char[]{ 'g', 'h', 'i' } },
-        {'5', new char[]{ 'j', 'k', 'l' } },
-        {'6', new char[]{ 'm', 'n', 'o' } },
-        {'7', new char[]{ 'p', 'q', 'r', 's' } },
-        {'8', new char[]{ 't', 'u', 'v' } },
-        {'9', new char[]{ 'w', 'x', 'y', 'z' } }
+        {'2', "abc"},
+        {'3', "def"},
+        {'4', "ghi"},
+        {'5', "jkl"},
+        {'6', "mno"},
+        {'7', "pqrs"},
+        {'8', "tuv"},
+        {'9', "wxyz"}
     };
 
     public IList<string> Solve(string digits)
@@ -25,27 +25,34 @@ public class LetterCombinations
             return new List<string>(0);
         }
 
-        var lengths = digits.Select(d => LettersByDigit[d].Length);
         int resultLength = 1;
-        foreach (var length in lengths)
+        foreach (var length in digits.Select(d => LettersByDigit[d].Length))
         {
             resultLength *= length;
         }
 
-        var result = new string[resultLength];
-        for (int d = 0; d < digits.Length; d++)
+        var list = new List<string>();
+
+        Backtrack(list, digits, LettersByDigit, new List<char>(), 0);
+
+        return list;
+    }
+
+    private static void Backtrack(List<string> list, string digits, Dictionary<char, string> dict, List<char> temp, int start)
+    {
+        if (temp.Count == digits.Length) 
+            list.Add(string.Join("", temp));
+
+        for (var i = start; i < digits.Length; i++)
         {
-            char digit = digits[d];
-
-            for (int i = 0; i < resultLength; i++) 
+            for (var j = 0; j < dict[digits[i]].Length; j++)
             {
-                var multiplier = d == 0 ? 1 : LettersByDigit[digit].Length * d;
-                var positionOfCharToFill = ((i * multiplier) / LettersByDigit[digit].Length) % LettersByDigit[digit].Length;
+                temp.Add(dict[digits[i]][j]);
 
-                result[i] = string.Empty + result[i] + LettersByDigit[digit][positionOfCharToFill];
+                Backtrack(list, digits, dict, temp, i + 1);
+
+                temp.RemoveAt(temp.Count - 1);
             }
         }
-
-        return result.ToList();
     }
 }
