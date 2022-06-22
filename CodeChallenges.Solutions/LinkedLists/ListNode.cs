@@ -8,7 +8,8 @@ public class ListNode {
     public ListNode next;
     public ListNode random;
         
-    public ListNode(int val) {
+    // Do not change, is LeetCode ListNode implementation
+    public ListNode(int val = 0, ListNode next = null) {
         this.val = val;
         next = null;
         random = null;
