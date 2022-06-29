@@ -21,38 +21,35 @@ public class LetterCombinations
     public IList<string> Solve(string digits)
     {
         if (!digits.Any())
-        {
             return new List<string>(0);
-        }
 
-        int resultLength = 1;
-        foreach (var length in digits.Select(d => LettersByDigit[d].Length))
-        {
-            resultLength *= length;
-        }
-
-        var list = new List<string>();
-
-        Backtrack(list, digits, LettersByDigit, new List<char>(), 0);
-
-        return list;
+        var letterCombinations = new List<string>();
+        Backtracking(letterCombinations, digits, LettersByDigit, new List<char>(), 0);
+        return letterCombinations;
     }
 
-    private static void Backtrack(List<string> list, string digits, Dictionary<char, string> dict, List<char> temp, int start)
+    private static void Backtracking(List<string> allLetterCombinations, string digits, Dictionary<char, string> dict,
+        List<char> backTrackList, int start)
     {
-        if (temp.Count == digits.Length) 
-            list.Add(string.Join("", temp));
+        if (backTrackList.Count == digits.Length) 
+            allLetterCombinations.Add(string.Join("", backTrackList));
 
         for (var i = start; i < digits.Length; i++)
         {
             for (var j = 0; j < dict[digits[i]].Length; j++)
             {
-                temp.Add(dict[digits[i]][j]);
-
-                Backtrack(list, digits, dict, temp, i + 1);
-
-                temp.RemoveAt(temp.Count - 1);
+                backTrackList.Add(dict[digits[i]][j]);
+                Backtracking(allLetterCombinations, digits, dict, backTrackList, i + 1);
+                backTrackList.RemoveLast();
             }
         }
+    }
+}
+
+public static class ListExtensions
+{
+    public static void RemoveLast<T>(this List<T> list)
+    {
+        list.RemoveAt(list.Count - 1);
     }
 }
