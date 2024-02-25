@@ -1,5 +1,6 @@
 ﻿using CodeChallenges.Solutions;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace CodeChallenges.UnitTests
 {

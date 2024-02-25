@@ -15,9 +15,9 @@ public class ValidBstTests
         binarySearchTreeRoot.left = new LeetCodeTreeNode(0, new LeetCodeTreeNode(-2));
         binarySearchTreeRoot.right = new LeetCodeTreeNode(3);
 
-        var result = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
+        var isValidBinarySearchTreeBfs = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
             
-        Assert.True(result);
+        Assert.That(isValidBinarySearchTreeBfs);
     }
         
     [Test]
@@ -28,8 +28,8 @@ public class ValidBstTests
         binarySearchTreeRoot.left = new LeetCodeTreeNode(1, new LeetCodeTreeNode(3));
         binarySearchTreeRoot.right = new LeetCodeTreeNode(6);
 
-        var result = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
+        var isValidBinarySearchTreeBfs = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
             
-        Assert.IsFalse((bool) result);
+        Assert.That(isValidBinarySearchTreeBfs);
     }
 }

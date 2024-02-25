@@ -42,7 +42,7 @@ public class SwapPairsTests
     {
         var newHead = new SwapPairs().Solve(null);
         
-        Assert.IsNull(newHead);
+        Assert.That(newHead is null);
     }
     
     [Test]

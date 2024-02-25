@@ -2,6 +2,7 @@ using CodeChallenges.Solutions;
 using CodeChallenges.Solutions.LinkedLists;
 using CodeChallenges.UnitTests.Builders;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace CodeChallenges.UnitTests;
 

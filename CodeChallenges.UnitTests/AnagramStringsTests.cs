@@ -12,7 +12,7 @@ public class AnagramStringsTests
         var text2 = "blpao";
 
         var isAnagram = new AnagramStrings().IsAnagram(text1, text2);
-            
-        Assert.True((bool) isAnagram);
+
+        Assert.That(isAnagram);
     }
 }
