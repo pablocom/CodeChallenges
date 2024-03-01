@@ -1,16 +1,16 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class LevenshteinDistanceTests
 {
-    [TestCase("pablo", "company", 6)]
-    [TestCase("zoologicoarchaeologist", "zoogeologist", 10)]
-    public void Test1(string originalString, string destinationString, int expectedResult)
+    [Theory]
+    [InlineData("pablo", "company", 6)]
+    [InlineData("zoologicoarchaeologist", "zoogeologist", 10)]
+    public void Test1(string originalString, string destinationString, int expected)
     {
         var result = new LevenshteinDistanceSolution().LevenshteinDistance(originalString, destinationString);
 
-        Assert.That(result, Is.EqualTo(expectedResult));
+        result.Should().Be(expected);
     }
 }

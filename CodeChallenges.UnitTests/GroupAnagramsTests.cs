@@ -1,20 +1,17 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
-using NUnit.Framework.Legacy;
 
 namespace CodeChallenges.UnitTests;
 
 public class GroupAnagramsTests
 {
-    [Ignore("Not solved")]
-    [Test]
+    [Fact]
     public void Test1()
     {
         var list = new[] {"eat", "tea", "tan", "ate", "nat", "bat"};
-        var expectedList = new[] {new[] {"bat"}, new[] {"nat", "tan"}, new[] {"ate", "eat", "tea"}};
+        var expectedList = new string[][] { ["bat"], ["nat", "tan"], ["ate", "eat", "tea"]};
 
         var result = new GroupAnagramsSolution().GroupAnagrams(list);
             
-        CollectionAssert.AreEquivalent(expectedList, result);
+        result.Should().BeEquivalentTo(expectedList);
     }
 }

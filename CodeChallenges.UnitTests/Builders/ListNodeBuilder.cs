@@ -1,13 +1,10 @@
-using System.Collections.Generic;
-using System.Linq;
-using CodeChallenges.Solutions;
 using CodeChallenges.Solutions.LinkedLists;
 
 namespace CodeChallenges.UnitTests.Builders;
 
 public class ListNodeBuilder
 {
-    private readonly List<int> _values = new();
+    private readonly List<int> _values = [];
     
     public ListNode Build()
     {

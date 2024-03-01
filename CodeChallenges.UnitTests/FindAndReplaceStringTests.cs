@@ -1,11 +1,10 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class FindAndReplaceStringTests
 {
-    [Test]
+    [Fact]
     public void Test1()
     {
         var inputString = "abcd";
@@ -13,13 +12,12 @@ public class FindAndReplaceStringTests
         var sources = new[] { "a", "cd" };
         var targets = new[] { "eee", "ffff" };
 
-        var result = new FindAndReplaceString()
-            .FindReplaceString(inputString, indexes, sources, targets);
+        var result = new FindAndReplaceString().FindReplaceString(inputString, indexes, sources, targets);
 
-        Assert.That(result, Is.EqualTo("eeebffff"));
+        result.Should().Be("eeebffff");
     }
 
-    [Test]
+    [Fact]
     public void Test2()
     {
         var inputString = "abcd";
@@ -27,13 +25,12 @@ public class FindAndReplaceStringTests
         var sources = new[] { "ab", "ec" };
         var targets = new[] { "eee", "ffff" };
 
-        var result = new FindAndReplaceString()
-            .FindReplaceString(inputString, indexes, sources, targets);
+        var result = new FindAndReplaceString().FindReplaceString(inputString, indexes, sources, targets);
 
-        Assert.That(result, Is.EqualTo("eeecd"));
+        result.Should().Be("eeecd");
     }
 
-    [Test]
+    [Fact]
     public void Test3()
     {
         var inputString = "abcd";
@@ -41,9 +38,8 @@ public class FindAndReplaceStringTests
         var sources = new[] { "cd", "a" };
         var targets = new[] { "ffff", "eee" };
 
-        var result = new FindAndReplaceString()
-            .FindReplaceString(inputString, indexes, sources, targets);
+        var result = new FindAndReplaceString().FindReplaceString(inputString, indexes, sources, targets);
 
-        Assert.That(result, Is.EqualTo("eeebffff"));
+        result.Should().Be("eeebffff");
     }
 }

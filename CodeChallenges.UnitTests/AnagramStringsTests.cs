@@ -1,11 +1,10 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class AnagramStringsTests
 {
-    [Test]
+    [Fact]
     public void Test1()
     {
         var text1 = "pablo";
@@ -13,6 +12,6 @@ public class AnagramStringsTests
 
         var isAnagram = new AnagramStrings().IsAnagram(text1, text2);
 
-        Assert.That(isAnagram);
+        isAnagram.Should().BeTrue();
     }
 }

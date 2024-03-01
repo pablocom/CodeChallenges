@@ -1,33 +1,32 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class MicrosoftCodilityQuestionTests
 {
-    [Test]
+    [Fact]
     public void Test1()
     {
         var text = "abccbd";
         var costs = new[] { 0, 1, 2, 3, 4, 5 };
 
         var solution = new MicrosoftCodilityQuestion().Question1(text, costs);
-        
-        Assert.That(solution, Is.EqualTo(2));
+
+        solution.Should().Be(2);
     }
     
-    [Test]
+    [Fact]
     public void Test2()
     {
         var text = "aaaa";
         var costs = new[] { 3, 4, 5, 6 };
 
         var solution = new MicrosoftCodilityQuestion().Question1(text, costs);
-        
-        Assert.That(solution, Is.EqualTo(12));
+
+        solution.Should().Be(12);
     }
     
-    [Test]
+    [Fact]
     public void Test3()
     {
         var text = "aabbcc";
@@ -35,10 +34,10 @@ public class MicrosoftCodilityQuestionTests
 
         var solution = new MicrosoftCodilityQuestion().Question1(text, costs);
         
-        Assert.That(solution, Is.EqualTo(3));
+        solution.Should().Be(3);
     }
     
-    [Test]
+    [Fact]
     public void Test5()
     {
         var K = 5;
@@ -46,10 +45,10 @@ public class MicrosoftCodilityQuestionTests
 
         var solution = new MicrosoftCodilityQuestion().Question2(A, K);
         
-        Assert.That(solution, Is.EqualTo(20));
+        solution.Should().Be(20);
     }
     
-    [Test]
+    [Fact]
     public void Test6()
     {
         var K = 3;
@@ -57,6 +56,6 @@ public class MicrosoftCodilityQuestionTests
 
         var solution = new MicrosoftCodilityQuestion().Question2(A, K);
         
-        Assert.That(solution, Is.EqualTo(18));
+        solution.Should().Be(18);
     }
 }

@@ -1,12 +1,10 @@
-using CodeChallenges.Solutions;
 using CodeChallenges.Solutions.LinkedLists;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class CopyLinkedListTests
 {
-    [Test]
+    [Fact]
     public void Test1()
     {
         var firstNodeValue = 6;
@@ -20,10 +18,10 @@ public class CopyLinkedListTests
 
         var newHead = new CopyOfLinkedListWithRandomPointersHashTable().CopyRandomList(head);
 
-        Assert.That(newHead.GetHashCode(), Is.Not.EqualTo(head.GetHashCode()));
-        Assert.That(newHead.val, Is.EqualTo(firstNodeValue));
-
-        Assert.That(newHead.next.val, Is.EqualTo(secondNodeValue));
-        Assert.That(newHead.next.random.GetHashCode(), Is.EqualTo(newHead.GetHashCode()));
+        newHead.GetHashCode().Should().NotBe(head.GetHashCode());
+        
+        newHead.val.Should().Be(firstNodeValue);
+        newHead.next!.val.Should().Be(secondNodeValue);
+        newHead.next!.random!.GetHashCode().Should().Be(newHead.GetHashCode());
     }
 }

@@ -1,13 +1,10 @@
-using CodeChallenges.Solutions;
 using CodeChallenges.Solutions.BinaryTrees;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
-[TestFixture]
-public class ValidBstTests
+public sealed class ValidBstTests
 {
-    [Test]
+    [Fact]
     public void ValidatesBinarySearchTree()
     {
         var binarySearchTreeRoot = new LeetCodeTreeNode(1);
@@ -16,11 +13,11 @@ public class ValidBstTests
         binarySearchTreeRoot.right = new LeetCodeTreeNode(3);
 
         var isValidBinarySearchTreeBfs = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
-            
-        Assert.That(isValidBinarySearchTreeBfs);
+
+        isValidBinarySearchTreeBfs.Should().BeTrue();
     }
         
-    [Test]
+    [Fact]
     public void NotValidBst()
     {
         var binarySearchTreeRoot = new LeetCodeTreeNode(5);
@@ -29,7 +26,7 @@ public class ValidBstTests
         binarySearchTreeRoot.right = new LeetCodeTreeNode(6);
 
         var isValidBinarySearchTreeBfs = ValidBST.IsValidBinarySearchTreeBfs(binarySearchTreeRoot);
-            
-        Assert.That(isValidBinarySearchTreeBfs);
+
+        isValidBinarySearchTreeBfs.Should().BeTrue();
     }
 }

@@ -1,108 +1,30 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class AwsInterviewQuestionsTests
 {
-    [Test]
-    public void Test1()
+    [Theory]
+    [InlineData("101000", 1)]
+    [InlineData("1110", -1)]
+    [InlineData("1010", 1)]
+    public void MinSwapsRequiredTests(string text, int expected)
     {
-        var text = "101000";
-
         var solution = AwsInterviewQuestions.MinSwapsRequired(text);
-        
-        Assert.That(solution, Is.EqualTo(1));
+        solution.Should().Be(expected);
     }
     
-    [Test]
-    public void Test2()
+    [Theory]
+    [InlineData("baaacyyyyyssssss", 4)]
+    [InlineData("aab", 1)]
+    [InlineData("abb", 1)]
+    [InlineData("bbacccabab", 2)]
+    [InlineData("bbcccc", 2)]
+    [InlineData("bbccccddd", 2)]
+    [InlineData("aaaaa", 0)]
+    public void GetMaxFreqDeviationTests(string text, int expected)
     {
-        var text = "1110";
-
-        var solution = AwsInterviewQuestions.MinSwapsRequired(text);
-        
-        Assert.That(solution, Is.EqualTo(-1));
-    }
-    
-    [Test]
-    public void Test3()
-    {
-        var text = "1010";
-
-        var solution = AwsInterviewQuestions.MinSwapsRequired(text);
-        
-        Assert.That(solution, Is.EqualTo(1));
-    }
-    
-    [Test]
-    public void Test4()
-    {
-        var text = "baaacyyyyyssssss";
-
         var solution = AwsInterviewQuestions.GetMaxFreqDeviation(text);
-        
-        Assert.That(solution, Is.EqualTo(4));
-    }
-    
-    
-    [Test]
-    public void Test5()
-    {
-        var text = "aab";
-
-        var solution = AwsInterviewQuestions.GetMaxFreqDeviation(text);
-        
-        Assert.That(solution, Is.EqualTo(1));
-    }
-    
-    [Test]
-    public void Test6()
-    {
-        var text = "abb";
-
-        var solution = AwsInterviewQuestions.GetMaxFreqDeviation(text);
-        
-        Assert.That(solution, Is.EqualTo(1));
-    }
-    
-    [Test]
-    public void Test7()
-    {
-        var text = "bbacccabab";
-
-        var solution = AwsInterviewQuestions.GetMaxFreqDeviation(text);
-        
-        Assert.That(solution, Is.EqualTo(2));
-    }
-    
-    [Test]
-    public void Test00()
-    {
-        var text = "bbcccc";
-
-        var solution = AwsInterviewQuestions.GetMaxFreqDeviation(text);
-        
-        Assert.That(solution, Is.EqualTo(2));
-    }
-    
-    [Test]
-    public void Test01()
-    {
-        var text = "bbccccddd";
-
-        var solution = AwsInterviewQuestions.GetMaxFreqDeviation(text);
-        
-        Assert.That(solution, Is.EqualTo(2));
-    }
-    
-    [Test]
-    public void Test8()
-    {
-        var text = "aaaaa";
-
-        var solution = AwsInterviewQuestions.GetMaxFreqDeviation(text);
-        
-        Assert.That(solution, Is.EqualTo(0));
+        solution.Should().Be(expected);
     }
 }

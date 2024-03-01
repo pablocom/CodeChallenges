@@ -1,37 +1,36 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class LongestPalindromeTests
 {
-    [Test]
+    [Fact]
     public void Test0()
     {
         var word = "a";
 
         var result = LongestPalindromeFinder.LongestPalindrome(word);
 
-        Assert.That(result, Is.EqualTo("a"));
+        result.Should().Be("a");
     }
 
-    [Test]
+    [Fact]
     public void Test1()
     {
         var word = "babad";
 
         var result = LongestPalindromeFinder.LongestPalindrome(word);
 
-        Assert.That(result, Is.EqualTo("aba").Or.EqualTo("bab"));
+        result.Should().Match(x => x == "aba" || x == "bab");
     }
 
-    [Test]
+    [Fact]
     public void Test2()
     {
         var word = "abb";
 
         var result = LongestPalindromeFinder.LongestPalindrome(word);
 
-        Assert.That(result, Is.EqualTo("bb"));
+        result.Should().Be("bb");
     }
 }

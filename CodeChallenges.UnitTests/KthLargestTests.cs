@@ -1,10 +1,9 @@
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 public class KthLargestTests
 {
-    [Test]
+    [Fact]
     public void Test1()
     {
         var inputArray = new[] {3, 2, 1, 4, 5, 6};
@@ -12,10 +11,10 @@ public class KthLargestTests
 
         var result = new KthLargest().FindKthLargest(inputArray, kthLargestNumber);
 
-        Assert.That(result, Is.EqualTo(5));
+        result.Should().Be(5);
     }
 
-    [Test]
+    [Fact]
     public void Test2()
     {
         var inputArray = new[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 };
@@ -23,6 +22,6 @@ public class KthLargestTests
 
         var result = new KthLargest().FindKthLargest(inputArray, kthLargestNumber);
 
-        Assert.That(result, Is.EqualTo(4));
+        result.Should().Be(4);
     }
 }

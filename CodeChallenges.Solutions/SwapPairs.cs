@@ -5,14 +5,14 @@ namespace CodeChallenges.Solutions;
 
 public class SwapPairs
 {
-    public ListNode Solve(ListNode head) 
+    public ListNode? Solve(ListNode? head) 
     {
-        if (head is null || head.next is null)
+        if (head?.next is null)
             return head;
         
         var newHead = head.next;
 
-        ListNode carriedNode = null;
+        ListNode? carriedNode = null;
         var previousNode = head;
         var currentNode = head.next;
         

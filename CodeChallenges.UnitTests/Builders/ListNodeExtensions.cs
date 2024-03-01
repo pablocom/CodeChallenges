@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using CodeChallenges.Solutions.LinkedLists;
 
 namespace CodeChallenges.UnitTests.Builders;
@@ -9,11 +8,11 @@ public static class ListNodeExtensions
     {
         var list = new List<int>();
 
-        var currentNode = head;
-        while (head is not null)
+        ListNode? cursor = head; 
+        while (cursor is not null)
         {
             list.Add(head.val);
-            head = head.next;
+            cursor = head.next;
         }
 
         return list.ToArray();

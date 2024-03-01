@@ -1,13 +1,10 @@
-using System;
-using System.Threading.Tasks;
 using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests;
 
 public class Tests
 {
-    [Test]
+    [Fact]
     public async Task Test1()
     {
         var foo = new PrecedenceSync();
@@ -32,7 +29,5 @@ public class Tests
         task1.Start();
 
         await Task.WhenAll(task2, task3);
-            
-        Assert.Pass();
     }
 }

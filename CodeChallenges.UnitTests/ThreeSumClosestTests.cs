@@ -1,11 +1,10 @@
 ﻿using CodeChallenges.Solutions;
-using NUnit.Framework;
 
 namespace CodeChallenges.UnitTests
 {
     public class ThreeSumClosestTests
     {
-        [Test]
+        [Fact]
         public void Test1()
         {
             var array = new int[] { -1, 2, 1, -4 };
@@ -13,10 +12,10 @@ namespace CodeChallenges.UnitTests
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            Assert.That(solution, Is.EqualTo(2));
+            solution.Should().Be(2);
         }
 
-        [Test]
+        [Fact]
         public void Test2()
         {
             var array = new int[] { 0, 0, 0 };
@@ -24,10 +23,10 @@ namespace CodeChallenges.UnitTests
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            Assert.That(solution, Is.EqualTo(0));
+            solution.Should().Be(0);
         }
 
-        [Test]
+        [Fact]
         public void Test3()
         {
             var array = new int[] { 1, 1, 1, 0 };
@@ -35,10 +34,10 @@ namespace CodeChallenges.UnitTests
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            Assert.That(solution, Is.EqualTo(2));
+            solution.Should().Be(2);
         }
 
-        [Test]
+        [Fact]
         public void Test4()
         {
             var array = new int[] { 0, 2, 1, -3 };
@@ -46,7 +45,7 @@ namespace CodeChallenges.UnitTests
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            Assert.That(solution, Is.EqualTo(0));
+            solution.Should().Be(0);
         }
     }
 }
