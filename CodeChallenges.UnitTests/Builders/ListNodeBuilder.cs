@@ -6,8 +6,11 @@ public class ListNodeBuilder
 {
     private readonly List<int> _values = [];
     
-    public ListNode Build()
+    public ListNode? Build()
     {
+        if (_values.Count is 0)
+            return null;
+        
         var head = new ListNode(_values[0]);
         var current = head;
         foreach (var value in _values.Skip(1))
