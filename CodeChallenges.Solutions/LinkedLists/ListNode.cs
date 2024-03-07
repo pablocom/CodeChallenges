@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace CodeChallenges.Solutions.LinkedLists;
 
-[DebuggerDisplay("Node {GetHashCode()}")]
+[DebuggerDisplay("Value: {this.val} - HashCode {GetHashCode()}")]
 public class ListNode : IEnumerable<int>
 {
     public int val { get; set; }

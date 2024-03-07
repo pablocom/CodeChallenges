@@ -1,6 +1,4 @@
-using CodeChallenges.Solutions.LinkedLists;
-
-namespace CodeChallenges.Solutions;
+namespace CodeChallenges.Solutions.LinkedLists;
 
 public static class MergeTwoSortedLists
 {

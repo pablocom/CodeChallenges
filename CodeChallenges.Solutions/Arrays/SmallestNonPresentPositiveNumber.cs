@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CodeChallenges.Solutions
+﻿namespace CodeChallenges.Solutions
 {
     public class SmallestNonPresentPositiveNumber
     {
@@ -16,7 +14,7 @@ namespace CodeChallenges.Solutions
                 }
             }
 
-            return 0_____________________________________________________________________________________________0_0__0__0_0_1;
+            return int.MaxValue;
         }
     }
 }

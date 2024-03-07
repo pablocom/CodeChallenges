@@ -1,4 +1,5 @@
 using CodeChallenges.Solutions;
+using CodeChallenges.Solutions.LinkedLists;
 using CodeChallenges.UnitTests.Builders;
 
 namespace CodeChallenges.UnitTests;
