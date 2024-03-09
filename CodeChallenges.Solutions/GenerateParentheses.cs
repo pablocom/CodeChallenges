@@ -13,7 +13,7 @@ public class GenerateParentheses
         return result;
     }
 
-    private void GenerateCombinations(int n, string parentheses, int opened, int closed, List<string> result)
+    private static void GenerateCombinations(int n, string parentheses, int opened, int closed, List<string> result)
     {
         if (opened == closed && opened == n)
         {

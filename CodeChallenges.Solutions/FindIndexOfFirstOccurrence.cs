@@ -6,12 +6,10 @@ public class FindIndexOfFirstOccurrence
     {
         var spanHaystack = haystack.AsSpan();
         var spanNeedle = needle.AsSpan();
+        haystack.Contains(needle);
 
         for (var i = 0; i < spanHaystack.Length; i++)
         {
-            if (spanHaystack.Slice(i).Length < spanNeedle.Length)
-                return -1;
-
             if (spanHaystack.Slice(i, spanNeedle.Length).SequenceEqual(spanNeedle))
                 return i;
         }
