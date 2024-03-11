@@ -1,5 +1,3 @@
-using System;
-
 namespace CodeChallenges.Solutions;
 
 public static class StockBuying

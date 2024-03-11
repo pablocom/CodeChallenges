@@ -1,4 +1,6 @@
-﻿namespace CodeChallenges.UnitTests;
+﻿using CodeChallenges.Solutions;
+
+namespace CodeChallenges.UnitTests;
 
 public class NextPermutationTests
 {
