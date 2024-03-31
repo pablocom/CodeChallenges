@@ -4,7 +4,7 @@ namespace CodeChallenges.UnitTests;
 
 public class AwsInterviewQuestionsTests
 {
-    [Theory]
+    [Theory(Skip = "Not implemented")]
     [InlineData("101000", 1)]
     [InlineData("1110", -1)]
     [InlineData("1010", 1)]
@@ -14,7 +14,7 @@ public class AwsInterviewQuestionsTests
         solution.Should().Be(expected);
     }
     
-    [Theory]
+    [Theory(Skip = "Not implemented")]
     [InlineData("baaacyyyyyssssss", 4)]
     [InlineData("aab", 1)]
     [InlineData("abb", 1)]

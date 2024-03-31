@@ -1,12 +1,4 @@
-﻿using System;
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
+using CodeChallenges.Benchmarks;
 
-namespace CodeChallenges.Benchmarks;
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        BenchmarkRunner.Run<RomanToIntBenchmarks>();
-    }
-}
+BenchmarkRunner.Run<SearchValuesBenchmark>();

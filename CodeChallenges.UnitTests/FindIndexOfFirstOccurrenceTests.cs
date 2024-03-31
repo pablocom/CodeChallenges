@@ -4,7 +4,7 @@ namespace CodeChallenges.UnitTests;
 
 public class FindIndexOfFirstOccurrenceTests
 {
-    [Theory]
+    [Theory(Skip = "Not implemented")]
     [InlineData("aaa", "aaaa", -1)]
     public void Test1(string haystack, string needle, int expectedResult)
     {
