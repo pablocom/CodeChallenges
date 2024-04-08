@@ -8,70 +8,58 @@ public static class ReverseNodesInKGroups
         if (k is 1)
             return head;
 
-        var isFirstReverse = true;
-
-        ListNode result = head;
+        var isFirstKGroup = true;
+        var result = head;
+        var currentNode = head;
+        var currentGroupSize = 0;
         ListNode? groupCurrent = null;
         ListNode? tailOfLastReversedGroup = null;
         ListNode? previousTailOfLastReversedGroup = null;
-        var currentNode = head;
-        var currentGroupSize = 0;
 
         while (currentNode is not null)
         {
-            var hasReversedInThisIteration = false;
             groupCurrent ??= currentNode;
             currentGroupSize++;
 
-            if (currentGroupSize == k)
+            if (currentGroupSize < k)
             {
-                hasReversedInThisIteration = true;
-
-                if (tailOfLastReversedGroup is null)
-                    tailOfLastReversedGroup = head;
-
-                var groupIterationCount = 0;
-                var aux = currentNode.next;
-                var groupNext = groupCurrent.next;
-
-                while (groupIterationCount < k) 
-                {
-                    if (groupIterationCount is 0)
-                    {
-                        previousTailOfLastReversedGroup = tailOfLastReversedGroup;
-                        tailOfLastReversedGroup = groupCurrent;
-                    }
-
-                    if (groupIterationCount == k - 1)
-                    {
-                        if (isFirstReverse)
-                            result = groupCurrent!;
-
-                        var next2 = tailOfLastReversedGroup!.next;
-
-                        if (!isFirstReverse)
-                            previousTailOfLastReversedGroup!.next = currentNode;
-
-                        currentNode = next2;
-                        groupCurrent!.next = aux;
-                        break;
-                    }
-
-                    groupNext = groupCurrent!.next;
-                    groupCurrent.next = aux;
-                    aux = groupCurrent;
-                    groupCurrent = groupNext;
-
-                    groupIterationCount++;
-                }
-
-                groupCurrent = null;
-                isFirstReverse = false;
-                currentGroupSize = 0;
+                currentNode = currentNode.next;
+                continue;
             }
 
-            if (!hasReversedInThisIteration)
-                currentNode = currentNode.next;
+            var aux = currentNode.next;
+
+            for (var i = 1; i <= k; i++)
+            {
+                var isTheFirstNodeToReverse = i is 1;
+                if (isTheFirstNodeToReverse)
+                {
+                    previousTailOfLastReversedGroup = tailOfLastReversedGroup;
+                    tailOfLastReversedGroup = groupCurrent;
+                }
+
+                var isTheLastNodeToReverse = i == k;
+                if (isTheLastNodeToReverse)
+                {
+                    if (isFirstKGroup)
+                        result = groupCurrent!;
+                    else
+                        previousTailOfLastReversedGroup!.next = currentNode;
+
+                    currentNode = tailOfLastReversedGroup!.next;
+                    groupCurrent!.next = aux;
+                    break;
+                }
+
+                var groupNext = groupCurrent.next;
+                groupCurrent.next = aux;
+                aux = groupCurrent;
+                groupCurrent = groupNext;
+            }
+
+            groupCurrent = null;
+            isFirstKGroup = false;
+            currentGroupSize = 0;
         }
 
         return result;
