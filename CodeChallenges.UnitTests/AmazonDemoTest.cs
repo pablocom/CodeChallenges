@@ -9,11 +9,12 @@ public class AmazonDemoTest
     {
         public static List<int> minimalHeaviestSetA(List<int> arr)
         {
-            long sum = 0;
-            for (var i = 0; i < arr.Count; i++)
-                sum += i;
-            
             var span = CollectionsMarshal.AsSpan(arr);
+
+            long sum = 0;
+            for (var i = 0; i < span.Length; i++)
+                sum += span[i];
+            
             span.Sort();
 
             long accumulated = 0;
@@ -39,7 +40,6 @@ public class AmazonDemoTest
             {
                 if (relativesTracked.Contains(i))
                     continue;
-
                 
                 SearchRelativesOf(related, i, relativesTracked);
                 totalGroups++;
@@ -53,7 +53,7 @@ public class AmazonDemoTest
             if (!relativesTracked.Add(relative))
                 return;
 
-            for (var j = relative + 1; j < related.Count; j++)
+            for (var j = 0; j < related.Count; j++)
             {
                 if (relative == j)
                     continue;
@@ -133,7 +133,7 @@ public class AmazonDemoTest
 
         var solution = Result.countGroups(array);
 
-        solution.Should().Be(3);
+        solution.Should().Be(2);
     }
     
     [Fact]
@@ -165,5 +165,20 @@ public class AmazonDemoTest
         var solution = Result.countGroups(array);
 
         solution.Should().Be(2);
+    }
+    
+    [Fact]
+    public void Exercise2_Test6()
+    {
+        List<string> array = [
+            "1001",
+            "0110",
+            "0111",
+            "1011"
+        ];
+
+        var solution = Result.countGroups(array);
+
+        solution.Should().Be(1);
     }
 }

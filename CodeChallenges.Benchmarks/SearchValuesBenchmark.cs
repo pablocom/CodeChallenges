@@ -21,13 +21,13 @@ public class SearchValuesBenchmark
     [Benchmark]
     public void Nickname_From_SearchValues()
     {
-        _ = Nickname.From_SearchValues(NickName);
+        _ = Nickname.IsValid_SearchValues(NickName);
     }
 
     [Benchmark]
     public void Nickname_From_FrozenSet()
     {
-        var nickname = Nickname.From_FrozenSet(NickName);
+        _ = Nickname.IsValid_FrozenSet(NickName);
     }
 }
 
@@ -46,7 +46,7 @@ public sealed class Nickname
         Value = value;
     }
 
-    public static bool From_FrozenSet(string username)
+    public static bool IsValid_FrozenSet(string username)
     {
         foreach (var character in username)
         {
@@ -57,7 +57,7 @@ public sealed class Nickname
         return true;
     }
 
-    public static bool From_SearchValues(string username)
+    public static bool IsValid_SearchValues(string username)
     {
         foreach (var character in username)
         {
