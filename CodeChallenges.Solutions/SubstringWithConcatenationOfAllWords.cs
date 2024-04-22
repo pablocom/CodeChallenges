@@ -1,69 +1,72 @@
-﻿
-using System;
-
-namespace CodeChallenges.Solutions;
+﻿namespace CodeChallenges.Solutions;
 
 public class SubstringWithConcatenationOfAllWords
 {
     public IList<int> FindSubstring(string s, string[] words)
     {
-        var totalWordsToCheck = words.Length;
-        var wordLength = words[0].Length;
-        var span = s.AsSpan();
-        var occurrencesByWord = new Dictionary<string, int>();
+        
+        if (s == null || words == null || words.Length == 0) 
+            return new List<int>();
 
+        int wordLength = words[0].Length;
+        int permutationLength = wordLength * words.Length;
+        if (s.Length < permutationLength) 
+            return new List<int>();
+
+        var wordCount = new Dictionary<string, int>();
         foreach (string word in words)
         {
-            if (occurrencesByWord.TryGetValue(word, out var occurrences))
-            {
-                occurrencesByWord[word] = occurrences + 1;
-                continue;
-            }
-
-            occurrencesByWord.Add(word, 1);
+            if (wordCount.ContainsKey(word))
+                wordCount[word]++;
+            else
+                wordCount.Add(word, 1);
         }
 
-        var indexes = new HashSet<int>();
-        for (int index = 0; index < span.Length; index++)
+        var result = new List<int>();
+
+        for (int i = 0; i < wordLength; i++)
         {
-            if (IsConcatenatedSubstringFrom(index, span, occurrencesByWord, wordLength, totalWordsToCheck))
-                indexes.Add(index);
-        }
+            int startingIndex = i;
+            var wordsFound = new Dictionary<string, int>();
+            int count = 0;
 
-        return indexes.ToList();
-    }
-
-    private bool IsConcatenatedSubstringFrom(int index, ReadOnlySpan<char> span, 
-        Dictionary<string, int> occurrencesByWord, int wordLength, int totalWordsToCheck)
-    {
-        var wordsUsages = 0;
-        var wordsUsed = new Dictionary<string, int>();
-
-        for (int i = index; i < span.Length - wordLength; i++)
-        {
-            var slice = span.Slice(i, wordLength).ToString();
-
-            if (occurrencesByWord.TryGetValue(slice, out var occurrences))
+            for (int right = i; right <= s.Length - wordLength; right += wordLength)
             {
-                if (wordsUsed.TryGetValue(slice, out var timesUsed))
+                var slice = s.Substring(right, wordLength);
+
+                if (wordCount.ContainsKey(slice))
                 {
-                    if (timesUsed == occurrences)
-                        return false;
+                    if (wordsFound.ContainsKey(slice))
+                    {
+                        wordsFound[slice]++;
+                    }
+                    else
+                    {
+                        wordsFound.Add(slice, 1);
+                    }
 
-                    wordsUsed[slice] = timesUsed + 1;
-                    
+                    count++;
+
+                    while (wordsFound[slice] > wordCount[slice])
+                    {
+                        var leftWord = s.Substring(startingIndex, wordLength);
+                        wordsFound[leftWord]--;
+                        count--;
+                        startingIndex += wordLength;
+                    }
+
+                    if (count == words.Length)
+                        result.Add(startingIndex);
                 }
-
-                wordsUsed.Add(slice, 1);
-                wordsUsages++;
-
-                i += wordLength - 1;
+                else
+                {
+                    wordsFound.Clear();
+                    count = 0;
+                    startingIndex = right + wordLength;
+                }
             }
-
-            if (wordsUsages == totalWordsToCheck)
-                return true;
         }
 
-        return false;
+        return result;
     }
 }
