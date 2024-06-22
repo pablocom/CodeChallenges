@@ -3,7 +3,6 @@ using Xunit;
 using FluentAssertions;
 
 namespace CodeChallenges.UnitTests;
-
 public class LetterCombinationsTests
 {
     [Fact]
