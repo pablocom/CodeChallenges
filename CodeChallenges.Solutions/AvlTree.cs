@@ -2,14 +2,48 @@ using System.Collections;
 
 namespace CodeChallenges.Solutions;
 
-public sealed class AvlTree<TItem> where TItem : IComparable<TItem>
+public sealed class AvlTree<TItem>
 {
+    private readonly IComparer<TItem> _comparer;
     private Node? _root;
+
+    public AvlTree(IComparer<TItem>? comparer = null)
+    {
+        _comparer = comparer ?? Comparer<TItem>.Default;
+    }
+
+    private void InsertNew(TItem item)
+    {
+        if (_root is null)
+        {
+            
+        }
+    }
     
     public void Insert(TItem item)
     {
         if (_root is null) 
             _root = new Node(item);
+        else
+            Insert(_root, item);
+    }
+
+    private void Insert(Node node, TItem item)
+    {
+        if (_comparer.Compare(item, node.Value) < 0)
+        {
+            if (node.LeftChild is null)
+                node.LeftChild = new Node(item);
+            else
+                Insert(node.LeftChild, item);
+        }
+        else
+        { 
+            if (node.RightChild is null)
+                node.RightChild = new Node(item);
+            else
+                Insert(node.RightChild, item);
+        }
     }
 
     public void Remove(TItem item) => throw new NotImplementedException();
@@ -18,7 +52,8 @@ public sealed class AvlTree<TItem> where TItem : IComparable<TItem>
 
     private sealed class Node
     {
-        public TItem? Value { get; }
+        public TItem? Value { get; set; }
+        public int Height { get; set; }
         public Node? LeftChild { get; set; }
         public Node? RightChild { get; set; }
 
