@@ -37,11 +37,8 @@ public sealed class AvlTreeTests
     public void AddsMultipleItemsAndKeepsThemInOrder()
     {
         var tree = new AvlTree<int>();
-        
-        tree.Insert(1);
-        tree.Insert(3);
-        tree.Insert(2);
-        tree.Insert(4);
+
+        tree.Insert([3, 2, 1, 4]);
         
         tree.InOrderTraversal().Should().Equal([1, 2, 3, 4]);
     }
@@ -56,5 +53,15 @@ public sealed class AvlTreeTests
         tree.Insert(1);
         
         tree.InOrderTraversal().Should().Equal([1, 2, 3]);
+    }
+    [Fact]
+    public void Test()
+    {
+        var tree = new AvlTree<int>();
+        
+        tree.Insert([5, 20, 40, 50, 100, 90, 110, 105]);
+        tree.Insert(101);
+        
+        tree.InOrderTraversal().Should().BeInAscendingOrder();
     }
 }

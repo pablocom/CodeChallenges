@@ -6,7 +6,7 @@ using BenchmarkDotNet.Order;
 
 namespace CodeChallenges.Benchmarks;
 
-[MemoryDiagnoser(true)]
+[MemoryDiagnoser]
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
 [RankColumn]
 public class SearchValuesBenchmark
