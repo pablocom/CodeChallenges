@@ -59,7 +59,7 @@ public sealed class AvlTreeTests
     {
         var tree = new AvlTree<int>();
         
-        tree.Insert([5, 20, 40, 50, 100, 90, 110, 105]);
+        tree.Insert(Enumerable.Range(0, 100000).Select(_ => Random.Shared.Next()).ToArray());
         tree.Insert(101);
         
         tree.InOrderTraversal().Should().BeInAscendingOrder();
