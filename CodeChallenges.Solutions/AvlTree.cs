@@ -2,7 +2,11 @@ namespace CodeChallenges.Solutions;
 
 public sealed class AvlTree<TItem>
 {
+    public int Height => _root?.Height ?? -1;
+    public int Balance => GetBalanceOf(_root);
+
     private const int BalanceThreshold = 1;
+    
     private readonly IComparer<TItem> _comparer;
     private Node? _root;
 
@@ -22,6 +26,11 @@ public sealed class AvlTree<TItem>
         _root = Insert(_root, item);
     }
 
+    public void Remove(TItem? item)
+    {
+        _root = Remove(_root, item);
+    }
+
     private Node Insert(Node? node, TItem item)
     {
         if (node is null)
@@ -37,24 +46,63 @@ public sealed class AvlTree<TItem>
         var balance = GetBalanceOf(node);
         
         if (balance > BalanceThreshold)
-        {
-            node = GetBalanceOf(node.LeftChild) >= 0 
-                ? RotateRight(node) 
-                : RotateLeftRight(node);
-        }
-        else if (balance < -BalanceThreshold)
-        {
-            node = GetBalanceOf(node.RightChild) <= 0 
-                ? RotateLeft(node) 
-                : RotateRightLeft(node);
-        }
+            return GetBalanceOf(node.LeftChild) >= 0 ? RotateRight(node) : RotateLeftRight(node);
+        if (balance < -BalanceThreshold) 
+            return GetBalanceOf(node.RightChild) <= 0 ? RotateLeft(node) : RotateRightLeft(node);
 
         return node;
     }
 
-    public void Remove(TItem item)
+    private Node? Remove(Node? node, TItem? item)
     {
-        throw new NotImplementedException();
+        if (node is null)
+            return null;
+
+        var comparison = _comparer.Compare(item, node.Value);
+        switch (comparison)
+        {
+            case < 0:
+                node.LeftChild = Remove(node.LeftChild, item);
+                break;
+            case > 0:
+                node.RightChild = Remove(node.RightChild, item);
+                break;
+            default:
+                if (node.LeftChild is null)
+                {
+                    return node.RightChild;
+                }
+                if (node.RightChild is null)
+                {
+                    return node.LeftChild;
+                }
+                
+                var minNode = GetMinValueNode(node.RightChild);
+                node.Value = minNode.Value;
+                node.RightChild = Remove(node.RightChild, minNode.Value);
+
+                break;
+        }
+
+        node!.Height = 1 + Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
+        
+        var balance = GetBalanceOf(node);
+        
+        if (balance > BalanceThreshold)
+            return GetBalanceOf(node.LeftChild) >= 0 ? RotateRight(node) : RotateLeftRight(node);
+        if (balance < -BalanceThreshold)
+            return GetBalanceOf(node.RightChild) <= 0 ? RotateLeft(node) : RotateRightLeft(node);
+
+        return node;
+    }
+
+    private static Node GetMinValueNode(Node node)
+    {
+        var current = node;
+        while (current.LeftChild is not null)
+            current = current.LeftChild;
+
+        return current;
     }
 
     private static Node RotateRight(Node node)
