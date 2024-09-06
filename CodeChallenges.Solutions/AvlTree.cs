@@ -15,6 +15,11 @@ public sealed class AvlTree<TItem>
         _comparer = comparer ?? Comparer<TItem>.Default;
     }
 
+    public AvlTree(IEnumerable<TItem> items, IComparer<TItem>? comparer = null) : this(comparer)
+    {
+        Insert(items);
+    }
+
     public void Insert(IEnumerable<TItem> items)
     {
         foreach (var item in items) 
@@ -23,12 +28,14 @@ public sealed class AvlTree<TItem>
     
     public void Insert(TItem item)
     {
-        _root = Insert(_root, item);
+        var newRoot = Insert(_root, item);
+        _root = newRoot;
     }
 
     public void Remove(TItem? item)
     {
-        _root = Remove(_root, item);
+        var newRoot = Remove(_root, item);
+        _root = newRoot;
     }
 
     private Node Insert(Node? node, TItem item)
@@ -69,13 +76,10 @@ public sealed class AvlTree<TItem>
                 break;
             default:
                 if (node.LeftChild is null)
-                {
                     return node.RightChild;
-                }
+                
                 if (node.RightChild is null)
-                {
                     return node.LeftChild;
-                }
                 
                 var minNode = GetMinValueNode(node.RightChild);
                 node.Value = minNode.Value;
@@ -94,15 +98,6 @@ public sealed class AvlTree<TItem>
             return GetBalanceOf(node.RightChild) <= 0 ? RotateLeft(node) : RotateRightLeft(node);
 
         return node;
-    }
-
-    private static Node GetMinValueNode(Node node)
-    {
-        var current = node;
-        while (current.LeftChild is not null)
-            current = current.LeftChild;
-
-        return current;
     }
 
     private static Node RotateRight(Node node)
@@ -131,16 +126,16 @@ public sealed class AvlTree<TItem>
         return rightChildTemp;
     }
 
-    private static Node RotateLeftRight(Node node)
-    {
-        node.LeftChild = RotateLeft(node.LeftChild!);
-        return RotateRight(node);
-    }
-
     private static Node RotateRightLeft(Node node)
     {
         node.RightChild = RotateRight(node.RightChild!);
         return RotateLeft(node);
+    }
+
+    private static Node RotateLeftRight(Node node)
+    {
+        node.LeftChild = RotateLeft(node.LeftChild!);
+        return RotateRight(node);
     }
 
     private static int GetBalanceOf(Node? node)
@@ -157,6 +152,15 @@ public sealed class AvlTree<TItem>
             return -1;
 
         return node.Height;
+    }
+
+    private static Node GetMinValueNode(Node node)
+    {
+        var current = node;
+        while (current.LeftChild is not null)
+            current = current.LeftChild;
+
+        return current;
     }
 
     public IEnumerable<TItem> InOrderTraversal() => InOrderTraversalInternal(_root);
