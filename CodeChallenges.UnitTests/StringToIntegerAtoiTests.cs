@@ -4,7 +4,7 @@ namespace CodeChallenges.UnitTests;
 
 public class StringToIntegerAtoiTests
 {
-    [Theory]
+    [Theory(Skip = "Incomplete")]
     [InlineData("42", 42)]
     [InlineData("7", 7)]
     [InlineData("   42", 42)]

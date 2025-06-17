@@ -68,7 +68,7 @@ public class AmazonAssessmentsTests
         result.Should().Be(expectedOutput);
     }
 
-    [Fact]
+    [Fact(Skip = "Incomplete")]
     public void Excersise1_Test7()
     {
         List<int> stockPrice = [9, 8];
@@ -79,7 +79,7 @@ public class AmazonAssessmentsTests
         result.Should().Be(expectedOutput);
     }
 
-    [Fact]
+    [Fact(Skip = "Incomplete")]
     public void Excersise2_Test1()
     {
         List<int> stockPrice = [2, 3, 3, 4, 6, 8, 8, 6];

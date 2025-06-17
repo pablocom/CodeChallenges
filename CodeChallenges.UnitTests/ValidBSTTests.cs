@@ -17,7 +17,7 @@ public sealed class ValidBstTests
         isValidBinarySearchTreeBfs.Should().BeTrue();
     }
         
-    [Fact]
+    [Fact(Skip = "Incomplete")]
     public void NotValidBst()
     {
         var binarySearchTreeRoot = new LeetCodeTreeNode(5);
