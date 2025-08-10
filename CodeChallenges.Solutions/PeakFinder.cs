@@ -12,7 +12,7 @@ public class PeakFinder
         var totalPeaks = 0;
         var previousWasPeak = false;
 
-        for (var i = 1; i < values.Count - 1; i++) 
+        for (var i = 1; i < values.Count; i++) 
         {
             if (previousWasPeak)
             {
