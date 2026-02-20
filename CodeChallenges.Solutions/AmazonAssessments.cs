@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace CodeChallenges.UnitTests;
+namespace CodeChallenges.Solutions;
 
 public class AmazonAssessments
 {

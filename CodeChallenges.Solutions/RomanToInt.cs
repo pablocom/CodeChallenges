@@ -6,8 +6,8 @@ public class RomanToInt
 {
     public int Solve(string s)
     {
-        ReadOnlySpan<char> romanNumeralSpan = s.AsSpan();
-        var arabicNumber  = 0;
+        var romanNumeralSpan = s.AsSpan();
+        var arabicNumber = 0;
         
         foreach (var arabicToRoman in ArabicToRomanNumerals.All)
         {
@@ -38,27 +38,27 @@ public class RomanToInt
         return arabicNumber;
     }
     
-    private class ArabicToRomanNumerals
+    public sealed class ArabicToRomanNumerals
     {
-        private static readonly ArabicToRomanNumerals Thousand = new ArabicToRomanNumerals(1000, "M");
-        private static readonly ArabicToRomanNumerals NineHundred = new ArabicToRomanNumerals(900, "CM");
-        private static readonly ArabicToRomanNumerals FiveHundred = new ArabicToRomanNumerals(500, "D");
-        private static readonly ArabicToRomanNumerals FortyHundred = new ArabicToRomanNumerals(400, "CD");
-        private static readonly ArabicToRomanNumerals Hundred = new ArabicToRomanNumerals(100, "C");
-        private static readonly ArabicToRomanNumerals Ninety = new ArabicToRomanNumerals(90, "XC");
-        private static readonly ArabicToRomanNumerals Fifty = new ArabicToRomanNumerals(50, "L");
-        private static readonly ArabicToRomanNumerals Forty = new ArabicToRomanNumerals(40, "XL");
-        private static readonly ArabicToRomanNumerals Ten = new ArabicToRomanNumerals(10, "X");
-        private static readonly ArabicToRomanNumerals Nine = new ArabicToRomanNumerals(9, "IX");
-        private static readonly ArabicToRomanNumerals Five = new ArabicToRomanNumerals(5, "V");
-        private static readonly ArabicToRomanNumerals Four = new ArabicToRomanNumerals(4, "IV");
-        private static readonly ArabicToRomanNumerals One = new ArabicToRomanNumerals(1, "I");
+        private static readonly ArabicToRomanNumerals Thousand = new(1000, "M");
+        private static readonly ArabicToRomanNumerals NineHundred = new(900, "CM");
+        private static readonly ArabicToRomanNumerals FiveHundred = new(500, "D");
+        private static readonly ArabicToRomanNumerals FortyHundred = new(400, "CD");
+        private static readonly ArabicToRomanNumerals Hundred = new(100, "C");
+        private static readonly ArabicToRomanNumerals Ninety = new(90, "XC");
+        private static readonly ArabicToRomanNumerals Fifty = new(50, "L");
+        private static readonly ArabicToRomanNumerals Forty = new(40, "XL");
+        private static readonly ArabicToRomanNumerals Ten = new(10, "X");
+        private static readonly ArabicToRomanNumerals Nine = new(9, "IX");
+        private static readonly ArabicToRomanNumerals Five = new(5, "V");
+        private static readonly ArabicToRomanNumerals Four = new(4, "IV");
+        private static readonly ArabicToRomanNumerals One = new(1, "I");
 
-        public static readonly ArabicToRomanNumerals[] All = new[]
-        {
+        public static readonly IReadOnlyList<ArabicToRomanNumerals> All =
+        [
             Thousand, NineHundred, FiveHundred, FortyHundred, Hundred,
             Ninety, Fifty, Forty, Ten, Nine, Five, Four, One
-        };
+        ];
         
         public string Character { get; }
         public int Arabic { get; }
