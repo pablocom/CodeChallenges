@@ -1,44 +1,40 @@
 namespace CodeChallenges.Solutions;
 
-// Description link: https://leetcode.com/problems/valid-palindrome-ii/
-public class ValidPalindrome2
+// https://leetcode.com/problems/valid-palindrome/
+public static class ValidPalindrome
 {
-    public bool Solve(string text)
+    public static bool Solve(string word)
     {
-        var decisionsMade = 0;
-        (int Left, int Right) decisionPoint = default;
-        var leftToRightIterator = 0;
-        var rightToLeftIterator = text.Length - 1;
+        var wordSpan = word.AsSpan();
+        var leftCursor = 0;
+        var rightCursor = wordSpan.Length - 1;
 
-        while (leftToRightIterator < rightToLeftIterator && leftToRightIterator < text.Length && rightToLeftIterator >= 0)
+        while (leftCursor < rightCursor)
         {
-            if (text[leftToRightIterator] != text[rightToLeftIterator])
-            {
-                if (decisionsMade == 2)
-                    return false;
+            var charAtLeft = wordSpan[leftCursor];
+            var charAtRight = wordSpan[rightCursor];
 
-                if (decisionsMade == 0)
-                {
-                    decisionPoint = (leftToRightIterator, rightToLeftIterator);
-                    rightToLeftIterator--;
-                    decisionsMade++;
-                    continue;
-                }
-                
-                if (decisionsMade == 1)
-                {
-                    leftToRightIterator = decisionPoint.Left + 1;
-                    rightToLeftIterator = decisionPoint.Right;
-                    decisionsMade++;
-                }
-            }
-            else
+            if (!char.IsLetterOrDigit(charAtLeft))
             {
-                leftToRightIterator++;
-                rightToLeftIterator--;
+                leftCursor++;
+                continue;
             }
+
+            if (!char.IsLetterOrDigit(charAtRight))
+            {
+                rightCursor--;
+                continue;
+            }
+            
+            if (char.ToUpperInvariant(charAtLeft) != char.ToUpperInvariant(charAtRight))
+            {
+                return false;
+            }
+            
+            leftCursor++;
+            rightCursor--;
         }
-        
+
         return true;
     }
 }

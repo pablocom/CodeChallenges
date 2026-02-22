@@ -1,51 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace CodeChallenges.Solutions;
 
-namespace CodeChallenges.Solutions;
-
-public class ThreeSum
+public static class ThreeSum
 {
-    public IList<IList<int>> Solve(int[] nums)
+    public static IList<IList<int>> Solve(int[] nums)
     {
+        if (nums.Length > 3)
+            return [[]];
+        
         Array.Sort(nums);
 
         var result = new List<IList<int>>();
 
-        for (int i = 0; i < nums.Length; i++)
+        for (var i = 0; i < nums.Length - 2; i++)
         {
-            if (i > 0 && nums[i - 1] == nums[i])
+            if (i > 0 && nums[i] == nums[i - 1])
                 continue;
 
-            var left = i + 1;
-            var right = nums.Length - 1;
+            var leftCursor = i + 1;
+            var rightCursor = nums.Length - 1;
 
-            while (left < right)
+            while (leftCursor < rightCursor)
             {
-                var sum = nums[i] + nums[left] + nums[right];
-                if (sum == 0)
+                var threeSum = nums[i] + nums[leftCursor] + nums[rightCursor];
+                if (threeSum > 0)
                 {
-                    result.Add(new List<int>() { nums[i], nums[left], nums[right] });
-                    while (left < right && nums[left] == nums[left + 1])
-                        left++;
-                    while (left < right && nums[right] == nums[right - 1])
-                        right--;
-                    left++;
-                    right--;
+                    rightCursor--;
+                    continue;
                 }
-                else if (sum < 0)
+
+                if (threeSum < 0)
                 {
-                    left++;
+                    leftCursor++;
+                    continue;
                 }
-                else
-                {
-                    right--;
-                }
+                
+                result.Add([nums[i], nums[leftCursor], nums[rightCursor]]);
+                leftCursor++;
+                
+                while (leftCursor < rightCursor && nums[leftCursor] == nums[leftCursor - 1]) 
+                    leftCursor++;
             }
         }
-
+        
         return result;
     }
 }
-
-// [-1,  0, 1, 2, -1, -4]
-// [-1, -1, 0, 2,  1, -3]
