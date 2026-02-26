@@ -4,7 +4,7 @@ public static class ThreeSum
 {
     public static IList<IList<int>> Solve(int[] nums)
     {
-        if (nums.Length > 3)
+        if (nums.Length < 3)
             return [[]];
         
         Array.Sort(nums);
