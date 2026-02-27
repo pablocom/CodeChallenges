@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace CodeChallenges.Solutions;
 
 public static class BinarySum
@@ -9,8 +7,9 @@ public static class BinarySum
     public static string Solve(string a, string b)
     {
         var resultCapacity = a.Length > b.Length ? a.Length + 1 : b.Length + 1;
-        var sb = new StringBuilder(resultCapacity);
-
+        var result = new char[resultCapacity].AsSpan();
+        var resultWriteCursor = result.Length - 1;
+        
         var aCursor = a.Length - 1;
         var bCursor = b.Length - 1;
 
@@ -25,33 +24,37 @@ public static class BinarySum
 
             switch (binaryDigitSum) {
                 case 0:
-                    sb.Insert(0, '0');
+                    result[resultWriteCursor] = '0';
                     carry = 0;
                     break;
                 case 1:
-                    sb.Insert(0, '1');
+                    result[resultWriteCursor] = '1';
                     carry = 0;
                     break;
                 case 2:
-                    sb.Insert(0, '0');
+                    result[resultWriteCursor] = '0';
                     carry = 1;
                     break;
                 case 3:
-                    sb.Insert(0, '1');
+                    result[resultWriteCursor] = '1';
                     carry = 1;
                     break;
                 default:
                     throw new InvalidOperationException("Binary digit sum unexpected");
             }
 
+            resultWriteCursor--;
+                
             if (aCursor >= 0) aCursor--;
             if (bCursor >= 0) bCursor--;
         }
 
         if (carry is 1)
-            sb.Insert(0, '1');
+            result[resultWriteCursor] = '1';
+        else
+            return result[1..].ToString();
         
-        return sb.ToString();
+        return result.ToString();
     }
 
     private static int CharBinaryToInt(char character)
