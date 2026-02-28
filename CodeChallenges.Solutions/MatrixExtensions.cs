@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CodeChallenges.Solutions;
+﻿namespace CodeChallenges.Solutions;
 
 public static class MatrixExtensions
 {

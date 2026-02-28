@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeChallenges.Solutions.BinaryTrees;
+﻿namespace CodeChallenges.Solutions.BinaryTrees;
 
 // Description link: https://leetcode.com/problems/validate-binary-search-tree/
 public class ValidBST

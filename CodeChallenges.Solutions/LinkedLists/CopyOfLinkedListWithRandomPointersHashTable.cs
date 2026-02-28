@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CodeChallenges.Solutions.LinkedLists;
+﻿namespace CodeChallenges.Solutions.LinkedLists;
 
 public class CopyOfLinkedListWithRandomPointersHashTable
 {

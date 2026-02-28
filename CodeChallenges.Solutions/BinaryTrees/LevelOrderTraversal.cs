@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CodeChallenges.Solutions.BinaryTrees;
+﻿namespace CodeChallenges.Solutions.BinaryTrees;
 
 public class LevelOrderTraversal
 {

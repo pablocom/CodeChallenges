@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
-using CodeChallenges.Solutions;
 using CodeChallenges.Solutions.Strings;
 
 namespace CodeChallenges.Benchmarks;
