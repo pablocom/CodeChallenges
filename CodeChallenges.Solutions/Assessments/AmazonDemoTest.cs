@@ -17,7 +17,7 @@ public class AmazonDemoTest
             span.Sort();
 
             long accumulated = 0;
-            for (int i = span.Length - 1; i >= 0; i--)
+            for (var i = span.Length - 1; i >= 0; i--)
             {
                 accumulated += span[i];
 

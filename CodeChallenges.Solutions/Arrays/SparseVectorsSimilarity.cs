@@ -6,8 +6,8 @@ public static class SparseVectorsSimilarity
 {
     public static double Solve(List<int> keysA, List<double> valuesA, List<int> keysB, List<double> valuesB)
     {
-        double squaresSumOfA = valuesA.Sum(x => x * x);
-        double squaresSumOfB = valuesB.Sum(x => x * x);
+        var squaresSumOfA = valuesA.Sum(x => x * x);
+        var squaresSumOfB = valuesB.Sum(x => x * x);
 
         if (squaresSumOfA is 0 || squaresSumOfB is 0)
             return 0;

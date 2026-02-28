@@ -10,13 +10,13 @@ public class AnagramStrings
             return false;
         
         var alphabet = new int[26];
-        for (int i = 0; i < s.Length; i++) 
+        for (var i = 0; i < s.Length; i++) 
         {
             alphabet[s[i] - 'a']++;
             alphabet[t[i] - 'a']--;
         }
         
-        foreach (int i in alphabet) 
+        foreach (var i in alphabet) 
             if (i != 0) 
                 return false;
         

@@ -5,10 +5,10 @@ public class ThreeSumClosest
     public int Solve(int[] array, int target)
     {
         int result = default;
-        int differenceBetweenSumToTarget = int.MaxValue;
+        var differenceBetweenSumToTarget = int.MaxValue;
         Array.Sort(array);
 
-        for (int i = 0; i < array.Length; i++)
+        for (var i = 0; i < array.Length; i++)
         {
             if (i != 0 && array[i - 1] == array[i])
                 continue;
@@ -17,7 +17,7 @@ public class ThreeSumClosest
             while (left < right)
             {
                 var sum = array[i] + array[left] + array[right];
-                int difference = System.Math.Abs(sum - target);
+                var difference = System.Math.Abs(sum - target);
                 if (difference < differenceBetweenSumToTarget)
                 {
                     differenceBetweenSumToTarget = difference;

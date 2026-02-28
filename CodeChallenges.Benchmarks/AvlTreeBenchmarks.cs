@@ -28,7 +28,7 @@ public class AvlTreeBenchmarks
     [Benchmark]
     public void InsertItemsIntoAvlTree()
     {
-        for (int i = 0; i < 10; i++)
+        for (var i = 0; i < 10; i++)
         {
             _tree.Insert(_random.Next());
         }

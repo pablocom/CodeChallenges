@@ -8,13 +8,13 @@ public class SubstringWithConcatenationOfAllWords
         if (s == null || words == null || words.Length == 0) 
             return new List<int>();
 
-        int wordLength = words[0].Length;
-        int permutationLength = wordLength * words.Length;
+        var wordLength = words[0].Length;
+        var permutationLength = wordLength * words.Length;
         if (s.Length < permutationLength) 
             return new List<int>();
 
         var wordCount = new Dictionary<string, int>();
-        foreach (string word in words)
+        foreach (var word in words)
         {
             if (wordCount.ContainsKey(word))
                 wordCount[word]++;
@@ -24,13 +24,13 @@ public class SubstringWithConcatenationOfAllWords
 
         var result = new List<int>();
 
-        for (int i = 0; i < wordLength; i++)
+        for (var i = 0; i < wordLength; i++)
         {
-            int startingIndex = i;
+            var startingIndex = i;
             var wordsFound = new Dictionary<string, int>();
-            int count = 0;
+            var count = 0;
 
-            for (int right = i; right <= s.Length - wordLength; right += wordLength)
+            for (var right = i; right <= s.Length - wordLength; right += wordLength)
             {
                 var slice = s.Substring(right, wordLength);
 

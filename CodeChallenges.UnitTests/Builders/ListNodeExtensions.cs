@@ -8,7 +8,7 @@ public static class ListNodeExtensions
     {
         var list = new List<int>();
 
-        ListNode? cursor = head; 
+        var cursor = head; 
         while (cursor is not null)
         {
             list.Add(head.val);

@@ -22,11 +22,11 @@ public class AmazonAssessments
             foreach (var price in stockPriceSpan) 
                 total += price;
             
-            int lowestNetPriceIndex = -1;
-            long lowestNetPrice = long.MaxValue;
+            var lowestNetPriceIndex = -1;
+            var lowestNetPrice = long.MaxValue;
             long sumUntilCurrentMonth = 0;
             
-            for (int i = 0; i < stockPriceSpan.Length; i++)
+            for (var i = 0; i < stockPriceSpan.Length; i++)
             {
                 sumUntilCurrentMonth += stockPriceSpan[i];
                 var currentAverage = sumUntilCurrentMonth / (i + 1);

@@ -21,7 +21,7 @@ public class RomanToInt
     
     public int SolveWithoutSpan(string s)
     {
-        string romanNumeral = s;
+        var romanNumeral = s;
         var arabicNumber  = 0;
         
         foreach (var arabicToRoman in ArabicToRomanNumerals.All)

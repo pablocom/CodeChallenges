@@ -11,10 +11,10 @@ public class AwsInterviewQuestions
             return 0;
         
         var charArray = s.ToCharArray();
-        int minSwapsRequired = 0;
+        var minSwapsRequired = 0;
 
-        int leftCursor = 0;
-        int rightCursor = charArray.Length - 1;
+        var leftCursor = 0;
+        var rightCursor = charArray.Length - 1;
 
         while (leftCursor < rightCursor)
         {
@@ -68,9 +68,9 @@ public class AwsInterviewQuestions
             return 0;
         
         int maxDeviation = 0, previousFrequency = 1, currentFrequency = 1;
-        char previousChar = s[0];
+        var previousChar = s[0];
 
-        for (int i = 1; i <= s.Length; i++)
+        for (var i = 1; i <= s.Length; i++)
         {
             if (i == s.Length - 1)
             {

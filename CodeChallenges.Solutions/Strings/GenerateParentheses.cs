@@ -5,8 +5,8 @@ public class GenerateParentheses
     public IList<string> GenerateParenthesis(int n)
     {
         var result = new List<string>();
-        int opened = 0; 
-        int closed = 0;
+        var opened = 0; 
+        var closed = 0;
         
         GenerateCombinations(n, "", opened, closed, result);
         

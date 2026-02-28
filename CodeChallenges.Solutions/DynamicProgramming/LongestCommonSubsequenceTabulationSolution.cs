@@ -4,7 +4,7 @@ public static class TabulationSolution
 {
     public static int LongestCommonSubsequence(string text1, string text2)
     {
-        int numberOfCalls = 0;
+        var numberOfCalls = 0;
         var m = text1.Length;
         var n = text2.Length;
 

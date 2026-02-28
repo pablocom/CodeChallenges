@@ -22,7 +22,7 @@ public sealed class CountAndSay
 
         var previous = span[0];
         var currentOccurrences = 1;
-        foreach (char number in span.Skip(1))
+        foreach (var number in span.Skip(1))
         {
             if (number != previous)
             {
