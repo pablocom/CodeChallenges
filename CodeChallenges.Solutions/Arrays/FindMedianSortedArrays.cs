@@ -1,6 +1,4 @@
-using System.Linq;
-
-namespace CodeChallenges.Solutions;
+namespace CodeChallenges.Solutions.Arrays;
 
 public class FindMedianSortedArrays 
 {

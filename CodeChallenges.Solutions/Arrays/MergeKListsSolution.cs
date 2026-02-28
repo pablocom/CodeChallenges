@@ -1,6 +1,6 @@
 ﻿using CodeChallenges.Solutions.LinkedLists;
 
-namespace CodeChallenges.Solutions;
+namespace CodeChallenges.Solutions.Arrays;
 
 public class MergeKListsSolution
 {

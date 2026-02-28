@@ -2,6 +2,7 @@ using System;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
 using CodeChallenges.Solutions;
+using CodeChallenges.Solutions.Math;
 
 namespace CodeChallenges.Benchmarks;
 

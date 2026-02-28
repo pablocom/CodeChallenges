@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CodeChallenges.Solutions;
+﻿namespace CodeChallenges.Solutions.Arrays;
 
 public class GroupAnagramsSolution
 {

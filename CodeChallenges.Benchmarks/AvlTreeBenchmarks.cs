@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
 using CodeChallenges.Solutions;
+using CodeChallenges.Solutions.BinaryTrees;
 
 namespace CodeChallenges.Benchmarks;
 

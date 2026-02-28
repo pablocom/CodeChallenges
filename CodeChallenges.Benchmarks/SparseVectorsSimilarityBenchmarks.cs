@@ -4,6 +4,7 @@ using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
 using CodeChallenges.Solutions;
+using CodeChallenges.Solutions.Arrays;
 
 namespace CodeChallenges.Benchmarks;
 

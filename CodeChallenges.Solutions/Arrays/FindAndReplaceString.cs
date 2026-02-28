@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using System.Text;
 
-namespace CodeChallenges.Solutions;
+namespace CodeChallenges.Solutions.Arrays;
 
 public class FindAndReplaceString
 {
