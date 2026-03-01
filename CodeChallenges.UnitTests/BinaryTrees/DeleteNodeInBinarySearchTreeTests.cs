@@ -1,19 +1,20 @@
-﻿using CodeChallenges.Solutions.BinaryTrees;
+using CodeChallenges.Solutions.BinaryTrees;
+using static CodeChallenges.UnitTests.BinaryTrees.BinaryTreeBuilder;
 
 namespace CodeChallenges.UnitTests.BinaryTrees;
+
 public class DeleteNodeInBinarySearchTreeTests
 {
     [Fact]
     public void Test1()
     {
-        var tree = new LeetCodeTreeNode(5);
-        tree.left = new LeetCodeTreeNode(3);
-        tree.right = new LeetCodeTreeNode(6);
-
-        tree.left.left = new LeetCodeTreeNode(2);
-        tree.left.right = new LeetCodeTreeNode(4);
-
-        tree.right.right = new LeetCodeTreeNode(7);
+        var tree = Node(5)
+            .WithLeft(Node(3)
+                .WithLeft(Node(2))
+                .WithRight(Node(4)))
+            .WithRight(Node(6)
+                .WithRight(Node(7)))
+            .Build();
 
         var root = new DeleteNodeInBinarySearchTree().DeleteNode(tree, 3);
 
@@ -23,16 +24,14 @@ public class DeleteNodeInBinarySearchTreeTests
     [Fact]
     public void Test2()
     {
-        var tree = new LeetCodeTreeNode(10);
-        tree.left = new(5);
-        tree.right = new(17);
-
-        tree.left.left = new(2);
-        tree.left.right = new(8);
-
-        tree.left.right.left = new(7);
-        tree.left.right.right = new(9);
-
+        var tree = Node(10)
+            .WithLeft(Node(5)
+                .WithLeft(Node(2))
+                .WithRight(Node(8)
+                    .WithLeft(Node(7))
+                    .WithRight(Node(9))))
+            .WithRight(Node(17))
+            .Build();
 
         var root = new DeleteNodeInBinarySearchTree().DeleteNode(tree, 5);
 

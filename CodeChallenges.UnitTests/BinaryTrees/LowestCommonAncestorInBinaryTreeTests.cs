@@ -1,4 +1,5 @@
-﻿using CodeChallenges.Solutions.BinaryTrees;
+using CodeChallenges.Solutions.BinaryTrees;
+using static CodeChallenges.UnitTests.BinaryTrees.BinaryTreeBuilder;
 
 namespace CodeChallenges.UnitTests.BinaryTrees;
 
@@ -7,57 +8,55 @@ public sealed class LowestCommonAncestorInBinaryTreeTests
     [Fact]
     public void Test1()
     {
-        LeetCodeTreeNode bstRoot = new(3);
+        var root = Node(3)
+            .WithLeft(Node(5)
+                .WithLeft(Node(6))
+                .WithRight(Node(2)
+                    .WithLeft(Node(7))
+                    .WithRight(Node(4))))
+            .WithRight(Node(1)
+                .WithLeft(Node(0))
+                .WithRight(Node(8)))
+            .Build();
 
-        bstRoot.left = new(5);
-        bstRoot.right = new(1);
+        var result = new LowestCommonAncestorInBinaryTree()
+            .LowestCommonAncestor(root, root.left!, root.right!);
 
-        bstRoot.left.left = new(6);
-        bstRoot.left.right = new(2);
-        bstRoot.left.right.left = new(7);
-        bstRoot.left.right.right = new(4);
-
-        bstRoot.right = new(1);
-        bstRoot.right.left = new(0);
-        bstRoot.right.right = new(8);
-
-        var lowestCommonAncestor = new LowestCommonAncestorInBinaryTree().LowestCommonAncestor(bstRoot, bstRoot.left, bstRoot.right);
-
-        lowestCommonAncestor.Should().Be(bstRoot);
+        result.Should().Be(root);
     }
-    
+
     [Fact]
     public void Test2()
     {
-        LeetCodeTreeNode bstRoot = new(3);
+        var root = Node(3)
+            .WithLeft(Node(5)
+                .WithLeft(Node(6))
+                .WithRight(Node(2)
+                    .WithLeft(Node(7))
+                    .WithRight(Node(4))))
+            .WithRight(Node(1)
+                .WithLeft(Node(0))
+                .WithRight(Node(8)))
+            .Build();
 
-        bstRoot.left = new(5);
+        var result = new LowestCommonAncestorInBinaryTree()
+            .LowestCommonAncestor(root, root.left!.left!, root.left!.right!);
 
-        bstRoot.left.left = new(6);
-        bstRoot.left.right = new(2);
-        bstRoot.left.right.left = new(7);
-        bstRoot.left.right.right = new(4);
-
-        bstRoot.right = new(1);
-        bstRoot.right.left = new(0);
-        bstRoot.right.right = new(8);
-
-        var lowestCommonAncestor = new LowestCommonAncestorInBinaryTree().LowestCommonAncestor(bstRoot, bstRoot.left.left, bstRoot.left.right);
-
-        lowestCommonAncestor.Should().Be(bstRoot.left);
+        result.Should().Be(root.left);
     }
 
     [Fact]
     public void Test3()
     {
-        LeetCodeTreeNode bstRoot = new(3);
+        var root = Node(3)
+            .WithRight(Node(1)
+                .WithLeft(Node(0))
+                .WithRight(Node(8)))
+            .Build();
 
-        bstRoot.right = new(1);
-        bstRoot.right.left = new(0);
-        bstRoot.right.right = new(8);
+        var result = new LowestCommonAncestorInBinaryTree()
+            .LowestCommonAncestor(root, root.right!.left!, root.right!.right!);
 
-        var lowestCommonAncestor = new LowestCommonAncestorInBinaryTree().LowestCommonAncestor(bstRoot, bstRoot.right.left, bstRoot.right.right);
-
-        lowestCommonAncestor.Should().Be(bstRoot.right);
+        result.Should().Be(root.right);
     }
 }

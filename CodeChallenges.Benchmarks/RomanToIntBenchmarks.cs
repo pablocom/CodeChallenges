@@ -4,7 +4,7 @@ using CodeChallenges.Solutions.Math;
 
 namespace CodeChallenges.Benchmarks;
 
-[MemoryDiagnoser(true)]
+[MemoryDiagnoser]
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
 [RankColumn]
 public class RomanToIntBenchmarks

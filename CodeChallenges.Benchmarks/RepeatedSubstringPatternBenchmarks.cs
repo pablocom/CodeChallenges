@@ -6,7 +6,7 @@ using CodeChallenges.Solutions.Strings;
 
 namespace CodeChallenges.Benchmarks;
 
-[MemoryDiagnoser(true)]
+[MemoryDiagnoser]
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
 [RankColumn]
 public class RepeatedSubstringPatternBenchmarks

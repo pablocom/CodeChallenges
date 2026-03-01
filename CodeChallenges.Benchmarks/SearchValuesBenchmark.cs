@@ -35,7 +35,7 @@ public class SearchValuesBenchmark
 public sealed class Nickname
 {
     private static readonly FrozenSet<char> _charactersToTrimFrozenSet = new[] { '.', '_', '-', '+' }.ToFrozenSet();
-    private static readonly SearchValues<char> _charactersToTrimSearchValues = SearchValues.Create(['.', '_', '-', '+']);
+    private static readonly SearchValues<char> _charactersToTrimSearchValues = SearchValues.Create('.', '_', '-', '+');
 
     public string Value { get; }
 
