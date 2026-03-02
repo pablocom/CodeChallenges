@@ -1,10 +1,10 @@
-namespace CodeChallenges.Solutions.Strings;
+namespace CodeChallenges.Solutions.Arrays;
 
 public static class CountSmallerNumbersThanCurrent
 {
     public static int[] Solve(int[] nums)
     {
-        var lowerCountByNumber = new Dictionary<int, int>();
+        var lowerCountByNumber = new Dictionary<int, int>(101);
 
         var sortedNums = nums.ToArray(); sortedNums.Sort();
 

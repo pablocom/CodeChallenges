@@ -1,6 +1,6 @@
-using CodeChallenges.Solutions.Strings;
+using CodeChallenges.Solutions.Arrays;
 
-namespace CodeChallenges.UnitTests.Strings;
+namespace CodeChallenges.UnitTests.Arrays;
 
 public sealed class CountSmallerNumbersThanCurrentTests
 {
