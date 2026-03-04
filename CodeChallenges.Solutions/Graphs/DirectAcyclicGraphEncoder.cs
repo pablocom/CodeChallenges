@@ -11,12 +11,12 @@ public static class DirectAcyclicGraphEncoder
         
         var rootId = startNode.Id;
 
-        var (nodeIdValuePairs, nodeAdjacencyList) = TraverseForEncoding(startNode);
+        var (nodeIdValuePairs, nodeAdjacencyList) = Traverse(startNode);
         
         return JsonSerializer.Serialize(new SerializableDirectedAcyclicGraph(nodeIdValuePairs, nodeAdjacencyList, rootId));
     }
 
-    private static (NodeIdValuePair[] nodeIdValuePairs, NodeAdjacency[] nodeAdjacencyList) TraverseForEncoding(
+    private static (NodeIdValuePair[] nodeIdValuePairs, NodeAdjacency[] nodeAdjacencyList) Traverse(
         GraphNode startNode)
     {
         var nodeIdValuePairs = new List<NodeIdValuePair>();
@@ -45,10 +45,34 @@ public static class DirectAcyclicGraphEncoder
     }
 }
 
+public static class DirectedAcyclicGraphDecoder
+{
+    public static GraphNode? Decode(SerializableDirectedAcyclicGraph serializedDag)
+    {
+        if (serializedDag.RootId is null)
+            return null;
+
+        var builtNodesById = new Dictionary<Guid, GraphNode>(serializedDag.NodeIdValuePairs.Length);
+
+        foreach (var pair in serializedDag.NodeIdValuePairs) 
+            builtNodesById[pair.NodeId] = new GraphNode(pair.NodeId, pair.Value);
+
+        foreach (var connection in serializedDag.Connections)
+        {
+            var parentNode = builtNodesById[connection.NodeId];
+            
+            foreach (var neighborId in connection.Neighbors) 
+                parentNode.Neighbors.Add(builtNodesById[neighborId]);
+        }
+        
+        return builtNodesById[serializedDag.RootId.Value];
+    }
+}
+
 public sealed record NodeIdValuePair(Guid NodeId, int Value);
 public sealed record NodeAdjacency(Guid NodeId, Guid[] Neighbors);
 public sealed record SerializableDirectedAcyclicGraph(
     NodeIdValuePair[] NodeIdValuePairs,
     NodeAdjacency[] Connections,
-    Guid RootId
+    Guid? RootId
 );
