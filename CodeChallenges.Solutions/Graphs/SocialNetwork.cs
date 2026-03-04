@@ -2,7 +2,7 @@ namespace CodeChallenges.Solutions.Graphs;
 
 public sealed class SocialNetwork
 {
-    private readonly List<int> _insights = new();
+    private readonly List<int> _insights = [];
     private readonly Dictionary<int, List<int>> _insightsByUserId = new();
     private readonly Dictionary<int, HashSet<int>> _connectionsByUserId = new();
 

@@ -17,7 +17,7 @@ public class LevelOrderTraversal
             if (nodesByLevel.ContainsKey(currentLevel.Value))
                 nodesByLevel[currentLevel.Value].Add(actualNode.val);
             else
-                nodesByLevel.Add(currentLevel.Value, new List<int>() { actualNode.val });
+                nodesByLevel.Add(currentLevel.Value, [actualNode.val]);
 
             if (actualNode.left != null)
             {

@@ -20,7 +20,7 @@ public class LetterCombinations
             return new List<string>(0);
 
         var letterCombinations = new List<string>();
-        Backtracking(letterCombinations, digits, LettersByDigit, new List<char>(), 0);
+        Backtracking(letterCombinations, digits, LettersByDigit, [], 0);
         return letterCombinations;
     }
 

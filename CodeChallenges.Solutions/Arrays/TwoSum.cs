@@ -35,7 +35,7 @@ public class WriteHeavyTwoSumStrategy : ITwoSumStrategy
     {
         if (!_indicesByNumber.TryGetValue(number, out var indices))
         {
-            indices = new List<int>();
+            indices = [];
             _indicesByNumber[number] = indices;
         }
 
@@ -65,7 +65,7 @@ public class WriteHeavyTwoSumStrategy : ITwoSumStrategy
 
 public class ReadHeavyTwoSumStrategy : ITwoSumStrategy
 {
-    private readonly List<int> _numbers = new();
+    private readonly List<int> _numbers = [];
     private readonly Dictionary<int, int[]> _pairBySum = new();
 
     public void Add(int number)
