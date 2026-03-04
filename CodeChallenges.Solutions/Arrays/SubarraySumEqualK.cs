@@ -7,7 +7,7 @@ public static class SubarraySumEqualK
         var prefixCountBySum = new Dictionary<int, int> { { 0, 1 } };
         var result = 0;
         var contiguousSum = 0;
-        
+
         foreach (var number in nums)
         {
             contiguousSum += number;
@@ -16,7 +16,7 @@ public static class SubarraySumEqualK
             result += prefixCountBySum.GetValueOrDefault(complement, 0);
             prefixCountBySum[contiguousSum] = 1 + prefixCountBySum.GetValueOrDefault(contiguousSum, 0);
         }
-        
+
         return result;
     }
 }

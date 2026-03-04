@@ -24,7 +24,7 @@ public class AmazonDemoTest
 
                 if (accumulated > sum - accumulated)
                 {
-                    return new List<int>(span[i..].ToArray());
+                    return [..span[i..]];
                 }
             }
 
