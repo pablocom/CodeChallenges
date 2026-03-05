@@ -1,4 +1,4 @@
-using CodeChallenges.Solutions.Math;
+using CodeChallenges.Solutions.Mathematics;
 
 namespace CodeChallenges.UnitTests.Math;
 

@@ -3,7 +3,8 @@
     "allow": [
       "Bash(dotnet test:*)",
       "Bash(dotnet build:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "WebSearch"
     ]
   }
 }

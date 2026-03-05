@@ -1,4 +1,4 @@
-namespace CodeChallenges.Solutions.Math;
+namespace CodeChallenges.Solutions.Mathematics;
 
 public static class GrayCode
 {

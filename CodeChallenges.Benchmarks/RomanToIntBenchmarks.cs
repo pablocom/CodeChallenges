@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
-using CodeChallenges.Solutions.Math;
+using CodeChallenges.Solutions.Mathematics;
 
 namespace CodeChallenges.Benchmarks;
 
