@@ -10,7 +10,7 @@ public sealed class MaxHeap<T> where T : IComparable<T>
 
     public MaxHeap(int capacity) => _heap = new(capacity);
 
-    public MaxHeap(T[] span)
+    public MaxHeap(IEnumerable<T> span)
     {
         _heap = new List<T>(span);
 

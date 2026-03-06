@@ -1,27 +1,24 @@
 using CodeChallenges.Solutions.Arrays;
 
 namespace CodeChallenges.UnitTests.Arrays;
+
 public class KthLargestTests
 {
-    [Fact]
-    public void Test1()
-    {
-        var inputArray = new[] {3, 2, 1, 4, 5, 6};
-        var kthLargestNumber = 2;
+    [Theory]
+    [InlineData(new[] { 3, 2, 1, 4, 5, 6 },             2, 5)]
+    [InlineData(new[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 },    4, 4)]
+    [InlineData(new[] { 1 },                              1, 1)]
+    [InlineData(new[] { 7, 7, 7 },                        2, 7)]
+    [InlineData(new[] { 5, 3, 1, 6, 4, 2 },              6, 1)]
+    public void SolveWithSort(int[] nums, int k, int expected) =>
+        KthLargest.SolveWithSort(nums, k).Should().Be(expected);
 
-        var result = new KthLargest().FindKthLargest(inputArray, kthLargestNumber);
-
-        result.Should().Be(5);
-    }
-
-    [Fact]
-    public void Test2()
-    {
-        var inputArray = new[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 };
-        var kthLargestNumber = 4;
-
-        var result = new KthLargest().FindKthLargest(inputArray, kthLargestNumber);
-
-        result.Should().Be(4);
-    }
+    [Theory]
+    [InlineData(new[] { 3, 2, 1, 4, 5, 6 },             2, 5)]
+    [InlineData(new[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 },    4, 4)]
+    [InlineData(new[] { 1 },                              1, 1)]
+    [InlineData(new[] { 7, 7, 7 },                        2, 7)]
+    [InlineData(new[] { 5, 3, 1, 6, 4, 2 },              6, 1)]
+    public void SolveWithMaxHeap(int[] nums, int k, int expected) =>
+        KthLargest.SolveWithMaxHeap(nums, k).Should().Be(expected);
 }
