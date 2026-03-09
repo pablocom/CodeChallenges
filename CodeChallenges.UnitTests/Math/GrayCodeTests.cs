@@ -13,8 +13,6 @@ public class GrayCodeTests
     public void Tests(int n, int[] expected)
     {
         var result = GrayCode.Solve(n);
-
-        
         
         result.Should().Equal(expected);
     }
