@@ -19,17 +19,4 @@ public sealed class ValidBstTests
         result.Should().BeTrue();
     }
 
-    [Fact(Skip = "Incomplete")]
-    public void NotValidBst()
-    {
-        var root = Node(5)
-            .WithLeft(Node(1)
-                .WithLeft(Node(3)))
-            .WithRight(Node(6))
-            .Build();
-
-        var result = ValidBST.IsValidBinarySearchTreeBfs(root);
-
-        result.Should().BeTrue();
-    }
 }

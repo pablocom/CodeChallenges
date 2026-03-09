@@ -12,7 +12,7 @@ public class LruCacheTests
     [Fact]
     public void Test1()
     {
-        var lru = new LRUCache(2);
+        var lru = new LruCache(2);
             
         lru.Put(1, 1);
         lru.Put(2, 2);
@@ -23,7 +23,7 @@ public class LruCacheTests
     [Fact]
     public void Test2()
     {
-        var lru = new LRUCache(2);
+        var lru = new LruCache(2);
             
         lru.Put(1, 1);
         lru.Put(2, 2);
@@ -36,7 +36,7 @@ public class LruCacheTests
     [Fact]
     public void Test3()
     {
-        var lru = new LRUCache(2);
+        var lru = new LruCache(2);
             
         lru.Put(1, 1);
         lru.Put(2, 2);

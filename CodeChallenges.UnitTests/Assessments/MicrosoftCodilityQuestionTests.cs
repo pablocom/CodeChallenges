@@ -37,17 +37,6 @@ public class MicrosoftCodilityQuestionTests
         solution.Should().Be(3);
     }
     
-    [Fact(Skip = "Not implemented")]
-    public void Test5()
-    {
-        var K = 5;
-        var A = new[] { 5, 6, 3, 4, 2 };
-
-        var solution = new MicrosoftCodilityQuestion().Question2(A, K);
-        
-        solution.Should().Be(20);
-    }
-    
     [Fact]
     public void Test6()
     {

@@ -1,29 +1,28 @@
 ﻿namespace CodeChallenges.Solutions.DataStructures;
 
-public class LRUCache
+public class LruCache
 {
-    private readonly Node head;
-    private readonly Node tail;
-    private readonly Dictionary<int, Node> dictionary;
-    private readonly int capacity;
+    private readonly Node _head;
+    private readonly Node _tail;
+    private readonly Dictionary<int, Node> _dictionary;
+    private readonly int _capacity;
 
-    public LRUCache(int capacity)
+    public LruCache(int capacity)
     {
-        this.capacity = capacity;
-        dictionary = new Dictionary<int, Node>();
-        head = new Node();
-        tail = new Node();
+        this._capacity = capacity;
+        _dictionary = new Dictionary<int, Node>();
+        _head = new Node();
+        _tail = new Node();
             
-        head.Next = tail;
-        tail.Previous = head;
+        _head.Next = _tail;
+        _tail.Previous = _head;
     }
 
     public int Get(int key)
     {
-        if (!dictionary.ContainsKey(key))
+        if (!_dictionary.TryGetValue(key, out var node))
             return -1;
-            
-        var node = dictionary[key];
+
         Remove(node);
         Add(node);
         return node.Value;
@@ -31,22 +30,21 @@ public class LRUCache
 
     public void Put(int key, int value)
     {
-        if (!dictionary.ContainsKey(key))
+        if (!_dictionary.TryGetValue(key, out var node))
         {
-            if (dictionary.Count == capacity)
+            if (_dictionary.Count == _capacity)
             {
-                dictionary.Remove(tail.Previous.Key);
-                Remove(tail.Previous);
+                _dictionary.Remove(_tail.Previous.Key);
+                Remove(_tail.Previous);
             }
 
             var newNode = new Node(key, value);
             Add(newNode);
-            dictionary.Add(key, newNode);
+            _dictionary.Add(key, newNode);
 
             return;
         }
-            
-        var node = dictionary[key];
+
         Remove(node);
         node.Value = value;
         Add(node);
@@ -54,14 +52,14 @@ public class LRUCache
 
     private void Add(Node node)
     {
-        var next = head.Next;
-        head.Next = node;
-        node.Previous = head;
+        var next = _head.Next;
+        _head.Next = node;
+        node.Previous = _head;
         node.Next = next;
         next.Previous = node;
     }
 
-    private void Remove(Node node)
+    private static void Remove(Node node)
     {
         var next = node.Next;
         var prev = node.Previous;

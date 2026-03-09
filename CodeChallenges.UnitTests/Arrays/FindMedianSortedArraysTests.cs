@@ -92,17 +92,6 @@ public class FindMedianSortedArraysTests
         median.Should().Be(3.5d);
     }
     
-    [Fact(Skip = "Not implemented")]
-    public void Test8()
-    {
-        var firstArray = new[] { 1, 2, 3, 6, 7 };
-        var secondArray = Array.Empty<int>();
-
-        var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
-        
-        median.Should().Be(3.5d);
-    }
-    
     [Fact]
     public void Test9()
     {
