@@ -55,7 +55,7 @@ public class WriteHeavyTwoSumStrategy : ITwoSumStrategy
             }
             else if (_indicesByNumber.TryGetValue(complement, out var complementIndices))
             {
-                return [System.Math.Min(indices[0], complementIndices[0]), System.Math.Max(indices[0], complementIndices[0])];
+                return [Math.Min(indices[0], complementIndices[0]), Math.Max(indices[0], complementIndices[0])];
             }
         }
 

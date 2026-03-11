@@ -7,10 +7,10 @@ public static class SetMismatch
         int duplicate = -1, missing = 1;
         
         for (var i = 0; i < nums.Length; i++) {
-            if (nums[System.Math.Abs(nums[i]) - 1] < 0)
-                duplicate = System.Math.Abs(nums[i]);
+            if (nums[Math.Abs(nums[i]) - 1] < 0)
+                duplicate = Math.Abs(nums[i]);
             else
-                nums[System.Math.Abs(nums[i]) - 1] *= -1;
+                nums[Math.Abs(nums[i]) - 1] *= -1;
         }
         
         for (var i = 0; i < nums.Length; i++) {

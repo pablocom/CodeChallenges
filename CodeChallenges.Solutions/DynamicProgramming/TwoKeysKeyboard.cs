@@ -28,7 +28,7 @@ public static class TwoKeysKeyboard
             for (var j = 1; j <= i / 2; j++)
             {
                 if (i % j == 0)
-                    subProblems[i] = System.Math.Min(subProblems[i], subProblems[j] + i / j);
+                    subProblems[i] = Math.Min(subProblems[i], subProblems[j] + i / j);
             }
         }
 
@@ -63,7 +63,7 @@ public static class TwoKeysKeyboard
             var copyingResult = 1 + Helper(count + clipboardSize, clipboardSize, targetN, cache);
             var copyPastingResult = 2 + Helper(count + count, count, targetN, cache);
         
-            var min = System.Math.Min(copyingResult, copyPastingResult);
+            var min = Math.Min(copyingResult, copyPastingResult);
             cache.TryAdd((count, clipboardSize), min);
             return min;
         }

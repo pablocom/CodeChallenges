@@ -4,7 +4,8 @@
       "Bash(dotnet test:*)",
       "Bash(dotnet build:*)",
       "Bash(git mv:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git add:*)"
     ]
   }
 }

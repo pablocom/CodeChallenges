@@ -74,9 +74,9 @@ public class AwsInterviewQuestions
         {
             if (i == s.Length - 1)
             {
-                maxDeviation = System.Math.Max(
+                maxDeviation = Math.Max(
                     maxDeviation, 
-                    System.Math.Abs(previousFrequency - currentFrequency)
+                    Math.Abs(previousFrequency - currentFrequency)
                 );
                 break;
             }
@@ -87,9 +87,9 @@ public class AwsInterviewQuestions
             }
             else
             {
-                maxDeviation = System.Math.Max(
+                maxDeviation = Math.Max(
                     maxDeviation, 
-                    System.Math.Abs(previousFrequency - currentFrequency)
+                    Math.Abs(previousFrequency - currentFrequency)
                 );
                 
                 previousFrequency = currentFrequency;

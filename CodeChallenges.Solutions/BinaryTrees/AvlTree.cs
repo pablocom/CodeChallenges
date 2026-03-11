@@ -48,7 +48,7 @@ public sealed class AvlTree<TItem>
         else
             node.RightChild = Insert(node.RightChild, item);
 
-        node.Height = 1 + System.Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
+        node.Height = 1 + Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
 
         var balance = GetBalanceOf(node);
         
@@ -88,7 +88,7 @@ public sealed class AvlTree<TItem>
                 break;
         }
 
-        node!.Height = 1 + System.Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
+        node!.Height = 1 + Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
         
         var balance = GetBalanceOf(node);
         
@@ -107,7 +107,7 @@ public sealed class AvlTree<TItem>
         node.LeftChild = leftChildTemp.RightChild;
         leftChildTemp.RightChild = node;
 
-        node.Height = 1 + System.Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
+        node.Height = 1 + Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
         leftChildTemp.Height = node.Height + 1;
         
         return leftChildTemp;
@@ -120,7 +120,7 @@ public sealed class AvlTree<TItem>
         node.RightChild = rightChildTemp.LeftChild;
         rightChildTemp.LeftChild = node;
 
-        node.Height = 1 + System.Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
+        node.Height = 1 + Math.Max(GetHeightOf(node.LeftChild), GetHeightOf(node.RightChild));
         rightChildTemp.Height = node.Height + 1;
         
         return rightChildTemp;

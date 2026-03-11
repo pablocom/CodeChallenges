@@ -10,7 +10,7 @@ public class GoodNodesFinder
     public static int GoToNode(LeetCodeTreeNode node, long max)
     {
         if (node == null) return 0;
-        max = System.Math.Max(node.val, max);
+        max = Math.Max(node.val, max);
         var count = max <= node.val ? 1 : 0;
         return count + GoToNode(node.left, max) + GoToNode(node.right, max);
     }

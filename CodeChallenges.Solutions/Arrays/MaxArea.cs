@@ -11,7 +11,7 @@ public class MaxArea
         while (left < right)
         {
             var volume = CalculateVolume(heights, left, right);
-            highestVolume = System.Math.Max(highestVolume, volume);
+            highestVolume = Math.Max(highestVolume, volume);
 
             if (heights[left] < heights[right])
                 left++;
@@ -24,6 +24,6 @@ public class MaxArea
 
     private static int CalculateVolume(int[] heights, int left, int right)
     {
-        return (right - left) * System.Math.Min(heights[left], heights[right]);
+        return (right - left) * Math.Min(heights[left], heights[right]);
     }
 }

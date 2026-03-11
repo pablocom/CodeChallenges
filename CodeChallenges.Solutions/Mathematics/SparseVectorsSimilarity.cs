@@ -34,7 +34,7 @@ public static class SparseVectorsSimilarity
             cursorB++;
         }
 
-        return dotProduct / (System.Math.Sqrt(squaresSumOfA) * System.Math.Sqrt(squaresSumOfB));
+        return dotProduct / (Math.Sqrt(squaresSumOfA) * Math.Sqrt(squaresSumOfB));
     }
     
     public static double SolveOptimized(List<int> keysA, List<double> valuesA, List<int> keysB, List<double> valuesB)
@@ -78,6 +78,6 @@ public static class SparseVectorsSimilarity
             cursorB++;
         }
 
-        return dotProduct / (System.Math.Sqrt(squaresSumOfA) * System.Math.Sqrt(squaresSumOfB));
+        return dotProduct / (Math.Sqrt(squaresSumOfA) * Math.Sqrt(squaresSumOfB));
     }
 }

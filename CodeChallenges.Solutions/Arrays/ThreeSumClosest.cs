@@ -17,7 +17,7 @@ public class ThreeSumClosest
             while (left < right)
             {
                 var sum = array[i] + array[left] + array[right];
-                var difference = System.Math.Abs(sum - target);
+                var difference = Math.Abs(sum - target);
                 if (difference < differenceBetweenSumToTarget)
                 {
                     differenceBetweenSumToTarget = difference;

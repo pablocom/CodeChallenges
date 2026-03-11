@@ -14,7 +14,7 @@ public static class MaxSubstring
                 queue.Dequeue();
             }
             queue.Enqueue(character);
-            maxLength = System.Math.Max(maxLength, queue.Count);
+            maxLength = Math.Max(maxLength, queue.Count);
         }
             
         return maxLength;

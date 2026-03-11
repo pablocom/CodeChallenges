@@ -26,7 +26,7 @@ public static class MemoizationSolution
             return longestCommonSubsequence;
         }
 
-        longestCommonSubsequence = System.Math.Max(LongestCommonSubsequenceRecursive(X, Y, m, n - 1, memoization), LongestCommonSubsequenceRecursive(X, Y, m - 1, n, memoization));
+        longestCommonSubsequence = Math.Max(LongestCommonSubsequenceRecursive(X, Y, m, n - 1, memoization), LongestCommonSubsequenceRecursive(X, Y, m - 1, n, memoization));
         memoization[m - 1, n - 1] = longestCommonSubsequence;
         return longestCommonSubsequence;
     }

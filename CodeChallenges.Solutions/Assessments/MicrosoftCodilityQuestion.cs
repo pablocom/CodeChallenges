@@ -17,7 +17,7 @@ public class MicrosoftCodilityQuestion
             {
                 result += A[i];
                 addedNumbersCount++;
-                lastMinNumberAdded = System.Math.Min(lastMinNumberAdded, A[i]);
+                lastMinNumberAdded = Math.Min(lastMinNumberAdded, A[i]);
                 continue;
             }
 

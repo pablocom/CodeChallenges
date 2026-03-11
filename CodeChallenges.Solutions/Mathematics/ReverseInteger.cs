@@ -56,7 +56,7 @@ public static class ReverseInteger
                     maxDigitTracker = false;
             }
             
-            result += (int)(digit * System.Math.Pow(10, currentPow));
+            result += (int)(digit * Math.Pow(10, currentPow));
             currentPow--;
         }
 

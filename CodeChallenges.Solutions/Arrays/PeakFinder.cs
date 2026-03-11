@@ -23,7 +23,7 @@ public class PeakFinder
             var previousValue = values[i - 1];
             var currentValue = values[i];
 
-            if (System.Math.Abs(currentValue - previousValue) >= 5)
+            if (Math.Abs(currentValue - previousValue) >= 5)
             {
                 totalPeaks++;
                 previousWasPeak = true;

@@ -2,7 +2,7 @@
 
 namespace CodeChallenges.Solutions.Assessments;
 
-public class AmazonAssessments
+public static class AmazonAssessments
 {
     public static class Result
     {
@@ -36,9 +36,9 @@ public class AmazonAssessments
                 if (i < stockPriceSpan.Length - 1)
                     remainingAverage = (total - sumUntilCurrentMonth) / (stockPriceSpan.Length - (i + 1));
 
-                if (lowestNetPrice > System.Math.Abs(currentAverage - remainingAverage))
+                if (lowestNetPrice > Math.Abs(currentAverage - remainingAverage))
                 {
-                    lowestNetPrice = System.Math.Abs(currentAverage - remainingAverage);
+                    lowestNetPrice = Math.Abs(currentAverage - remainingAverage);
                     lowestNetPriceIndex = i;
                 }
             }

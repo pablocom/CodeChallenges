@@ -14,8 +14,8 @@ public sealed class DivideTwoIntegers
         var divisorIsNegative = divisor < 0;
         var sign = (dividendIsNegative && !divisorIsNegative) || (!dividendIsNegative && divisorIsNegative) ? -1 : 1;
         
-        var absDividend = System.Math.Abs((long)dividend);
-        var absDivisor = System.Math.Abs((long)divisor);
+        var absDividend = Math.Abs((long)dividend);
+        var absDivisor = Math.Abs((long)divisor);
         var quotient = 0;
         long currentMultipliedValue = 0;
 

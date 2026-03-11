@@ -16,6 +16,6 @@ public class LongestCommonSubsequenceBruteForceSolution
         if (X[m - 1] == Y[n - 1])
             return 1 + LongestCommonSubsequenceRecursive(X, Y, m - 1, n - 1);
             
-        return System.Math.Max(LongestCommonSubsequenceRecursive(X, Y, m, n - 1), LongestCommonSubsequenceRecursive(X, Y, m - 1, n));
+        return Math.Max(LongestCommonSubsequenceRecursive(X, Y, m, n - 1), LongestCommonSubsequenceRecursive(X, Y, m - 1, n));
     }
 }

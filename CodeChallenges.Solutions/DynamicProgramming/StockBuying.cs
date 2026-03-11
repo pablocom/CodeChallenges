@@ -8,8 +8,8 @@ public static class StockBuying
             
         for (var i = 1; i < prices.Length; i++) 
         {
-            maxCur = System.Math.Max(0, maxCur + (prices[i] - prices[i-1]));
-            maxSoFar = System.Math.Max(maxCur, maxSoFar);
+            maxCur = Math.Max(0, maxCur + (prices[i] - prices[i-1]));
+            maxSoFar = Math.Max(maxCur, maxSoFar);
         }
         return maxSoFar;
     }

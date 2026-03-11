@@ -15,7 +15,7 @@ public static class LongestSubset
                 
             for (var j = i + 1; j < A.Length - 1; j++)
             {
-                if (System.Math.Abs(currentValue - A[j]) % M == 0)
+                if (Math.Abs(currentValue - A[j]) % M == 0)
                 {
                     if (!anySubset)
                         anySubset = true;
@@ -24,7 +24,7 @@ public static class LongestSubset
                 }
             }
                 
-            maximumSubsetCount = anySubset ? System.Math.Max(maximumSubsetCount, ++currentCount) : 1;
+            maximumSubsetCount = anySubset ? Math.Max(maximumSubsetCount, ++currentCount) : 1;
         }
             
         return maximumSubsetCount;
@@ -37,14 +37,14 @@ public static class LongestSubset
         {
             for (var j = i + 1; j < A.Length; j++)
             {
-                var distanceBetween = System.Math.Abs(A[i] - A[j]);
+                var distanceBetween = Math.Abs(A[i] - A[j]);
                 if (distanceBetween == 0) 
                     continue;
 
                 if (distanceBetween % M == 0)
                 {
                     var subsetCount = CountSubsetCount(A, j, M);
-                    maximumSubsetCount = System.Math.Max(maximumSubsetCount, subsetCount);
+                    maximumSubsetCount = Math.Max(maximumSubsetCount, subsetCount);
                 }
             }
         }
@@ -58,7 +58,7 @@ public static class LongestSubset
 
         for (var i = lastDivisible + 1; i < A.Length; i++)
         {
-            var distanceBetweenLastAndCurrent = System.Math.Abs(A[lastDivisible] - A[i]);
+            var distanceBetweenLastAndCurrent = Math.Abs(A[lastDivisible] - A[i]);
             if (distanceBetweenLastAndCurrent == 0)
                 continue;
             if (distanceBetweenLastAndCurrent % M == 0)

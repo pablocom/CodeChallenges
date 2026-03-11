@@ -9,7 +9,7 @@ public class LruCache
 
     public LruCache(int capacity)
     {
-        this._capacity = capacity;
+        _capacity = capacity;
         _dictionary = new Dictionary<int, Node>();
         _head = new Node();
         _tail = new Node();

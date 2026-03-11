@@ -13,7 +13,7 @@ public class LongestPalindromeFinder
         {
             var length1 = ExpandAroundCenter(text, i, i);
             var length2 = ExpandAroundCenter(text, i, i + 1);
-            var length = System.Math.Max(length1, length2);
+            var length = Math.Max(length1, length2);
             if (length > end - start)
             {
                 start = i - (length - 1) / 2;

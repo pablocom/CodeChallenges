@@ -21,7 +21,7 @@ public sealed class LongestValidParentheses
                     var x = (i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0;
                     dp[i] = dp[i - 1] + x + 2;
                 }
-                maxLen = System.Math.Max(maxLen, dp[i]);
+                maxLen = Math.Max(maxLen, dp[i]);
             }
         }
 

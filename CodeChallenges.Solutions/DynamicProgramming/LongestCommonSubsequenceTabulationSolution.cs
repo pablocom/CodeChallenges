@@ -20,7 +20,7 @@ public static class TabulationSolution
                 else if (text1[i - 1] == text2[j - 1])
                     resultsTable[i, j] = resultsTable[i - 1, j - 1] + 1;
                 else
-                    resultsTable[i, j] = System.Math.Max(resultsTable[i - 1, j], resultsTable[i, j - 1]);
+                    resultsTable[i, j] = Math.Max(resultsTable[i - 1, j], resultsTable[i, j - 1]);
             }
         }
             
