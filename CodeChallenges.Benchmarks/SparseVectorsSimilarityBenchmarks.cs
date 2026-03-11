@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
-using CodeChallenges.Solutions.Arrays;
+using CodeChallenges.Solutions.Mathematics;
 
 namespace CodeChallenges.Benchmarks;
 
