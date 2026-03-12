@@ -2,7 +2,7 @@ namespace CodeChallenges.Solutions.Assessments;
 
 public class AwsInterviewQuestions
 {
-    public static int MinSwapsRequired(string s)
+    public static int MinSwapsRequired(string? s)
     {
         if (s is null || s.Length == 0)
             return -1;
@@ -37,10 +37,9 @@ public class AwsInterviewQuestions
                 {
                     minSwapsRequired++;
                         
-                    var aux = charArray[rightCursor];
-                    charArray[rightCursor] = charArray[rightCursorForReplace];
-                    charArray[rightCursorForReplace] = aux;
-                    
+                    (charArray[rightCursor], charArray[rightCursorForReplace]) 
+                        = (charArray[rightCursorForReplace], charArray[rightCursor]);
+
                     break;
                 }
 

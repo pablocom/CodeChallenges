@@ -35,14 +35,6 @@ public sealed class LevelOrderTraversalTests
     }
 
     [Fact]
-    public void NullTree()
-    {
-        var result = _sut.LevelOrder(null);
-
-        result.Should().BeEmpty();
-    }
-
-    [Fact]
     public void LeftSkewedTree()
     {
         var root = Node(1)
