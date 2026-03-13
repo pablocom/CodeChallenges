@@ -4,7 +4,7 @@ namespace CodeChallenges.UnitTests.Graphs;
 
 public sealed class SocialNetworkTests
 {
-    private readonly SocialNetwork network = new();
+    private readonly SocialNetwork _network = new();
 
     [Fact]
     public void InsightsAreDisplayed()
@@ -12,9 +12,9 @@ public sealed class SocialNetworkTests
         const int user = 12;
         const int insight = 69;
         
-        network.ShareInsight(user, insight);
+        _network.ShareInsight(user, insight);
 
-        var insightsInFeed = network.GetLastInsights(user);
+        var insightsInFeed = _network.GetLastInsights(user);
 
         insightsInFeed.ShouldBe([insight]);
     }
@@ -26,10 +26,10 @@ public sealed class SocialNetworkTests
         const int insight1 = 69;
         const int insight2 = 70;
         
-        network.ShareInsight(user, insight1);
-        network.ShareInsight(user, insight2);
+        _network.ShareInsight(user, insight1);
+        _network.ShareInsight(user, insight2);
 
-        var insightsInFeed = network.GetLastInsights(user);
+        var insightsInFeed = _network.GetLastInsights(user);
 
         insightsInFeed.ShouldBe([insight1, insight2]);
     }
@@ -45,14 +45,14 @@ public sealed class SocialNetworkTests
         const int insight3 = 71;
         const int insight4 = 72;
         
-        network.AddConnection(user2, user1);
+        _network.AddConnection(user2, user1);
         
-        network.ShareInsight(user1, insight1);
-        network.ShareInsight(user2, insight2);
-        network.ShareInsight(user1, insight3);
-        network.ShareInsight(notConnectedUser, insight4);
+        _network.ShareInsight(user1, insight1);
+        _network.ShareInsight(user2, insight2);
+        _network.ShareInsight(user1, insight3);
+        _network.ShareInsight(notConnectedUser, insight4);
 
-        var insightsInFeed = network.GetLastInsights(user2);
+        var insightsInFeed = _network.GetLastInsights(user2);
 
         insightsInFeed.ShouldBe([insight1, insight2, insight3]);
     }
@@ -62,7 +62,7 @@ public sealed class SocialNetworkTests
     {
         const int user1 = 12;
 
-        var insightsInFeed = network.GetLastInsights(user1);
+        var insightsInFeed = _network.GetLastInsights(user1);
 
         insightsInFeed.ShouldBeEmpty();
     }
@@ -76,13 +76,13 @@ public sealed class SocialNetworkTests
         const int insight2 = 70;
         const int insight3 = 71;
         
-        network.AddConnection(user1, user2);
-        network.ShareInsight(user1, insight1);
-        network.ShareInsight(user2, insight2);
-        network.ShareInsight(user1, insight3);
-        network.RemoveConnection(user1, user2);
+        _network.AddConnection(user1, user2);
+        _network.ShareInsight(user1, insight1);
+        _network.ShareInsight(user2, insight2);
+        _network.ShareInsight(user1, insight3);
+        _network.RemoveConnection(user1, user2);
 
-        var insights = network.GetLastInsights(user1);
+        var insights = _network.GetLastInsights(user1);
 
         insights.ShouldBe([insight1, insight3]);
     }

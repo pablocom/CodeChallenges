@@ -40,10 +40,10 @@ public class MicrosoftCodilityQuestionTests
     [Fact]
     public void Test6()
     {
-        var K = 3;
-        var A = new[] { 4, 9, 8, 2, 6 };
+        var k = 3;
+        var a = new[] { 4, 9, 8, 2, 6 };
 
-        var solution = new MicrosoftCodilityQuestion().Question2(A, K);
+        var solution = new MicrosoftCodilityQuestion().Question2(a, k);
         
         solution.ShouldBe(18);
     }

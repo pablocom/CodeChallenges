@@ -7,7 +7,7 @@ public class AmazonDemoTest
 {
     private static class Result
     {
-        public static List<int> minimalHeaviestSetA(List<int> arr)
+        public static List<int> MinimalHeaviestSetA(List<int> arr)
         {
             var span = CollectionsMarshal.AsSpan(arr);
 
@@ -31,7 +31,7 @@ public class AmazonDemoTest
             throw new UnreachableException();
         }
         
-        public static int countGroups(List<string> related)
+        public static int CountGroups(List<string> related)
         {
             var totalGroups = 0;
             var relativesTracked = new HashSet<int>();
@@ -74,7 +74,7 @@ public class AmazonDemoTest
     {
         List<int> array = [5, 3, 2, 4, 1, 2];
 
-        var solution = Result.minimalHeaviestSetA(array);
+        var solution = Result.MinimalHeaviestSetA(array);
 
         solution.ShouldBe([4, 5]);
     }
@@ -84,7 +84,7 @@ public class AmazonDemoTest
     {
         List<int> array = [4, 2, 5, 1, 6];
 
-        var solution = Result.minimalHeaviestSetA(array);
+        var solution = Result.MinimalHeaviestSetA(array);
 
         solution.ShouldBe([5, 6]);
     }
@@ -99,7 +99,7 @@ public class AmazonDemoTest
             "0001"
         ];
 
-        var solution = Result.countGroups(array);
+        var solution = Result.CountGroups(array);
 
         solution.ShouldBe(2);
     }
@@ -115,7 +115,7 @@ public class AmazonDemoTest
             "00001"
         ];
 
-        var solution = Result.countGroups(array);
+        var solution = Result.CountGroups(array);
 
         solution.ShouldBe(5);
     }
@@ -131,7 +131,7 @@ public class AmazonDemoTest
             "10001"
         ];
 
-        var solution = Result.countGroups(array);
+        var solution = Result.CountGroups(array);
 
         solution.ShouldBe(2);
     }
@@ -147,7 +147,7 @@ public class AmazonDemoTest
             "11111"
         ];
 
-        var solution = Result.countGroups(array);
+        var solution = Result.CountGroups(array);
 
         solution.ShouldBe(1);
     }
@@ -162,7 +162,7 @@ public class AmazonDemoTest
             "0101",
         ];
 
-        var solution = Result.countGroups(array);
+        var solution = Result.CountGroups(array);
 
         solution.ShouldBe(2);
     }
@@ -177,7 +177,7 @@ public class AmazonDemoTest
             "1011"
         ];
 
-        var solution = Result.countGroups(array);
+        var solution = Result.CountGroups(array);
 
         solution.ShouldBe(1);
     }
