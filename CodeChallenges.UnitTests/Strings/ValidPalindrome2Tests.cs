@@ -14,6 +14,6 @@ public sealed class ValidPalindrome2Tests
     {
         var solution = new ValidPalindrome2().Solve(text);
 
-        solution.Should().Be(isPalindrome);
+        solution.ShouldBe(isPalindrome);
     }
 }

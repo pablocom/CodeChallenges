@@ -11,7 +11,7 @@ public class StockBuyingTests
 
         var result = StockBuying.MaxProfit(stocks);
 
-        result.Should().Be(4);
+        result.ShouldBe(4);
     }
         
     [Fact]
@@ -21,6 +21,6 @@ public class StockBuyingTests
 
         var result = StockBuying.MaxProfit(stocks);
             
-        result.Should().Be(5);
+        result.ShouldBe(5);
     }
 }

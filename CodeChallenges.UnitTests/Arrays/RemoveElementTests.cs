@@ -11,7 +11,7 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 3);
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -21,7 +21,7 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 3);
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -31,8 +31,8 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 3);
 
-        result.Should().Be(1);
-        nums[0].Should().Be(5);
+        result.ShouldBe(1);
+        nums[0].ShouldBe(5);
     }
 
     [Fact]
@@ -42,7 +42,7 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 2);
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -52,11 +52,11 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 5);
 
-        result.Should().Be(4);
-        nums[0].Should().Be(1);
-        nums[1].Should().Be(2);
-        nums[2].Should().Be(3);
-        nums[3].Should().Be(4);
+        result.ShouldBe(4);
+        nums[0].ShouldBe(1);
+        nums[1].ShouldBe(2);
+        nums[2].ShouldBe(3);
+        nums[3].ShouldBe(4);
     }
 
     [Fact]
@@ -66,9 +66,9 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 3);
 
-        result.Should().Be(2);
+        result.ShouldBe(2);
         var remaining = nums.Take(result).Order().ToArray();
-        remaining.Should().BeEquivalentTo(new[] { 2, 2 });
+        remaining.ShouldBe(new[] { 2, 2 });
     }
 
     [Fact]
@@ -78,9 +78,9 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 2);
 
-        result.Should().Be(5);
+        result.ShouldBe(5);
         var remaining = nums.Take(result).Order().ToArray();
-        remaining.Should().BeEquivalentTo(new[] { 0, 0, 1, 3, 4 });
+        remaining.ShouldBe(new[] { 0, 0, 1, 3, 4 });
     }
 
     [Fact]
@@ -90,9 +90,9 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 4);
 
-        result.Should().Be(3);
+        result.ShouldBe(3);
         var remaining = nums.Take(result).Order().ToArray();
-        remaining.Should().BeEquivalentTo(new[] { 1, 2, 3 });
+        remaining.ShouldBe(new[] { 1, 2, 3 });
     }
 
     [Fact]
@@ -102,9 +102,9 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 7);
 
-        result.Should().Be(4);
+        result.ShouldBe(4);
         var remaining = nums.Take(result).Order().ToArray();
-        remaining.Should().BeEquivalentTo(new[] { 1, 3, 5, 9 });
+        remaining.ShouldBe(new[] { 1, 3, 5, 9 });
     }
 
     [Fact]
@@ -114,9 +114,9 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 5);
 
-        result.Should().Be(3);
+        result.ShouldBe(3);
         var remaining = nums.Take(result).Order().ToArray();
-        remaining.Should().BeEquivalentTo(new[] { 1, 2, 3 });
+        remaining.ShouldBe(new[] { 1, 2, 3 });
     }
 
     [Fact]
@@ -126,10 +126,10 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 5);
 
-        result.Should().Be(3);
-        nums[0].Should().Be(1);
-        nums[1].Should().Be(2);
-        nums[2].Should().Be(3);
+        result.ShouldBe(3);
+        nums[0].ShouldBe(1);
+        nums[1].ShouldBe(2);
+        nums[2].ShouldBe(3);
     }
 
     [Fact]
@@ -139,7 +139,7 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 1);
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -149,8 +149,8 @@ public class RemoveElementTests
 
         var result = new RemoveElements().RemoveElement(nums, 3);
 
-        result.Should().Be(2);
-        nums[0].Should().Be(1);
-        nums[1].Should().Be(2);
+        result.ShouldBe(2);
+        nums[0].ShouldBe(1);
+        nums[1].ShouldBe(2);
     }
 }

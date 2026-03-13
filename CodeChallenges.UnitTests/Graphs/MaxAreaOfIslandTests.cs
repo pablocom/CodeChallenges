@@ -19,7 +19,7 @@ public class MaxAreaOfIslandTests
             new[] { 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
         };
 
-        MaxAreaOfIsland.Solve(grid).Should().Be(6);
+        MaxAreaOfIsland.Solve(grid).ShouldBe(6);
     }
 
     [Fact]
@@ -31,7 +31,7 @@ public class MaxAreaOfIslandTests
             new[] { 0, 0, 0 },
         };
 
-        MaxAreaOfIsland.Solve(grid).Should().Be(0);
+        MaxAreaOfIsland.Solve(grid).ShouldBe(0);
     }
 
     [Fact]
@@ -43,7 +43,7 @@ public class MaxAreaOfIslandTests
             new[] { 0, 0, 0 },
         };
 
-        MaxAreaOfIsland.Solve(grid).Should().Be(1);
+        MaxAreaOfIsland.Solve(grid).ShouldBe(1);
     }
 
     [Fact]
@@ -55,7 +55,7 @@ public class MaxAreaOfIslandTests
             new[] { 1, 1 },
         };
 
-        MaxAreaOfIsland.Solve(grid).Should().Be(4);
+        MaxAreaOfIsland.Solve(grid).ShouldBe(4);
     }
 
     [Fact]
@@ -67,7 +67,7 @@ public class MaxAreaOfIslandTests
             new[] { 0, 1 },
         };
 
-        MaxAreaOfIsland.Solve(grid).Should().Be(1);
+        MaxAreaOfIsland.Solve(grid).ShouldBe(1);
     }
 
     [Fact]
@@ -82,7 +82,7 @@ public class MaxAreaOfIslandTests
             new[] { 0, 0, 0, 1, 1 },
         };
 
-        MaxAreaOfIsland.Solve(grid).Should().Be(6);
+        MaxAreaOfIsland.Solve(grid).ShouldBe(6);
     }
 
     [Fact]
@@ -95,6 +95,6 @@ public class MaxAreaOfIslandTests
             new[] { 1, 1, 1 },
         };
 
-        MaxAreaOfIsland.Solve(grid).Should().Be(5);
+        MaxAreaOfIsland.Solve(grid).ShouldBe(5);
     }
 }

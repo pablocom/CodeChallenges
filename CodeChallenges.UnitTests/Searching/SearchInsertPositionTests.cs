@@ -19,6 +19,6 @@ public sealed class SearchInsertPositionTests
     {
         var result = SearchInsertPosition.Solve(nums, target);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

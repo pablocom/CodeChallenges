@@ -15,6 +15,6 @@ public class CountAndSayTests
     {
         var solution = new CountAndSay().Solve(n);
 
-        solution.Should().Be(expectedSolution);
+        solution.ShouldBe(expectedSolution);
     }
 }

@@ -7,7 +7,7 @@ public class WordSearchTests
     [Theory]
     [MemberData(nameof(TestCases))]
     public void Solve(char[][] board, string word, bool expected) =>
-        WordSearch.Solve(board, word).Should().Be(expected);
+        WordSearch.Solve(board, word).ShouldBe(expected);
 
     public static TheoryData<char[][], string, bool> TestCases => new()
     {

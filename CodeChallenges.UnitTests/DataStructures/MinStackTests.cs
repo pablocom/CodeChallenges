@@ -12,7 +12,7 @@ public class MinStackTests
         stack.Push(5);
         stack.Push(2);
 
-        stack.GetMin().Should().Be(2);
+        stack.GetMin().ShouldBe(2);
     }
 
     [Fact]
@@ -24,10 +24,10 @@ public class MinStackTests
         stack.Push(1);
 
         stack.Pop();
-        stack.GetMin().Should().Be(2);
+        stack.GetMin().ShouldBe(2);
 
         stack.Pop();
-        stack.GetMin().Should().Be(3);
+        stack.GetMin().ShouldBe(3);
     }
 
     [Fact]
@@ -37,7 +37,7 @@ public class MinStackTests
         stack.Push(10);
         stack.Push(20);
 
-        stack.Top().Should().Be(20);
+        stack.Top().ShouldBe(20);
     }
 
     [Fact]
@@ -48,7 +48,7 @@ public class MinStackTests
         stack.Push(1);
 
         stack.Pop();
-        stack.GetMin().Should().Be(1);
+        stack.GetMin().ShouldBe(1);
     }
 
     [Fact]
@@ -59,10 +59,10 @@ public class MinStackTests
         stack.Push(0);
         stack.Push(-3);
 
-        stack.GetMin().Should().Be(-3);
+        stack.GetMin().ShouldBe(-3);
         stack.Pop();
-        stack.Top().Should().Be(0);
-        stack.GetMin().Should().Be(-2);
+        stack.Top().ShouldBe(0);
+        stack.GetMin().ShouldBe(-2);
     }
 
     [Fact]
@@ -71,7 +71,7 @@ public class MinStackTests
         var stack = new MinStack();
         stack.Push(42);
 
-        stack.Top().Should().Be(42);
-        stack.GetMin().Should().Be(42);
+        stack.Top().ShouldBe(42);
+        stack.GetMin().ShouldBe(42);
     }
 }

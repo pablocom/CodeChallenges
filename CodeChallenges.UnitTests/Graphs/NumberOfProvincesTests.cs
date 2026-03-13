@@ -14,7 +14,7 @@ public class NumberOfProvincesTests
             new[] { 0, 0, 1 },
         };
 
-        NumberOfProvinces.Solve(isConnected).Should().Be(2);
+        NumberOfProvinces.Solve(isConnected).ShouldBe(2);
     }
 
     [Fact]
@@ -27,7 +27,7 @@ public class NumberOfProvincesTests
             new[] { 0, 0, 1 },
         };
 
-        NumberOfProvinces.Solve(isConnected).Should().Be(3);
+        NumberOfProvinces.Solve(isConnected).ShouldBe(3);
     }
 
     [Fact]
@@ -40,7 +40,7 @@ public class NumberOfProvincesTests
             new[] { 1, 1, 1 },
         };
 
-        NumberOfProvinces.Solve(isConnected).Should().Be(1);
+        NumberOfProvinces.Solve(isConnected).ShouldBe(1);
     }
 
     [Fact]
@@ -51,7 +51,7 @@ public class NumberOfProvincesTests
             new[] { 1 },
         };
 
-        NumberOfProvinces.Solve(isConnected).Should().Be(1);
+        NumberOfProvinces.Solve(isConnected).ShouldBe(1);
     }
 
     [Fact]
@@ -65,6 +65,6 @@ public class NumberOfProvincesTests
             new[] { 0, 0, 0, 1 },
         };
 
-        NumberOfProvinces.Solve(isConnected).Should().Be(2);
+        NumberOfProvinces.Solve(isConnected).ShouldBe(2);
     }
 }

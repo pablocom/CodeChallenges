@@ -14,5 +14,5 @@ public sealed class MoveUnitsTests
 
     [Theory, MemberData(nameof(Scenarios))]
     public void Solve(List<int> population, string unit, int expected) =>
-        MoveUnits.Solve(population, unit).Should().Be(expected);
+        MoveUnits.Solve(population, unit).ShouldBe(expected);
 }

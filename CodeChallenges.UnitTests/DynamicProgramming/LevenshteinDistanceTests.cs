@@ -11,6 +11,6 @@ public class LevenshteinDistanceTests
     {
         var result = new LevenshteinDistanceSolution().LevenshteinDistance(originalString, destinationString);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

@@ -17,8 +17,8 @@ public class LongestCommonSubsequenceTests
         var memoizationSolution = MemoizationSolution.LongestCommonSubsequence(text1, text2);
         // var bruteForceSolution = new LongestCommonSubsequenceBruteForceSolution().LongestCommonSubsequence(text1, text2);
 
-        tabulationSolution.Should().Be(expectedResult);
-        memoizationSolution.Should().Be(expectedResult);
-        // bruteForceSolution.Should().Be(expectedResult);
+        tabulationSolution.ShouldBe(expectedResult);
+        memoizationSolution.ShouldBe(expectedResult);
+        // bruteForceSolution.ShouldBe(expectedResult);
     }
 }

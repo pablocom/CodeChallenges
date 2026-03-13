@@ -12,7 +12,7 @@ public class FirstAndLastPositionInSortedArraySolutionTests
 
         var solution = new FirstAndLastPositionInSortedArraySolution().SearchRange(nums, target);
 
-        solution.Should().Equal([-1, -1]);
+        solution.ShouldBe([-1, -1]);
     }
     
     [Fact]
@@ -23,7 +23,7 @@ public class FirstAndLastPositionInSortedArraySolutionTests
 
         var solution = new FirstAndLastPositionInSortedArraySolution().SearchRange(nums, target);
 
-        solution.Should().Equal([3, 4]);
+        solution.ShouldBe([3, 4]);
     }
     
     [Fact]
@@ -34,6 +34,6 @@ public class FirstAndLastPositionInSortedArraySolutionTests
 
         var solution = new FirstAndLastPositionInSortedArraySolution().SearchRange(nums, target);
 
-        solution.Should().Equal([0, 0]);
+        solution.ShouldBe([0, 0]);
     }
 }

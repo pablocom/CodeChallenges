@@ -13,6 +13,6 @@ public class ReorganizeStringTests
     {
         var result = ReorganizeString.Solve(text);
         
-        result.Should().Be(reorganizedText);
+        result.ShouldBe(reorganizedText);
     }
 }

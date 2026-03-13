@@ -12,6 +12,6 @@ public sealed class BinarySearchTests
     {
         var result = BinarySearch<int>.FindFirst(orderedArray, valueToFind);
 
-        result.Should().Be(indexFound);
+        result.ShouldBe(indexFound);
     }
 }

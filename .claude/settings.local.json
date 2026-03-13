@@ -5,7 +5,13 @@
       "Bash(dotnet build:*)",
       "Bash(git mv:*)",
       "WebSearch",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(find \"C:/src/CodeChallenges/CodeChallenges.Solutions\" -maxdepth 1 -type d | grep -v \"^\\\\.$\" | grep -v \"^\\\\.\\\\./$\" | sort)",
+      "Bash(dotnet restore:*)",
+      "Bash(find CodeChallenges.UnitTests -name '*.cs' ! -path '*/obj/*' ! -path '*/bin/*' -exec sed -i \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeTrue\\(\\)/\\\\.ShouldBeTrue\\(\\)/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeFalse\\(\\)/\\\\.ShouldBeFalse\\(\\)/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeEmpty\\(\\)/\\\\.ShouldBeEmpty\\(\\)/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeNull\\(\\)/\\\\.ShouldBeNull\\(\\)/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.NotBeEmpty\\(\\)/\\\\.ShouldNotBeEmpty\\(\\)/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeSameAs\\(/\\\\.ShouldBeSameAs\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeGreaterOrEqualTo\\(/\\\\.ShouldBeGreaterThanOrEqualTo\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeEquivalentTo\\(/\\\\.ShouldBe\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.BeApproximately\\(/\\\\.ShouldBe\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.NotBe\\(/\\\\.ShouldNotBe\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.Equal\\(/\\\\.ShouldBe\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.HaveCount\\(/\\\\.Count\\(\\)\\\\.ShouldBe\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.HaveLength\\(/\\\\.Length\\\\.ShouldBe\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.OnlyContain\\(/\\\\.ShouldAllBe\\(/g' \\\\\n  -e 's/\\\\.Should\\(\\)\\\\.Be\\(/\\\\.ShouldBe\\(/g' \\\\\n  -e 's/because: //g' \\\\\n  {} +)",
+      "Bash(find CodeChallenges.UnitTests -name '*.cs' ! -path '*/obj/*' ! -path '*/bin/*' -exec grep -l 'NodeIdValuePairs\\\\.ShouldBe\\\\|Connections\\\\.ShouldBe' {} +)",
+      "Bash(dotnet list:*)",
+      "Bash(dotnet package:*)"
     ]
   }
 }

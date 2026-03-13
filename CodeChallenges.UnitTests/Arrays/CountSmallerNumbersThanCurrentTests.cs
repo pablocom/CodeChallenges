@@ -14,6 +14,6 @@ public sealed class CountSmallerNumbersThanCurrentTests
     {
         var result = CountSmallerNumbersThanCurrent.Solve(nums);
 
-        result.Should().Equal(expected);
+        result.ShouldBe(expected);
     }
 }

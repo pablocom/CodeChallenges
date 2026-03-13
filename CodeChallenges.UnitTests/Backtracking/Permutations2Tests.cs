@@ -7,7 +7,7 @@ public class Permutations2Tests
     [Theory]
     [MemberData(nameof(TestCases))]
     public void Solve(int[] nums, int[][] expected) =>
-        Permutations2.Solve(nums).Should().BeEquivalentTo(expected);
+        Permutations2.Solve(nums).ShouldBe(expected);
 
     public static TheoryData<int[], int[][]> TestCases => new()
     {

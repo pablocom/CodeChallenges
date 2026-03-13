@@ -11,10 +11,10 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(3);
-        result[0].Should().BeEquivalentTo(new[] { 1, 6 });
-        result[1].Should().BeEquivalentTo(new[] { 8, 10 });
-        result[2].Should().BeEquivalentTo(new[] { 15, 18 });
+        result.Count().ShouldBe(3);
+        result[0].ShouldBe(new[] { 1, 6 });
+        result[1].ShouldBe(new[] { 8, 10 });
+        result[2].ShouldBe(new[] { 15, 18 });
     }
 
     [Fact]
@@ -24,8 +24,8 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(1);
-        result[0].Should().BeEquivalentTo(new[] { 1, 5 });
+        result.Count().ShouldBe(1);
+        result[0].ShouldBe(new[] { 1, 5 });
     }
 
     [Fact]
@@ -35,8 +35,8 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(1);
-        result[0].Should().BeEquivalentTo(new[] { 5, 10 });
+        result.Count().ShouldBe(1);
+        result[0].ShouldBe(new[] { 5, 10 });
     }
 
     [Fact]
@@ -46,10 +46,10 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(3);
-        result[0].Should().BeEquivalentTo(new[] { 1, 2 });
-        result[1].Should().BeEquivalentTo(new[] { 4, 6 });
-        result[2].Should().BeEquivalentTo(new[] { 8, 10 });
+        result.Count().ShouldBe(3);
+        result[0].ShouldBe(new[] { 1, 2 });
+        result[1].ShouldBe(new[] { 4, 6 });
+        result[2].ShouldBe(new[] { 8, 10 });
     }
 
     [Fact]
@@ -59,8 +59,8 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(1);
-        result[0].Should().BeEquivalentTo(new[] { 1, 10 });
+        result.Count().ShouldBe(1);
+        result[0].ShouldBe(new[] { 1, 10 });
     }
 
     [Fact]
@@ -70,8 +70,8 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(1);
-        result[0].Should().BeEquivalentTo(new[] { 1, 10 });
+        result.Count().ShouldBe(1);
+        result[0].ShouldBe(new[] { 1, 10 });
     }
 
     [Fact]
@@ -81,10 +81,10 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(3);
-        result[0].Should().BeEquivalentTo(new[] { 1, 6 });
-        result[1].Should().BeEquivalentTo(new[] { 8, 10 });
-        result[2].Should().BeEquivalentTo(new[] { 15, 18 });
+        result.Count().ShouldBe(3);
+        result[0].ShouldBe(new[] { 1, 6 });
+        result[1].ShouldBe(new[] { 8, 10 });
+        result[2].ShouldBe(new[] { 15, 18 });
     }
 
     [Fact]
@@ -94,8 +94,8 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(1);
-        result[0].Should().BeEquivalentTo(new[] { 1, 6 });
+        result.Count().ShouldBe(1);
+        result[0].ShouldBe(new[] { 1, 6 });
     }
 
     [Fact]
@@ -105,8 +105,8 @@ public class MergeIntervalsTests
 
         var result = MergeIntervals.Solve(intervals);
 
-        result.Should().HaveCount(2);
-        result[0].Should().BeEquivalentTo(new[] { 1, 3 });
-        result[1].Should().BeEquivalentTo(new[] { 5, 7 });
+        result.Count().ShouldBe(2);
+        result[0].ShouldBe(new[] { 1, 3 });
+        result[1].ShouldBe(new[] { 5, 7 });
     }
 }

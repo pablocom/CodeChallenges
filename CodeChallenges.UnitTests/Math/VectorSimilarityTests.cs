@@ -9,7 +9,7 @@ public class VectorSimilarityTests
     {
         var result = SparseVectorsSimilarity.SolveOptimized([], [], [], []);
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -20,7 +20,7 @@ public class VectorSimilarityTests
             [42], [7.2]
         );
 
-        result.Should().Be(1);
+        result.ShouldBe(1);
     }
 
     [Fact]
@@ -31,7 +31,7 @@ public class VectorSimilarityTests
             [7], [-5.0]
         );
 
-        result.Should().Be(-1);
+        result.ShouldBe(-1);
     }
     
     [Fact]
@@ -42,7 +42,7 @@ public class VectorSimilarityTests
             [2, 4, 6], [1, 1, 1]
         );
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
     
     [Fact]
@@ -57,7 +57,7 @@ public class VectorSimilarityTests
                        (System.Math.Sqrt(7 * 7 + 5 * 5 + 12 * 12 + 1 * 1) *
                         System.Math.Sqrt(3 * 3 + 4 * 4 + 1 * 1 + 2 * 2));
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
     
     [Fact]
@@ -78,7 +78,7 @@ public class VectorSimilarityTests
             758.489622156364 * 758.489622156364);
         var expected = dot / (normA * normB);
 
-        result.Should().BeApproximately(expected, 1e-12);
+        result.ShouldBe(expected, 1e-12);
     }
     
     
@@ -90,7 +90,7 @@ public class VectorSimilarityTests
             [736565921, 2014363605], [160.05272192883, 758.489622156364]
         );
 
-        result.Should().BeApproximately(0.770969008850541, 1e-15);
+        result.ShouldBe(0.770969008850541, 1e-15);
     }
 }
 

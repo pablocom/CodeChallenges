@@ -12,7 +12,7 @@ public class SwapPairsTests
 
         var newHead = new SwapPairs().Solve(head);
 
-        newHead.Should().BeEquivalentTo([2, 1, 4, 3]);
+        newHead.ShouldBe([2, 1, 4, 3]);
     }
     
     [Fact]
@@ -22,7 +22,7 @@ public class SwapPairsTests
 
         var newHead = new SwapPairs().Solve(head);
         
-        newHead.Should().BeEquivalentTo([2, 1, 4, 3, 5]);
+        newHead.ShouldBe([2, 1, 4, 3, 5]);
     }
     
     [Fact]
@@ -32,7 +32,7 @@ public class SwapPairsTests
 
         var newHead = new SwapPairs().Solve(head);
         
-        newHead.Should().BeEquivalentTo([2, 1, 3]);
+        newHead.ShouldBe([2, 1, 3]);
     }
     
     [Fact]
@@ -40,7 +40,7 @@ public class SwapPairsTests
     {
         var newHead = new SwapPairs().Solve(null);
 
-        newHead.Should().BeNull();
+        newHead.ShouldBeNull();
     }
     
     [Fact]
@@ -50,6 +50,6 @@ public class SwapPairsTests
 
         var newHead = new SwapPairs().Solve(head);
         
-        newHead.Should().BeEquivalentTo([1]);
+        newHead.ShouldBe([1]);
     }
 }

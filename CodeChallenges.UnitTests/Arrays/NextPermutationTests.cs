@@ -12,7 +12,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
     [Fact]
@@ -23,7 +23,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
     [Fact]
@@ -34,7 +34,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
     [Fact]
@@ -45,7 +45,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
     [Fact]
@@ -56,7 +56,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
 
@@ -68,7 +68,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
     [Fact]
@@ -79,7 +79,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
 
@@ -91,7 +91,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
 
@@ -103,7 +103,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
 
@@ -115,7 +115,7 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 
     [Fact]
@@ -126,6 +126,6 @@ public class NextPermutationTests
 
         new NextPermutation().ToNextPermutation(nums);
 
-        nums.Should().Equal(nextPermutation);
+        nums.ShouldBe(nextPermutation);
     }
 }

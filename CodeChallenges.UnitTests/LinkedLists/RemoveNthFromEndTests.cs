@@ -12,7 +12,7 @@ public class RemoveNthFromEndTests
 
         var result = new RemoveNthNodeFromList().RemoveNthFromEnd(linkedList, 2);
 
-        result.Should().BeEquivalentTo([1, 2, 3, 5]);
+        result.ShouldBe([1, 2, 3, 5]);
     }
     
     [Fact]
@@ -22,7 +22,7 @@ public class RemoveNthFromEndTests
 
         var result = new RemoveNthNodeFromList().RemoveNthFromEnd(linkedList, 3);
 
-        result.Should().BeEquivalentTo([1, 2, 2, 4, 5]);
+        result.ShouldBe([1, 2, 2, 4, 5]);
     }
     
     [Fact]
@@ -32,7 +32,7 @@ public class RemoveNthFromEndTests
 
         var result = new RemoveNthNodeFromList().RemoveNthFromEnd(linkedList, 1);
 
-        result.Should().BeNull();
+        result.ShouldBeNull();
     }
     
     [Fact]
@@ -42,7 +42,7 @@ public class RemoveNthFromEndTests
 
         var result = new RemoveNthNodeFromList().RemoveNthFromEnd(linkedList, 1);
 
-        result.Should().BeEquivalentTo([1]);
+        result.ShouldBe([1]);
     }
     
     [Fact]
@@ -52,7 +52,7 @@ public class RemoveNthFromEndTests
 
         var result = new RemoveNthNodeFromList().RemoveNthFromEnd(linkedList, 2);
 
-        result.Should().BeEquivalentTo([2]);
+        result.ShouldBe([2]);
     }
     
     [Fact]
@@ -62,6 +62,6 @@ public class RemoveNthFromEndTests
 
         var result = new RemoveNthNodeFromList().RemoveNthFromEnd(linkedList, 3);
 
-        result.Should().BeEquivalentTo([2, 3]);
+        result.ShouldBe([2, 3]);
     }
 }

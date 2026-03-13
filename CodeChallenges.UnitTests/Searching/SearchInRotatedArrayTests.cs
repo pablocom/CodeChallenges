@@ -12,6 +12,6 @@ public class SearchInRotatedArrayTests
 
         var solution = new SearchInRotatedArray().Search(nums, target);
 
-        solution.Should().Be(3);
+        solution.ShouldBe(3);
     }
 }

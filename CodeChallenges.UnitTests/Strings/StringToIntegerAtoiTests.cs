@@ -9,7 +9,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("42");
 
-        result.Should().Be(42);
+        result.ShouldBe(42);
     }
 
     [Fact]
@@ -17,7 +17,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("-42");
 
-        result.Should().Be(-42);
+        result.ShouldBe(-42);
     }
 
     [Fact]
@@ -25,7 +25,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("   -42");
 
-        result.Should().Be(-42);
+        result.ShouldBe(-42);
     }
 
     [Fact]
@@ -33,7 +33,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("4193 with words");
 
-        result.Should().Be(4193);
+        result.ShouldBe(4193);
     }
 
     [Fact]
@@ -41,7 +41,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("words and 987");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -49,7 +49,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("+1");
 
-        result.Should().Be(1);
+        result.ShouldBe(1);
     }
 
     [Fact]
@@ -57,7 +57,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -65,7 +65,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("   ");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -73,7 +73,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("0");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -81,7 +81,7 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("7");
 
-        result.Should().Be(7);
+        result.ShouldBe(7);
     }
 
     [Fact]
@@ -89,6 +89,6 @@ public sealed class StringToIntegerAtoiTests
     {
         var result = new StringToIntegerAtoi().MyAtoi("91283472332");
 
-        result.Should().Be(int.MaxValue);
+        result.ShouldBe(int.MaxValue);
     }
 }

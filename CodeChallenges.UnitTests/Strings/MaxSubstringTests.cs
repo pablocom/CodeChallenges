@@ -11,7 +11,7 @@ public class MaxSubstringTests
 
         var maxLength = MaxSubstring.LengthOfLongestSubstring(word);
 
-        maxLength.Should().Be(1);
+        maxLength.ShouldBe(1);
     }
         
     [Fact]
@@ -21,7 +21,7 @@ public class MaxSubstringTests
 
         var maxLength = MaxSubstring.LengthOfLongestSubstring(word);
             
-        maxLength.Should().Be(3);
+        maxLength.ShouldBe(3);
     }
         
     [Fact]
@@ -31,7 +31,7 @@ public class MaxSubstringTests
 
         var maxLength = MaxSubstring.LengthOfLongestSubstring(word);
             
-        maxLength.Should().Be(3);
+        maxLength.ShouldBe(3);
     }
         
     [Fact]
@@ -41,7 +41,7 @@ public class MaxSubstringTests
 
         var maxLength = MaxSubstring.LengthOfLongestSubstring(word);
             
-        maxLength.Should().Be(1);
+        maxLength.ShouldBe(1);
     }
         
     [Fact]
@@ -51,6 +51,6 @@ public class MaxSubstringTests
 
         var maxLength = MaxSubstring.LengthOfLongestSubstring(word);
             
-        maxLength.Should().Be(2);
+        maxLength.ShouldBe(2);
     }
 }

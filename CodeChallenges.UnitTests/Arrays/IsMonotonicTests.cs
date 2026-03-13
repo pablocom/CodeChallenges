@@ -19,6 +19,6 @@ public sealed class IsMonotonicTests
     {
         var result = IsMonotonic.Solve(nums);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

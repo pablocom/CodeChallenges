@@ -21,7 +21,7 @@ public class TaskSchedulerTests
     [InlineData(new[] { 'A', 'A', 'A', 'B', 'B', 'B',
                         'C', 'C', 'C', 'D', 'D', 'E' },          2, 12)]
     public void Solve(char[] tasks, int n, int expected) =>
-        TaskScheduler.Solve(tasks, n).Should().Be(expected);
+        TaskScheduler.Solve(tasks, n).ShouldBe(expected);
 
     [Theory]
     [InlineData(new[] { 'A', 'A', 'A', 'B', 'B', 'B' },          2, 8)]
@@ -40,5 +40,5 @@ public class TaskSchedulerTests
     [InlineData(new[] { 'A', 'A', 'A', 'B', 'B', 'B',
                         'C', 'C', 'C', 'D', 'D', 'E' },          2, 12)]
     public void SolveWithFormula(char[] tasks, int n, int expected) =>
-        TaskScheduler.SolveWithFormula(tasks, n).Should().Be(expected);
+        TaskScheduler.SolveWithFormula(tasks, n).ShouldBe(expected);
 }

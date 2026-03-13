@@ -12,7 +12,7 @@ public class MicrosoftCodilityQuestionTests
 
         var solution = new MicrosoftCodilityQuestion().Question1(text, costs);
 
-        solution.Should().Be(2);
+        solution.ShouldBe(2);
     }
     
     [Fact]
@@ -23,7 +23,7 @@ public class MicrosoftCodilityQuestionTests
 
         var solution = new MicrosoftCodilityQuestion().Question1(text, costs);
 
-        solution.Should().Be(12);
+        solution.ShouldBe(12);
     }
     
     [Fact]
@@ -34,7 +34,7 @@ public class MicrosoftCodilityQuestionTests
 
         var solution = new MicrosoftCodilityQuestion().Question1(text, costs);
         
-        solution.Should().Be(3);
+        solution.ShouldBe(3);
     }
     
     [Fact]
@@ -45,6 +45,6 @@ public class MicrosoftCodilityQuestionTests
 
         var solution = new MicrosoftCodilityQuestion().Question2(A, K);
         
-        solution.Should().Be(18);
+        solution.ShouldBe(18);
     }
 }

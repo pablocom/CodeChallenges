@@ -11,5 +11,5 @@ public class ArithmeticSlicesTests
     [InlineData(new[] { 1, 2, 3, 4, 5 }, 6)]
     [InlineData(new[] { 1, 2, 3, 1, 2 }, 1)]
     public void Solve(int[] nums, int expected) =>
-        ArithmeticSlices.Solve(nums).Should().Be(expected);
+        ArithmeticSlices.Solve(nums).ShouldBe(expected);
 }

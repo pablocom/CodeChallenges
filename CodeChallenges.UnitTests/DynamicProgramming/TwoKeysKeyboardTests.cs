@@ -18,13 +18,13 @@ public class TwoKeysKeyboardTests
 
     [Theory, MemberData(nameof(Scenarios))]
     public void SolveWithFactors(int n, int expected) =>
-        TwoKeysKeyboard.SolveWithFactors(n).Should().Be(expected);
+        TwoKeysKeyboard.SolveWithFactors(n).ShouldBe(expected);
 
     [Theory, MemberData(nameof(Scenarios))]
     public void SolveWithMagic(int n, int expected) =>
-        TwoKeysKeyboard.SolveWithMagic(n).Should().Be(expected);
+        TwoKeysKeyboard.SolveWithMagic(n).ShouldBe(expected);
 
     [Theory, MemberData(nameof(Scenarios))]
     public void SolveWithDfs(int n, int expected) =>
-        TwoKeysKeyboard.SolveWithDfs(n).Should().Be(expected);
+        TwoKeysKeyboard.SolveWithDfs(n).ShouldBe(expected);
 }

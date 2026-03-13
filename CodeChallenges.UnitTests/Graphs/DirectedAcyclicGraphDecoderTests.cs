@@ -10,7 +10,7 @@ public sealed class DirectedAcyclicGraphDecoderTests
     {
         var input = new SerializableDirectedAcyclicGraph([], [], null);
 
-        DirectedAcyclicGraphDecoder.Decode(input).Should().BeNull();
+        DirectedAcyclicGraphDecoder.Decode(input).ShouldBeNull();
     }
 
     [Fact]
@@ -26,9 +26,9 @@ public sealed class DirectedAcyclicGraphDecoderTests
 
         var result = DirectedAcyclicGraphDecoder.Decode(input)!;
 
-        result.Id.Should().Be(id);
-        result.Value.Should().Be(42);
-        result.Neighbors.Should().BeEmpty();
+        result.Id.ShouldBe(id);
+        result.Value.ShouldBe(42);
+        result.Neighbors.ShouldBeEmpty();
     }
 
     [Fact]
@@ -46,13 +46,13 @@ public sealed class DirectedAcyclicGraphDecoderTests
 
         var result = DirectedAcyclicGraphDecoder.Decode(input)!;
 
-        result.Id.Should().Be(a);
-        result.Value.Should().Be(10);
-        result.Neighbors.Should().HaveCount(1);
-        result.Neighbors[0].Id.Should().Be(b);
-        result.Neighbors[0].Value.Should().Be(20);
-        result.Neighbors[0].Neighbors[0].Id.Should().Be(c);
-        result.Neighbors[0].Neighbors[0].Value.Should().Be(30);
+        result.Id.ShouldBe(a);
+        result.Value.ShouldBe(10);
+        result.Neighbors.Count().ShouldBe(1);
+        result.Neighbors[0].Id.ShouldBe(b);
+        result.Neighbors[0].Value.ShouldBe(20);
+        result.Neighbors[0].Neighbors[0].Id.ShouldBe(c);
+        result.Neighbors[0].Neighbors[0].Value.ShouldBe(30);
     }
 
     [Fact]
@@ -72,10 +72,10 @@ public sealed class DirectedAcyclicGraphDecoderTests
 
         var result = DirectedAcyclicGraphDecoder.Decode(input)!;
 
-        result.Value.Should().Be(1);
-        result.Neighbors.Should().HaveCount(2);
-        result.Neighbors[0].Value.Should().Be(2);
-        result.Neighbors[1].Value.Should().Be(3);
+        result.Value.ShouldBe(1);
+        result.Neighbors.Count().ShouldBe(2);
+        result.Neighbors[0].Value.ShouldBe(2);
+        result.Neighbors[1].Value.ShouldBe(3);
     }
 
     [Fact]
@@ -101,8 +101,8 @@ public sealed class DirectedAcyclicGraphDecoderTests
         var dFromB = result.Neighbors[0].Neighbors[0];
         var dFromC = result.Neighbors[1].Neighbors[0];
 
-        dFromB.Value.Should().Be(4);
-        dFromB.Should().BeSameAs(dFromC);
+        dFromB.Value.ShouldBe(4);
+        dFromB.ShouldBeSameAs(dFromC);
     }
 
     [Fact]
@@ -134,9 +134,9 @@ public sealed class DirectedAcyclicGraphDecoderTests
         var cNode = result.Neighbors[1];
         var dNode = result.Neighbors[2];
 
-        bNode.Neighbors[0].Should().BeSameAs(cNode.Neighbors[0]);
-        cNode.Neighbors[1].Should().BeSameAs(dNode.Neighbors[0]);
-        bNode.Neighbors[0].Neighbors[0].Should().BeSameAs(dNode.Neighbors[0].Neighbors[0]);
+        bNode.Neighbors[0].ShouldBeSameAs(cNode.Neighbors[0]);
+        cNode.Neighbors[1].ShouldBeSameAs(dNode.Neighbors[0]);
+        bNode.Neighbors[0].Neighbors[0].ShouldBeSameAs(dNode.Neighbors[0].Neighbors[0]);
     }
 
     [Fact]
@@ -162,20 +162,20 @@ public sealed class DirectedAcyclicGraphDecoderTests
         var serialized = System.Text.Json.JsonSerializer.Deserialize<SerializableDirectedAcyclicGraph>(json)!;
         var decoded = DirectedAcyclicGraphDecoder.Decode(serialized)!;
 
-        decoded.Id.Should().Be(original.Id);
-        decoded.Value.Should().Be(original.Value);
-        decoded.Neighbors.Should().HaveCount(3);
-        decoded.Neighbors[0].Value.Should().Be(5);
-        decoded.Neighbors[1].Value.Should().Be(5);
-        decoded.Neighbors[2].Value.Should().Be(10);
+        decoded.Id.ShouldBe(original.Id);
+        decoded.Value.ShouldBe(original.Value);
+        decoded.Neighbors.Count().ShouldBe(3);
+        decoded.Neighbors[0].Value.ShouldBe(5);
+        decoded.Neighbors[1].Value.ShouldBe(5);
+        decoded.Neighbors[2].Value.ShouldBe(10);
 
         var eDecoded = decoded.Neighbors[0].Neighbors[0];
-        eDecoded.Should().BeSameAs(decoded.Neighbors[1].Neighbors[0]);
+        eDecoded.ShouldBeSameAs(decoded.Neighbors[1].Neighbors[0]);
 
         var fDecoded = decoded.Neighbors[1].Neighbors[1];
-        fDecoded.Should().BeSameAs(decoded.Neighbors[2].Neighbors[0]);
+        fDecoded.ShouldBeSameAs(decoded.Neighbors[2].Neighbors[0]);
 
         var gDecoded = eDecoded.Neighbors[0];
-        gDecoded.Should().BeSameAs(fDecoded.Neighbors[0]);
+        gDecoded.ShouldBeSameAs(fDecoded.Neighbors[0]);
     }
 }

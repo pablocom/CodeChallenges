@@ -18,6 +18,6 @@ public class MergeKListsTests
 
         var solution = new MergeKListsSolution().MergeKLists(lists);
 
-        solution.Should().Equal(expectedSolution);
+        solution.ShouldBe(expectedSolution);
     }
 }

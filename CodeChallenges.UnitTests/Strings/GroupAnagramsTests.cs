@@ -11,7 +11,9 @@ public class GroupAnagramsTests
         var expectedList = new string[][] { ["bat"], ["nat", "tan"], ["ate", "eat", "tea"]};
 
         var result = new GroupAnagramsSolution().GroupAnagrams(list);
-            
-        result.Should().BeEquivalentTo(expectedList);
+
+        var normalize = (IEnumerable<IEnumerable<string>> groups) =>
+            groups.Select(g => string.Join(",", g.Order())).Order().ToList();
+        normalize(result).ShouldBe(normalize(expectedList));
     }
 }

@@ -14,6 +14,6 @@ public class GrayCodeTests
     {
         var result = GrayCode.Solve(n);
         
-        result.Should().Equal(expected);
+        result.ShouldBe(expected);
     }
 }

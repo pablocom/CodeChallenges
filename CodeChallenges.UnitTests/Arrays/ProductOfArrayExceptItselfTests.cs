@@ -11,7 +11,7 @@ namespace CodeChallenges.UnitTests.Arrays
 
             var solution = new ProductOfArrayExceptItself().ProductExceptSelf(nums);
 
-            solution.Should().BeEquivalentTo([24, 12, 8, 6]);
+            solution.ShouldBe([24, 12, 8, 6]);
         }
     }
 }

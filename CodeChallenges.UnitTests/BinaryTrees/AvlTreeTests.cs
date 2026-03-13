@@ -9,8 +9,8 @@ public sealed class AvlTreeTests
     {
         var tree = new AvlTree<int>();
         
-        tree.InOrderTraversal().Should().BeEmpty();
-        tree.Height.Should().Be(-1);
+        tree.InOrderTraversal().ShouldBeEmpty();
+        tree.Height.ShouldBe(-1);
     }
     
     [Fact]
@@ -18,8 +18,8 @@ public sealed class AvlTreeTests
     {
         var tree = new AvlTree<int>([1, 2, 3]);
         
-        tree.InOrderTraversal().Should().Equal([1, 2, 3]);
-        tree.Height.Should().Be(1);
+        tree.InOrderTraversal().ShouldBe([1, 2, 3]);
+        tree.Height.ShouldBe(1);
     }
     
     [Fact]
@@ -29,8 +29,8 @@ public sealed class AvlTreeTests
         
         tree.Insert(1);
         
-        tree.InOrderTraversal().Should().Equal([1]);
-        tree.Height.Should().Be(0);
+        tree.InOrderTraversal().ShouldBe([1]);
+        tree.Height.ShouldBe(0);
     }
     
     [Fact]
@@ -41,9 +41,9 @@ public sealed class AvlTreeTests
         tree.Insert(2);
         tree.Insert(1);
         
-        tree.InOrderTraversal().Should().Equal([1, 2]);
-        tree.Height.Should().Be(1);
-        tree.Balance.Should().Be(1);
+        tree.InOrderTraversal().ShouldBe([1, 2]);
+        tree.Height.ShouldBe(1);
+        tree.Balance.ShouldBe(1);
     }
     
     [Fact]
@@ -53,8 +53,8 @@ public sealed class AvlTreeTests
 
         tree.Insert([3, 2, 1, 4]);
         
-        tree.InOrderTraversal().Should().Equal([1, 2, 3, 4]);
-        tree.Height.Should().Be(2);
+        tree.InOrderTraversal().ShouldBe([1, 2, 3, 4]);
+        tree.Height.ShouldBe(2);
     }
     
     [Fact]
@@ -66,8 +66,8 @@ public sealed class AvlTreeTests
         tree.Insert('a');
         tree.Insert('c');
         
-        tree.InOrderTraversal().Should().Equal(['a', 'b', 'c']);
-        tree.Height.Should().Be(1);
+        tree.InOrderTraversal().ShouldBe(['a', 'b', 'c']);
+        tree.Height.ShouldBe(1);
     }
     
     [Fact]
@@ -77,7 +77,7 @@ public sealed class AvlTreeTests
         
         tree.Remove(3);
         
-        tree.InOrderTraversal().Should().Equal([1, 2, 4]);
-        tree.Height.Should().Be(1);
+        tree.InOrderTraversal().ShouldBe([1, 2, 4]);
+        tree.Height.ShouldBe(1);
     }
 }

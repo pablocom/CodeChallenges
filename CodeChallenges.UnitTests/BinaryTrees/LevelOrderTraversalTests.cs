@@ -17,10 +17,10 @@ public sealed class LevelOrderTraversalTests
 
         var result = _sut.LevelOrder(root);
 
-        result.Should().HaveCount(3);
-        result[0].Should().ContainInOrder(3);
-        result[1].Should().ContainInOrder(9, 20);
-        result[2].Should().ContainInOrder(15, 7);
+        result.Count().ShouldBe(3);
+        result[0].ShouldBe(new[] { 3 });
+        result[1].ShouldBe(new[] { 9, 20 });
+        result[2].ShouldBe(new[] { 15, 7 });
     }
 
     [Fact]
@@ -30,8 +30,8 @@ public sealed class LevelOrderTraversalTests
 
         var result = _sut.LevelOrder(root);
 
-        result.Should().HaveCount(1);
-        result[0].Should().ContainInOrder(1);
+        result.Count().ShouldBe(1);
+        result[0].ShouldBe(new[] { 1 });
     }
 
     [Fact]
@@ -43,10 +43,10 @@ public sealed class LevelOrderTraversalTests
 
         var result = _sut.LevelOrder(root);
 
-        result.Should().HaveCount(3);
-        result[0].Should().ContainInOrder(1);
-        result[1].Should().ContainInOrder(2);
-        result[2].Should().ContainInOrder(3);
+        result.Count().ShouldBe(3);
+        result[0].ShouldBe(new[] { 1 });
+        result[1].ShouldBe(new[] { 2 });
+        result[2].ShouldBe(new[] { 3 });
     }
 
     [Fact]
@@ -59,9 +59,9 @@ public sealed class LevelOrderTraversalTests
 
         var result = _sut.LevelOrder(root);
 
-        result.Should().HaveCount(3);
-        result[0].Should().ContainInOrder(1);
-        result[1].Should().ContainInOrder(2, 3);
-        result[2].Should().ContainInOrder(4, 5, 6, 7);
+        result.Count().ShouldBe(3);
+        result[0].ShouldBe(new[] { 1 });
+        result[1].ShouldBe(new[] { 2, 3 });
+        result[2].ShouldBe(new[] { 4, 5, 6, 7 });
     }
 }

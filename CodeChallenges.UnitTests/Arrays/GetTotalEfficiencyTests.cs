@@ -11,6 +11,6 @@ public class GetTotalEfficiencyTests
         
         var solution = GetTotalEfficiency.getTotalEfficiency([1, 2, 3, 2]);
         
-        solution.Should().Be(expectedSolution);
+        solution.ShouldBe(expectedSolution);
     }
 }

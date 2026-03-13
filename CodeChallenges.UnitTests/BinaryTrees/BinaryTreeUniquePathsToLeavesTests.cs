@@ -13,7 +13,7 @@ public sealed class BinaryTreeUniquePathsToLeavesTests
 
         var result = BinaryTreeUniquePathsToLeaves.Solve(root);
 
-        result.Should().Equal("5");
+        result.ShouldBe(new[] { "5" });
     }
 
     [Fact]
@@ -29,7 +29,7 @@ public sealed class BinaryTreeUniquePathsToLeavesTests
 
         var result = BinaryTreeUniquePathsToLeaves.Solve(root);
 
-        result.Should().Equal("1->2", "1->3");
+        result.ShouldBe(new[] { "1->2", "1->3" });
     }
 
     [Fact]
@@ -47,7 +47,7 @@ public sealed class BinaryTreeUniquePathsToLeavesTests
 
         var result = BinaryTreeUniquePathsToLeaves.Solve(root);
 
-        result.Should().Equal("1->2->3");
+        result.ShouldBe(new[] { "1->2->3" });
     }
 
     [Fact]
@@ -66,7 +66,7 @@ public sealed class BinaryTreeUniquePathsToLeavesTests
 
         var result = BinaryTreeUniquePathsToLeaves.Solve(root);
 
-        result.Should().Equal("1->2->5", "1->3");
+        result.ShouldBe(new[] { "1->2->5", "1->3" });
     }
 
     [Fact]
@@ -87,6 +87,6 @@ public sealed class BinaryTreeUniquePathsToLeavesTests
 
         var result = BinaryTreeUniquePathsToLeaves.Solve(root);
 
-        result.Should().Equal("1->2->4", "1->2->5", "1->3->6");
+        result.ShouldBe(new[] { "1->2->4", "1->2->5", "1->3->6" });
     }
 }

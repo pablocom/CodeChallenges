@@ -15,7 +15,7 @@ public class NumberOfIslandsTests
             new[] { '0', '0', '0', '0', '0' },
         };
 
-        NumberOfIslands.Solve(grid).Should().Be(1);
+        NumberOfIslands.Solve(grid).ShouldBe(1);
     }
 
     [Fact]
@@ -29,7 +29,7 @@ public class NumberOfIslandsTests
             new[] { '0', '0', '0', '1', '1' },
         };
 
-        NumberOfIslands.Solve(grid).Should().Be(3);
+        NumberOfIslands.Solve(grid).ShouldBe(3);
     }
 
     [Fact]
@@ -41,7 +41,7 @@ public class NumberOfIslandsTests
             new[] { '0', '0' },
         };
 
-        NumberOfIslands.Solve(grid).Should().Be(0);
+        NumberOfIslands.Solve(grid).ShouldBe(0);
     }
 
     [Fact]
@@ -53,7 +53,7 @@ public class NumberOfIslandsTests
             new[] { '1', '1' },
         };
 
-        NumberOfIslands.Solve(grid).Should().Be(1);
+        NumberOfIslands.Solve(grid).ShouldBe(1);
     }
 
     [Fact]
@@ -65,7 +65,7 @@ public class NumberOfIslandsTests
             new[] { '0', '1' },
         };
 
-        NumberOfIslands.Solve(grid).Should().Be(2);
+        NumberOfIslands.Solve(grid).ShouldBe(2);
     }
 
     [Fact]
@@ -76,6 +76,6 @@ public class NumberOfIslandsTests
             new[] { '1' },
         };
 
-        NumberOfIslands.Solve(grid).Should().Be(1);
+        NumberOfIslands.Solve(grid).ShouldBe(1);
     }
 }

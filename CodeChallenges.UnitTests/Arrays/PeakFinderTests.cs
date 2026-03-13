@@ -11,6 +11,6 @@ public class PeakFinderTests
 
         var totalPeaks = PeakFinder.CountPeaks(measures);
         
-        totalPeaks.Should().Be(3);
+        totalPeaks.ShouldBe(3);
     }
 }

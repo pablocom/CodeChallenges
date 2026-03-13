@@ -12,5 +12,5 @@ public class MultiplyStringsTests
     [InlineData("9999999999999999", "222", "2219999999999999778")]
     [InlineData("11111111111111111111111111111111111", "1000000", "11111111111111111111111111111111111000000")]
     public void Tests(string num1, string num2, string expected) 
-        => MultiplyStrings.Solve(num1, num2).Should().Be(expected);
+        => MultiplyStrings.Solve(num1, num2).ShouldBe(expected);
 }

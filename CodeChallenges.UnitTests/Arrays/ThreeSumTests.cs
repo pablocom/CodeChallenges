@@ -11,7 +11,7 @@ public class ThreeSumTests
 
         var solution = ThreeSum.Solve(inputArray);
 
-        solution.Should().BeEquivalentTo(new int[][]
+        solution.ShouldBe(new int[][]
         {
             [-1, -1, 2], [-1, 0, 1]
         });

@@ -11,7 +11,7 @@ public class MaxAreaTests
 
         var solution = new MaxArea().Solve(heights);
 
-        solution.Should().Be(1);
+        solution.ShouldBe(1);
     }
     
     [Fact]
@@ -21,7 +21,7 @@ public class MaxAreaTests
 
         var solution = new MaxArea().Solve(heights);
         
-        solution.Should().Be(1);
+        solution.ShouldBe(1);
     }
     
     [Fact]
@@ -31,7 +31,7 @@ public class MaxAreaTests
 
         var solution = new MaxArea().Solve(heights);
         
-        solution.Should().Be(4);
+        solution.ShouldBe(4);
     }
     
     [Fact]
@@ -41,7 +41,7 @@ public class MaxAreaTests
 
         var solution = new MaxArea().Solve(heights);
         
-        solution.Should().Be(4);
+        solution.ShouldBe(4);
     }
     
     [Fact]
@@ -51,7 +51,7 @@ public class MaxAreaTests
 
         var solution = new MaxArea().Solve(heights);
         
-        solution.Should().Be(49);
+        solution.ShouldBe(49);
     }
     
     [Fact]
@@ -61,6 +61,6 @@ public class MaxAreaTests
 
         var solution = new MaxArea().Solve(heights);
         
-        solution.Should().Be(2);
+        solution.ShouldBe(2);
     }
 }

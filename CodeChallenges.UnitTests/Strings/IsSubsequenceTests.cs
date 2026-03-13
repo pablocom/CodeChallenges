@@ -19,6 +19,6 @@ public sealed class IsSubsequenceTests
     {
         var result = IsSubsequence.Solve(s, t);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

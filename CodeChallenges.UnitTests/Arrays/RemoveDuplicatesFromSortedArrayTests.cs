@@ -11,9 +11,9 @@ public class RemoveDuplicatesFromSortedArrayTests
 
         var resultArrayLength = new RemoveDuplicatesFromSortedArray().RemoveDuplicates(array);
             
-        resultArrayLength.Should().Be(2);
-        array[0].Should().Be(1);
-        array[1].Should().Be(2);
+        resultArrayLength.ShouldBe(2);
+        array[0].ShouldBe(1);
+        array[1].ShouldBe(2);
     }
         
     [Fact]
@@ -23,9 +23,9 @@ public class RemoveDuplicatesFromSortedArrayTests
 
         var resultArrayLength = new RemoveDuplicatesFromSortedArray().RemoveDuplicates(array);
             
-        resultArrayLength.Should().Be(3);
-        array[0].Should().Be(1);
-        array[1].Should().Be(2);
-        array[2].Should().Be(3);
+        resultArrayLength.ShouldBe(3);
+        array[0].ShouldBe(1);
+        array[1].ShouldBe(2);
+        array[2].ShouldBe(3);
     }
 }

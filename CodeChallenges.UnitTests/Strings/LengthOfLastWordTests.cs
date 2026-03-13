@@ -15,6 +15,6 @@ public sealed class LengthOfLastWordTests
     {
         var result = LengthOfLastWord.Solve(str);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

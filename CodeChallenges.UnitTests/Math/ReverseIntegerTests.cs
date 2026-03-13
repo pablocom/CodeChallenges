@@ -18,7 +18,7 @@ public class ReverseIntegerTests
     {
         var result = ReverseInteger.Reverse(input);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
     
     [Theory]
@@ -35,6 +35,6 @@ public class ReverseIntegerTests
     {
         var result = ReverseInteger.ReverseOptimized(input);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
 }

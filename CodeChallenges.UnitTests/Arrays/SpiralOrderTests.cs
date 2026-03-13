@@ -17,7 +17,7 @@ public class SpiralOrderTests
 
         var solution = new SpiralOrderSolution().SpiralOrder(matrix);
 
-        solution.Should().Equal(expectedResult);
+        solution.ShouldBe(expectedResult);
     }
 
     [Fact]
@@ -33,6 +33,6 @@ public class SpiralOrderTests
 
         var solution = new SpiralOrderSolution().SpiralOrder(matrix);
 
-        solution.Should().Equal(expectedResult);
+        solution.ShouldBe(expectedResult);
     }
 }

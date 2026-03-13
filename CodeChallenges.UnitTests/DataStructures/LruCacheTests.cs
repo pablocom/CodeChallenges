@@ -17,7 +17,7 @@ public class LruCacheTests
         lru.Put(1, 1);
         lru.Put(2, 2);
 
-        lru.Get(1).Should().Be(1);
+        lru.Get(1).ShouldBe(1);
     }
         
     [Fact]
@@ -30,7 +30,7 @@ public class LruCacheTests
         lru.Get(1);
         lru.Put(3, 3);
             
-        lru.Get(2).Should().Be(-1);
+        lru.Get(2).ShouldBe(-1);
     }
         
     [Fact]
@@ -45,8 +45,8 @@ public class LruCacheTests
         lru.Get(2);
         lru.Put(4, 4);
             
-        lru.Get(1).Should().Be(-1);
-        lru.Get(3).Should().Be(3);
-        lru.Get(4).Should().Be(4);
+        lru.Get(1).ShouldBe(-1);
+        lru.Get(3).ShouldBe(3);
+        lru.Get(4).ShouldBe(4);
     }
 }

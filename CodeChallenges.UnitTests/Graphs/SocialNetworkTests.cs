@@ -16,7 +16,7 @@ public sealed class SocialNetworkTests
 
         var insightsInFeed = network.GetLastInsights(user);
 
-        insightsInFeed.Should().Equal([insight]);
+        insightsInFeed.ShouldBe([insight]);
     }
     
     [Fact]
@@ -31,7 +31,7 @@ public sealed class SocialNetworkTests
 
         var insightsInFeed = network.GetLastInsights(user);
 
-        insightsInFeed.Should().Equal([insight1, insight2]);
+        insightsInFeed.ShouldBe([insight1, insight2]);
     }
     
     [Fact]
@@ -54,7 +54,7 @@ public sealed class SocialNetworkTests
 
         var insightsInFeed = network.GetLastInsights(user2);
 
-        insightsInFeed.Should().Equal([insight1, insight2, insight3]);
+        insightsInFeed.ShouldBe([insight1, insight2, insight3]);
     }
     
     [Fact]
@@ -64,7 +64,7 @@ public sealed class SocialNetworkTests
 
         var insightsInFeed = network.GetLastInsights(user1);
 
-        insightsInFeed.Should().BeEmpty();
+        insightsInFeed.ShouldBeEmpty();
     }
     
     [Fact]
@@ -84,6 +84,6 @@ public sealed class SocialNetworkTests
 
         var insights = network.GetLastInsights(user1);
 
-        insights.Should().Equal([insight1, insight3]);
+        insights.ShouldBe([insight1, insight3]);
     }
 }

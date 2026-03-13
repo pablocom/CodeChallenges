@@ -11,7 +11,7 @@ public class GenerateParenthesesTests
 
         var solution = new GenerateParentheses().GenerateParenthesis(n);
 
-        solution.Should().BeEquivalentTo(["((()))", "(()())", "(())()", "()(())", "()()()"]);
+        solution.ShouldBe(["((()))", "(()())", "(())()", "()(())", "()()()"]);
     }
     
     [Fact]
@@ -21,7 +21,7 @@ public class GenerateParenthesesTests
 
         var solution = new GenerateParentheses().GenerateParenthesis(n);
 
-        solution.Should().BeEquivalentTo(["(())", "()()"]);
+        solution.ShouldBe(["(())", "()()"]);
     }
     
     [Fact]
@@ -31,6 +31,6 @@ public class GenerateParenthesesTests
 
         var solution = new GenerateParentheses().GenerateParenthesis(n);
 
-        solution.Should().BeEquivalentTo(["()"]);
+        solution.ShouldBe(["()"]);
     }
 }

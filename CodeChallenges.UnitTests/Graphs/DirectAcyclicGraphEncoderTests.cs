@@ -15,11 +15,11 @@ public sealed class DirectAcyclicGraphEncoderTests
 
         var result = Decode(DirectAcyclicGraphEncoder.Encode(root));
 
-        result.RootId.Should().Be(root.Id);
-        result.NodeIdValuePairs.Should().ContainSingle()
-            .Which.Should().Be(new NodeIdValuePair(root.Id, 42));
-        result.Connections.Should().ContainSingle()
-            .Which.Neighbors.Should().BeEmpty();
+        result.RootId.ShouldBe(root.Id);
+        result.NodeIdValuePairs.ShouldHaveSingleItem()
+            .ShouldBe(new NodeIdValuePair(root.Id, 42));
+        var conn = result.Connections.ShouldHaveSingleItem();
+        conn.Neighbors.ShouldBeEmpty();
     }
 
     [Fact]
@@ -36,16 +36,16 @@ public sealed class DirectAcyclicGraphEncoderTests
 
         var result = Decode(DirectAcyclicGraphEncoder.Encode(root));
 
-        result.RootId.Should().Be(root.Id);
-        result.NodeIdValuePairs.Should().BeEquivalentTo([
+        result.RootId.ShouldBe(root.Id);
+        result.NodeIdValuePairs.ShouldBe([
             new NodeIdValuePair(root.Id, 10),
             new NodeIdValuePair(b.Id, 20),
             new NodeIdValuePair(c.Id, 30)
-        ]);
-        result.Connections.Should().BeEquivalentTo([
-            new NodeAdjacency(root.Id, [b.Id]),
-            new NodeAdjacency(b.Id, [c.Id]),
-            new NodeAdjacency(c.Id, [])
+        ], ignoreOrder: true);
+        AssertConnections(result.Connections, [
+            (root.Id, new[] { b.Id }),
+            (b.Id, new[] { c.Id }),
+            (c.Id, Array.Empty<Guid>())
         ]);
     }
 
@@ -65,16 +65,16 @@ public sealed class DirectAcyclicGraphEncoderTests
 
         var result = Decode(DirectAcyclicGraphEncoder.Encode(root));
 
-        result.RootId.Should().Be(root.Id);
-        result.NodeIdValuePairs.Should().BeEquivalentTo([
+        result.RootId.ShouldBe(root.Id);
+        result.NodeIdValuePairs.ShouldBe([
             new NodeIdValuePair(root.Id, 1),
             new NodeIdValuePair(b.Id, 2),
             new NodeIdValuePair(c.Id, 3)
-        ]);
-        result.Connections.Should().BeEquivalentTo([
-            new NodeAdjacency(root.Id, [b.Id, c.Id]),
-            new NodeAdjacency(b.Id, []),
-            new NodeAdjacency(c.Id, [])
+        ], ignoreOrder: true);
+        AssertConnections(result.Connections, [
+            (root.Id, new[] { b.Id, c.Id }),
+            (b.Id, Array.Empty<Guid>()),
+            (c.Id, Array.Empty<Guid>())
         ]);
     }
 
@@ -98,18 +98,18 @@ public sealed class DirectAcyclicGraphEncoderTests
 
         var result = Decode(DirectAcyclicGraphEncoder.Encode(root));
 
-        result.RootId.Should().Be(root.Id);
-        result.NodeIdValuePairs.Should().BeEquivalentTo([
+        result.RootId.ShouldBe(root.Id);
+        result.NodeIdValuePairs.ShouldBe([
             new NodeIdValuePair(root.Id, 1),
             new NodeIdValuePair(b.Id, 2),
             new NodeIdValuePair(c.Id, 3),
             new NodeIdValuePair(dNode.Id, 4)
-        ]);
-        result.Connections.Should().BeEquivalentTo([
-            new NodeAdjacency(root.Id, [b.Id, c.Id]),
-            new NodeAdjacency(b.Id, [dNode.Id]),
-            new NodeAdjacency(c.Id, [dNode.Id]),
-            new NodeAdjacency(dNode.Id, [])
+        ], ignoreOrder: true);
+        AssertConnections(result.Connections, [
+            (root.Id, new[] { b.Id, c.Id }),
+            (b.Id, new[] { dNode.Id }),
+            (c.Id, new[] { dNode.Id }),
+            (dNode.Id, Array.Empty<Guid>())
         ]);
     }
 
@@ -142,9 +142,9 @@ public sealed class DirectAcyclicGraphEncoderTests
         var encoded = DirectAcyclicGraphEncoder.Encode(root);
         var result = Decode(encoded);
 
-        result.RootId.Should().Be(root.Id);
-        result.NodeIdValuePairs.Should().HaveCount(7);
-        result.NodeIdValuePairs.Should().BeEquivalentTo([
+        result.RootId.ShouldBe(root.Id);
+        result.NodeIdValuePairs.Count().ShouldBe(7);
+        result.NodeIdValuePairs.ShouldBe([
             new NodeIdValuePair(root.Id, 10),
             new NodeIdValuePair(bNode.Id, 5),
             new NodeIdValuePair(cNode.Id, 5),
@@ -152,16 +152,29 @@ public sealed class DirectAcyclicGraphEncoderTests
             new NodeIdValuePair(eNode.Id, 3),
             new NodeIdValuePair(fNode.Id, 3),
             new NodeIdValuePair(gNode.Id, 5)
+        ], ignoreOrder: true);
+        AssertConnections(result.Connections, [
+            (root.Id, new[] { bNode.Id, cNode.Id, dNode.Id }),
+            (bNode.Id, new[] { eNode.Id }),
+            (cNode.Id, new[] { eNode.Id, fNode.Id }),
+            (dNode.Id, new[] { fNode.Id }),
+            (eNode.Id, new[] { gNode.Id }),
+            (fNode.Id, new[] { gNode.Id }),
+            (gNode.Id, Array.Empty<Guid>())
         ]);
-        result.Connections.Should().BeEquivalentTo([
-            new NodeAdjacency(root.Id, [bNode.Id, cNode.Id, dNode.Id]),
-            new NodeAdjacency(bNode.Id, [eNode.Id]),
-            new NodeAdjacency(cNode.Id, [eNode.Id, fNode.Id]),
-            new NodeAdjacency(dNode.Id, [fNode.Id]),
-            new NodeAdjacency(eNode.Id, [gNode.Id]),
-            new NodeAdjacency(fNode.Id, [gNode.Id]),
-            new NodeAdjacency(gNode.Id, [])
-        ]);
+    }
+
+    private static void AssertConnections(
+        IReadOnlyList<NodeAdjacency> actual,
+        (Guid NodeId, Guid[] Neighbors)[] expected)
+    {
+        actual.Count.ShouldBe(expected.Length);
+        foreach (var (nodeId, neighbors) in expected)
+        {
+            var match = actual.FirstOrDefault(a => a.NodeId == nodeId);
+            match.ShouldNotBeNull($"Connection for node {nodeId} should exist");
+            match.Neighbors.ShouldBe(neighbors);
+        }
     }
 
     private static SerializableDirectedAcyclicGraph Decode(string json) =>

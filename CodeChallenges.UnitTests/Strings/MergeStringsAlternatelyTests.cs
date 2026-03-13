@@ -15,6 +15,6 @@ public sealed class MergeStringsAlternatelyTests
     {
         var result = MergeStringsAlternately.Solve(word1, word2);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

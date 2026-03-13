@@ -9,6 +9,6 @@ public static class LinkedListAssert
     {
         var actualValues = actualHead.ToArray();
         
-        actualValues.Should().BeEquivalentTo(expectedNodeValues);
+        actualValues.ShouldBe(expectedNodeValues);
     }
 }

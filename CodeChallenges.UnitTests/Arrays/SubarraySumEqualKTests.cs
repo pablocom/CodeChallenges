@@ -11,5 +11,5 @@ public class SubarraySumEqualKTests
     [InlineData(new[] { 1 },       2, 0)]
     [InlineData(new[] { -1, -1, 1 }, -1, 3)]
     public void Solve(int[] nums, int k, int expected) =>
-        SubarraySumEqualK.Solve(nums, k).Should().Be(expected);
+        SubarraySumEqualK.Solve(nums, k).ShouldBe(expected);
 }

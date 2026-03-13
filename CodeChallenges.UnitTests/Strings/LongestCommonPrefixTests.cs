@@ -11,7 +11,7 @@ public class LongestCommonPrefixTests
 
         var solution = new LongestCommonPrefix().Solve(words);
 
-        solution.Should().Be("h");
+        solution.ShouldBe("h");
     }
     
     [Fact]
@@ -21,7 +21,7 @@ public class LongestCommonPrefixTests
 
         var solution = new LongestCommonPrefix().Solve(words);
         
-        solution.Should().Be("he");
+        solution.ShouldBe("he");
     }
     
     
@@ -32,6 +32,6 @@ public class LongestCommonPrefixTests
 
         var solution = new LongestCommonPrefix().Solve(words);
         
-        solution.Should().BeEmpty();
+        solution.ShouldBeEmpty();
     }
 }

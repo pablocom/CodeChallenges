@@ -14,14 +14,14 @@ public sealed class TwoSumTests
 
     [Theory, MemberData(nameof(Scenarios))]
     public void Solve(int[] nums, int target, int[] expected) =>
-        TwoSum.Solve(nums, target).Should().Equal(expected);
+        TwoSum.Solve(nums, target).ShouldBe(expected);
 
     [Theory, MemberData(nameof(Scenarios))]
     public void WriteHeavy(int[] nums, int target, int[] expected)
     {
         var strategy = new WriteHeavyTwoSumStrategy();
         foreach (var n in nums) strategy.Add(n);
-        strategy.Find(target).Should().Equal(expected);
+        strategy.Find(target).ShouldBe(expected);
     }
 
     [Theory, MemberData(nameof(Scenarios))]
@@ -29,20 +29,20 @@ public sealed class TwoSumTests
     {
         var strategy = new ReadHeavyTwoSumStrategy();
         foreach (var n in nums) strategy.Add(n);
-        strategy.Find(target).Should().Equal(expected);
+        strategy.Find(target).ShouldBe(expected);
     }
 
     [Fact]
     public void NoSolution_Throws()
     {
-        FluentActions.Invoking(() => TwoSum.Solve([1, 2, 3], 100)).Should().Throw<InvalidOperationException>();
+        Should.Throw<InvalidOperationException>(() => TwoSum.Solve([1, 2, 3], 100));
 
         var writeHeavy = new WriteHeavyTwoSumStrategy();
         foreach (var n in new[] { 1, 2, 3 }) writeHeavy.Add(n);
-        writeHeavy.Invoking(s => s.Find(100)).Should().Throw<InvalidOperationException>();
+        Should.Throw<InvalidOperationException>(() => writeHeavy.Find(100));
 
         var readHeavy = new ReadHeavyTwoSumStrategy();
         foreach (var n in new[] { 1, 2, 3 }) readHeavy.Add(n);
-        readHeavy.Invoking(s => s.Find(100)).Should().Throw<InvalidOperationException>();
+        Should.Throw<InvalidOperationException>(() => readHeavy.Find(100));
     }
 }

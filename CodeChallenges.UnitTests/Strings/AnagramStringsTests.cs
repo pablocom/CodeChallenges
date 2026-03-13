@@ -13,6 +13,6 @@ public class AnagramStringsTests
 
         var isAnagram = new AnagramStrings().IsAnagram(text1, text2);
 
-        isAnagram.Should().BeTrue();
+        isAnagram.ShouldBeTrue();
     }
 }

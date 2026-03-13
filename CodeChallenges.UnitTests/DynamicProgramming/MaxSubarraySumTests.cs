@@ -22,5 +22,5 @@ public class MaxSubarraySumTests
     [InlineData(new[] { 3, -10, 3 },                          3)]
     [InlineData(new[] { -10000, -10000 },                 -10000)]
     public void Solve(int[] nums, int expected) =>
-        MaxSubarraySum.Solve(nums).Should().Be(expected);
+        MaxSubarraySum.Solve(nums).ShouldBe(expected);
 }

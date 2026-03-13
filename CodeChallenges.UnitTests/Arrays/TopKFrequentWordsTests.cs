@@ -9,7 +9,7 @@ public class TopKFrequentWordsTests
     {
         var words = new[] { "i", "love", "leetcode", "i", "love", "coding" };
         var result = TopKFrequentWords.TopKFrequent(words, 2);
-        result.Should().ContainInOrder("i", "love");
+        result.ShouldBe(new[] { "i", "love" });
     }
 
     [Fact]
@@ -17,14 +17,14 @@ public class TopKFrequentWordsTests
     {
         var words = new[] { "the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is" };
         var result = TopKFrequentWords.TopKFrequent(words, 4);
-        result.Should().ContainInOrder("the", "is", "sunny", "day");
+        result.ShouldBe(new[] { "the", "is", "sunny", "day" });
     }
 
     [Fact]
     public void SingleWord()
     {
         var result = TopKFrequentWords.TopKFrequent(new[] { "hello" }, 1);
-        result.Should().ContainInOrder("hello");
+        result.ShouldBe(new[] { "hello" });
     }
 
     [Fact]
@@ -32,7 +32,7 @@ public class TopKFrequentWordsTests
     {
         var words = new[] { "c", "a", "b" };
         var result = TopKFrequentWords.TopKFrequent(words, 2);
-        result.Should().ContainInOrder("a", "b");
+        result.ShouldBe(new[] { "a", "b" });
     }
 
     [Fact]
@@ -40,6 +40,6 @@ public class TopKFrequentWordsTests
     {
         var words = new[] { "aa", "bb", "aa" };
         var result = TopKFrequentWords.TopKFrequent(words, 2);
-        result.Should().ContainInOrder("aa", "bb");
+        result.ShouldBe(new[] { "aa", "bb" });
     }
 }

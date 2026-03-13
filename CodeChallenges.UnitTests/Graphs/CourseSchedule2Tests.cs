@@ -37,7 +37,7 @@ public class CourseSchedule2Tests
     {
         var result = CourseSchedule2.Solve(1, []);
 
-        result.Should().BeEquivalentTo([0]);
+        result.ShouldBe([0]);
     }
 
     [Fact]
@@ -45,9 +45,9 @@ public class CourseSchedule2Tests
     {
         var result = CourseSchedule2.Solve(2, []);
 
-        result.Should().HaveCount(2);
-        result.Should().Contain(0);
-        result.Should().Contain(1);
+        result.Count().ShouldBe(2);
+        result.ShouldContain(0);
+        result.ShouldContain(1);
     }
 
     [Fact]
@@ -58,7 +58,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(2, prerequisites);
 
-        result.Should().BeEquivalentTo(new[] { 0, 1 }, options => options.WithStrictOrdering());
+        result.ShouldBe(new[] { 0, 1 });
     }
 
     [Fact]
@@ -69,7 +69,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(4, prerequisites);
 
-        result.Should().BeEquivalentTo(new[] { 0, 1, 2, 3 }, options => options.WithStrictOrdering());
+        result.ShouldBe(new[] { 0, 1, 2, 3 });
     }
 
     [Fact]
@@ -80,8 +80,8 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(4, prerequisites);
 
-        IsValidTopologicalOrder(result, 4, prerequisites).Should().BeTrue(
-            because: $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
+        IsValidTopologicalOrder(result, 4, prerequisites).ShouldBeTrue(
+            $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
     }
 
     [Fact]
@@ -92,7 +92,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(2, prerequisites);
 
-        result.Should().BeEmpty();
+        result.ShouldBeEmpty();
     }
 
     [Fact]
@@ -103,7 +103,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(3, prerequisites);
 
-        result.Should().BeEmpty();
+        result.ShouldBeEmpty();
     }
 
     [Fact]
@@ -114,7 +114,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(1, prerequisites);
 
-        result.Should().BeEmpty();
+        result.ShouldBeEmpty();
     }
 
     [Fact]
@@ -122,9 +122,9 @@ public class CourseSchedule2Tests
     {
         var result = CourseSchedule2.Solve(5, []);
 
-        result.Should().HaveCount(5);
-        result.Should().OnlyContain(c => c >= 0 && c < 5);
-        result.Distinct().Should().HaveCount(5);
+        result.Count().ShouldBe(5);
+        result.ShouldAllBe(c => c >= 0 && c < 5);
+        result.Distinct().Count().ShouldBe(5);
     }
 
     [Fact]
@@ -135,8 +135,8 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(4, prerequisites);
 
-        IsValidTopologicalOrder(result, 4, prerequisites).Should().BeTrue(
-            because: $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
+        IsValidTopologicalOrder(result, 4, prerequisites).ShouldBeTrue(
+            $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
     }
 
     [Fact]
@@ -152,12 +152,12 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(4, prerequisites);
 
-        IsValidTopologicalOrder(result, 4, prerequisites).Should().BeTrue(
-            because: $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
+        IsValidTopologicalOrder(result, 4, prerequisites).ShouldBeTrue(
+            $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
         // Course 0 must be first
-        result[0].Should().Be(0);
+        result[0].ShouldBe(0);
         // Course 3 must be last
-        result[3].Should().Be(3);
+        result[3].ShouldBe(3);
     }
 
     [Fact]
@@ -168,7 +168,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(3, prerequisites);
 
-        result.Should().BeEmpty();
+        result.ShouldBeEmpty();
     }
 
     [Fact]
@@ -179,9 +179,9 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(4, prerequisites);
 
-        IsValidTopologicalOrder(result, 4, prerequisites).Should().BeTrue(
-            because: $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
-        result[0].Should().Be(0, because: "course 0 is a prerequisite for all others");
+        IsValidTopologicalOrder(result, 4, prerequisites).ShouldBeTrue(
+            $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
+        result[0].ShouldBe(0, "course 0 is a prerequisite for all others");
     }
 
     [Fact]
@@ -192,7 +192,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(5, prerequisites);
 
-        result.Should().BeEmpty();
+        result.ShouldBeEmpty();
     }
 
     [Fact]
@@ -203,7 +203,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(2, prerequisites);
 
-        result.Should().BeEquivalentTo(new[] { 1, 0 }, options => options.WithStrictOrdering());
+        result.ShouldBe(new[] { 1, 0 });
     }
 
     [Fact]
@@ -217,8 +217,8 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(6, prerequisites);
 
-        IsValidTopologicalOrder(result, 6, prerequisites).Should().BeTrue(
-            because: $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
+        IsValidTopologicalOrder(result, 6, prerequisites).ShouldBeTrue(
+            $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
     }
 
     [Fact]
@@ -227,7 +227,7 @@ public class CourseSchedule2Tests
         // numCourses = 1, prerequisites = []
         var result = CourseSchedule2.Solve(1, []);
 
-        result.Should().BeEquivalentTo([0]);
+        result.ShouldBe([0]);
     }
 
     [Fact]
@@ -238,7 +238,7 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(4, prerequisites);
 
-        result.Should().BeEquivalentTo(new[] { 3, 2, 1, 0 }, options => options.WithStrictOrdering());
+        result.ShouldBe(new[] { 3, 2, 1, 0 });
     }
 
     [Fact]
@@ -249,9 +249,9 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(5, prerequisites);
 
-        IsValidTopologicalOrder(result, 5, prerequisites).Should().BeTrue(
-            because: $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
-        result.Last().Should().Be(4, because: "course 4 depends on all others so it must come last");
+        IsValidTopologicalOrder(result, 5, prerequisites).ShouldBeTrue(
+            $"the result [{string.Join(", ", result)}] should be a valid topological ordering");
+        result.Last().ShouldBe(4, "course 4 depends on all others so it must come last");
     }
 
     [Fact]
@@ -262,6 +262,6 @@ public class CourseSchedule2Tests
 
         var result = CourseSchedule2.Solve(3, prerequisites);
 
-        result.Should().BeEmpty();
+        result.ShouldBeEmpty();
     }
 }

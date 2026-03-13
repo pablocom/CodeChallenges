@@ -11,7 +11,7 @@ public class RemoveDuplicatesFromStringTests
 
         var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
-        result.Should().Be("abc");
+        result.ShouldBe("abc");
     } 
         
     [Fact]
@@ -21,7 +21,7 @@ public class RemoveDuplicatesFromStringTests
 
         var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
-        result.Should().Be("acdb");
+        result.ShouldBe("acdb");
     }
         
     [Fact]
@@ -31,7 +31,7 @@ public class RemoveDuplicatesFromStringTests
 
         var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
-        result.Should().Be("adbc");
+        result.ShouldBe("adbc");
     }
         
     [Fact]
@@ -41,6 +41,6 @@ public class RemoveDuplicatesFromStringTests
 
         var result = new RemoveDuplicatesFromString().RemoveDuplicateLetters(text);
 
-        result.Should().Be("letcod");
+        result.ShouldBe("letcod");
     }
 }

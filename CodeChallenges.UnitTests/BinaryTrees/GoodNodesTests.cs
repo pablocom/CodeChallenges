@@ -18,7 +18,7 @@ public class GoodNodesTests
 
         var result = GoodNodesFinder.GoodNodes(root);
 
-        result.Should().Be(4);
+        result.ShouldBe(4);
     }
 
     [Fact]
@@ -32,7 +32,7 @@ public class GoodNodesTests
 
         var result = GoodNodesFinder.GoodNodes(root);
 
-        result.Should().Be(3);
+        result.ShouldBe(3);
     }
 
     [Fact]
@@ -45,6 +45,6 @@ public class GoodNodesTests
 
         var result = GoodNodesFinder.GoodNodes(root);
 
-        result.Should().Be(2);
+        result.ShouldBe(2);
     }
 }

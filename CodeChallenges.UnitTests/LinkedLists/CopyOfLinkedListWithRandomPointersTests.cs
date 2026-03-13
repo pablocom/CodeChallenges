@@ -18,10 +18,10 @@ public class CopyLinkedListTests
 
         var newHead = new CopyOfLinkedListWithRandomPointersHashTable().CopyRandomList(head);
 
-        newHead.GetHashCode().Should().NotBe(head.GetHashCode());
+        newHead.GetHashCode().ShouldNotBe(head.GetHashCode());
         
-        newHead.val.Should().Be(firstNodeValue);
-        newHead.next!.val.Should().Be(secondNodeValue);
-        newHead.next!.random!.GetHashCode().Should().Be(newHead.GetHashCode());
+        newHead.val.ShouldBe(firstNodeValue);
+        newHead.next!.val.ShouldBe(secondNodeValue);
+        newHead.next!.random!.GetHashCode().ShouldBe(newHead.GetHashCode());
     }
 }

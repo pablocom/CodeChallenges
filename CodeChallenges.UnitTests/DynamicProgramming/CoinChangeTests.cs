@@ -19,5 +19,5 @@ public class CoinChangeTests
     [InlineData(new[] { 2, 5, 10 },  1, -1)]
     [InlineData(new[] { 186, 419, 83, 408 }, 6249, 20)]
     public void Solve(int[] coins, int amount, int expected) =>
-        CoinChange.Solve(coins, amount).Should().Be(expected);
+        CoinChange.Solve(coins, amount).ShouldBe(expected);
 }

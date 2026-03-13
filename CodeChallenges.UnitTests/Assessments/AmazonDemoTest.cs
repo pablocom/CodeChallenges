@@ -76,7 +76,7 @@ public class AmazonDemoTest
 
         var solution = Result.minimalHeaviestSetA(array);
 
-        solution.Should().Equal([4, 5]);
+        solution.ShouldBe([4, 5]);
     }
 
     [Fact]
@@ -86,7 +86,7 @@ public class AmazonDemoTest
 
         var solution = Result.minimalHeaviestSetA(array);
 
-        solution.Should().Equal([5, 6]);
+        solution.ShouldBe([5, 6]);
     }
     
     [Fact]
@@ -101,7 +101,7 @@ public class AmazonDemoTest
 
         var solution = Result.countGroups(array);
 
-        solution.Should().Be(2);
+        solution.ShouldBe(2);
     }
     
     [Fact]
@@ -117,7 +117,7 @@ public class AmazonDemoTest
 
         var solution = Result.countGroups(array);
 
-        solution.Should().Be(5);
+        solution.ShouldBe(5);
     }
     
     [Fact]
@@ -133,7 +133,7 @@ public class AmazonDemoTest
 
         var solution = Result.countGroups(array);
 
-        solution.Should().Be(2);
+        solution.ShouldBe(2);
     }
     
     [Fact]
@@ -149,7 +149,7 @@ public class AmazonDemoTest
 
         var solution = Result.countGroups(array);
 
-        solution.Should().Be(1);
+        solution.ShouldBe(1);
     }
     
     [Fact]
@@ -164,7 +164,7 @@ public class AmazonDemoTest
 
         var solution = Result.countGroups(array);
 
-        solution.Should().Be(2);
+        solution.ShouldBe(2);
     }
     
     [Fact]
@@ -179,6 +179,6 @@ public class AmazonDemoTest
 
         var solution = Result.countGroups(array);
 
-        solution.Should().Be(1);
+        solution.ShouldBe(1);
     }
 }

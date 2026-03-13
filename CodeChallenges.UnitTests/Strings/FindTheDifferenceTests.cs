@@ -14,7 +14,7 @@ public sealed class FindTheDifferenceTests
     {
         var result = FindTheDifference.SolveWithDictionary(s, t);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 
     [Theory]
@@ -27,6 +27,6 @@ public sealed class FindTheDifferenceTests
     {
         var result = FindTheDifference.SolveWithXor(s, t);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

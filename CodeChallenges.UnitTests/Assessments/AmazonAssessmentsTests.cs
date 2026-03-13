@@ -12,7 +12,7 @@ public class AmazonAssessmentsTests
 
         var result = AmazonAssessments.Result.LocateEarliestMonth(stockPrice);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
 
     [Fact]
@@ -23,7 +23,7 @@ public class AmazonAssessmentsTests
 
         var result = AmazonAssessments.Result.LocateEarliestMonth(stockPrice);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
 
     [Fact]
@@ -34,7 +34,7 @@ public class AmazonAssessmentsTests
 
         var result = AmazonAssessments.Result.LocateEarliestMonth(stockPrice);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
 
     [Fact]
@@ -45,7 +45,7 @@ public class AmazonAssessmentsTests
 
         var result = AmazonAssessments.Result.LocateEarliestMonth(stockPrice);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
 
     [Fact]
@@ -56,7 +56,7 @@ public class AmazonAssessmentsTests
 
         var result = AmazonAssessments.Result.LocateEarliestMonth(stockPrice);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
 
     [Fact]
@@ -67,7 +67,7 @@ public class AmazonAssessmentsTests
 
         var result = AmazonAssessments.Result.LocateEarliestMonth(stockPrice);
 
-        result.Should().Be(expectedOutput);
+        result.ShouldBe(expectedOutput);
     }
 
 }

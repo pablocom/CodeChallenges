@@ -12,7 +12,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
 
-        median.Should().Be(2d);
+        median.ShouldBe(2d);
     }
     
     [Fact]
@@ -23,7 +23,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2d);
+        median.ShouldBe(2d);
     }
     
     [Fact]
@@ -34,7 +34,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(3d);
+        median.ShouldBe(3d);
     }
     
     [Fact]
@@ -45,7 +45,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2d);
+        median.ShouldBe(2d);
     }
 
     [Fact]
@@ -56,7 +56,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2d);
+        median.ShouldBe(2d);
     }
     
     [Fact]
@@ -67,7 +67,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(3d);
+        median.ShouldBe(3d);
     }
     
     [Fact]
@@ -78,7 +78,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(3.5d);
+        median.ShouldBe(3.5d);
     }
     
     [Fact]
@@ -89,7 +89,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(3.5d);
+        median.ShouldBe(3.5d);
     }
     
     [Fact]
@@ -100,7 +100,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2.5d);
+        median.ShouldBe(2.5d);
     }
     
     [Fact]
@@ -111,7 +111,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2.5d);
+        median.ShouldBe(2.5d);
     }
     
     [Fact]
@@ -122,7 +122,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2.5d);
+        median.ShouldBe(2.5d);
     }
     
     [Fact]
@@ -133,7 +133,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(3d);
+        median.ShouldBe(3d);
     }
     
     [Fact]
@@ -144,7 +144,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(1.5d);
+        median.ShouldBe(1.5d);
     }
     
     [Fact]
@@ -155,7 +155,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(100000.5d);
+        median.ShouldBe(100000.5d);
     }
     
     [Fact]
@@ -166,7 +166,7 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2.5d);
+        median.ShouldBe(2.5d);
     }
     
     [Fact]
@@ -177,6 +177,6 @@ public class FindMedianSortedArraysTests
 
         var median = new FindMedianSortedArrays().Solve(firstArray, secondArray);
         
-        median.Should().Be(2.5d);
+        median.ShouldBe(2.5d);
     }
 }

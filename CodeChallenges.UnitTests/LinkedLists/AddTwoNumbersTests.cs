@@ -24,6 +24,6 @@ public sealed class AddTwoNumbersTests
 
         var result = AddTwoNumbers.Solve(l1!, l2!);
 
-        result.Should().BeEquivalentTo(expectedHead);
+        result.ShouldBe(expectedHead);
     }
 }

@@ -11,7 +11,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired(null);
 
-        result.Should().Be(-1);
+        result.ShouldBe(-1);
     }
 
     [Fact]
@@ -19,7 +19,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("");
 
-        result.Should().Be(-1);
+        result.ShouldBe(-1);
     }
 
     [Fact]
@@ -27,7 +27,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("a");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -35,7 +35,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("aa");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -43,7 +43,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("ab");
 
-        result.Should().Be(-1);
+        result.ShouldBe(-1);
     }
 
     [Fact]
@@ -51,7 +51,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("aba");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -59,7 +59,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("abba");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -67,7 +67,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("abab");
 
-        result.Should().Be(1);
+        result.ShouldBe(1);
     }
 
     [Fact]
@@ -75,7 +75,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("abcd");
 
-        result.Should().Be(-1);
+        result.ShouldBe(-1);
     }
 
     [Fact]
@@ -83,7 +83,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("aabb");
 
-        result.Should().Be(1);
+        result.ShouldBe(1);
     }
 
     [Fact]
@@ -91,7 +91,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.MinSwapsRequired("aaa");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     // ── GetMaxFreqDeviation ─────────────────────────────────────────
@@ -101,7 +101,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.GetMaxFreqDeviation("a");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -109,7 +109,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.GetMaxFreqDeviation("aaaa");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -117,7 +117,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.GetMaxFreqDeviation("aabbb");
 
-        result.Should().Be(1);
+        result.ShouldBe(1);
     }
 
     [Fact]
@@ -125,7 +125,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.GetMaxFreqDeviation("aabbbbcc");
 
-        result.Should().Be(3);
+        result.ShouldBe(3);
     }
 
     [Fact]
@@ -133,7 +133,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.GetMaxFreqDeviation("ababab");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -141,7 +141,7 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.GetMaxFreqDeviation("ab");
 
-        result.Should().Be(0);
+        result.ShouldBe(0);
     }
 
     [Fact]
@@ -149,6 +149,6 @@ public class AwsInterviewQuestionsTests
     {
         var result = AwsInterviewQuestions.GetMaxFreqDeviation("aaaab");
 
-        result.Should().Be(3);
+        result.ShouldBe(3);
     }
 }

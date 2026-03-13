@@ -11,7 +11,7 @@ namespace CodeChallenges.UnitTests.Arrays
 
             var solution = new SmallestNonPresentPositiveNumber().Solution(array);
 
-            solution.Should().Be(5);
+            solution.ShouldBe(5);
         }
     }
 }

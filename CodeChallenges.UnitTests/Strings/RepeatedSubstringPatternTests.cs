@@ -20,6 +20,6 @@ public sealed class RepeatedSubstringPatternTests
     {
         var result = RepeatedSubstringPattern.Solve(s);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

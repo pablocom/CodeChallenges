@@ -14,7 +14,7 @@ public class FindAndReplaceStringTests
 
         var result = new FindAndReplaceString().FindReplaceString(inputString, indexes, sources, targets);
 
-        result.Should().Be("eeebffff");
+        result.ShouldBe("eeebffff");
     }
 
     [Fact]
@@ -27,7 +27,7 @@ public class FindAndReplaceStringTests
 
         var result = new FindAndReplaceString().FindReplaceString(inputString, indexes, sources, targets);
 
-        result.Should().Be("eeecd");
+        result.ShouldBe("eeecd");
     }
 
     [Fact]
@@ -40,6 +40,6 @@ public class FindAndReplaceStringTests
 
         var result = new FindAndReplaceString().FindReplaceString(inputString, indexes, sources, targets);
 
-        result.Should().Be("eeebffff");
+        result.ShouldBe("eeebffff");
     }
 }

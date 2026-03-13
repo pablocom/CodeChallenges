@@ -11,5 +11,5 @@ public class MinDifferenceTests
     [InlineData(new[] { 6, 6, 0, 1, 1, 4, 6 },     2)]
     [InlineData(new[] { 1, 5, 6, 14, 15 },         1)]
     public void Solve(int[] nums, int expected) =>
-        MinDifference.Solve(nums).Should().Be(expected);
+        MinDifference.Solve(nums).ShouldBe(expected);
 }

@@ -10,7 +10,7 @@ public class LetterCombinationsTests
 
         var solution = new LetterCombinations().Solve(input);
 
-        solution.Should().BeEquivalentTo(["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]);
+        solution.ShouldBe(["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]);
     }
 
     [Fact]
@@ -20,7 +20,7 @@ public class LetterCombinationsTests
 
         var solution = new LetterCombinations().Solve(input);
 
-        solution.Should().BeEquivalentTo(["a", "b", "c"]);
+        solution.ShouldBe(["a", "b", "c"]);
     }
 
     [Fact]
@@ -30,7 +30,7 @@ public class LetterCombinationsTests
 
         var solution = new LetterCombinations().Solve(input);
 
-        solution.Should().BeEquivalentTo([
+        solution.ShouldBe([
             "adg", "adh", "adi", "aeg", "aeh", "aei", "afg", "afh", "afi",
             "bdg", "bdh", "bdi", "beg", "beh", "bei", "bfg", "bfh", "bfi",
             "cdg", "cdh", "cdi", "ceg", "ceh", "cei", "cfg", "cfh", "cfi"
@@ -44,7 +44,7 @@ public class LetterCombinationsTests
 
         var solution = new LetterCombinations().Solve(input);
 
-        solution.Should().BeEquivalentTo([
+        solution.ShouldBe([
             "jmpt", "jmpu", "jmpv", "jmqt", "jmqu", "jmqv", "jmrt", "jmru", "jmrv", "jmst", "jmsu", "jmsv", "jnpt", "jnpu",
             "jnpv", "jnqt", "jnqu", "jnqv", "jnrt", "jnru", "jnrv", "jnst", "jnsu", "jnsv", "jopt", "jopu", "jopv", "joqt",
             "joqu", "joqv", "jort", "joru", "jorv", "jost", "josu", "josv", "kmpt", "kmpu", "kmpv", "kmqt", "kmqu", "kmqv",

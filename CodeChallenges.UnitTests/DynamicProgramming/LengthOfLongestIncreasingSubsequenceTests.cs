@@ -21,5 +21,5 @@ public class LengthOfLongestIncreasingSubsequenceTests
     [InlineData(new[] { 4, 10, 4, 3, 8, 9 },           3)]
     [InlineData(new[] { 1, 2, 4, 3 },                  3)]
     public void Solve(int[] nums, int expected) =>
-        LengthOfLongestIncreasingSubsequence.Solve(nums).Should().Be(expected);
+        LengthOfLongestIncreasingSubsequence.Solve(nums).ShouldBe(expected);
 }

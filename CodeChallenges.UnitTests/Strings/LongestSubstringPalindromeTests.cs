@@ -20,7 +20,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("a");
 
-        result.Should().Be("a");
+        result.ShouldBe("a");
     }
 
     [Fact]
@@ -28,7 +28,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("aa");
 
-        result.Should().Be("aa");
+        result.ShouldBe("aa");
     }
 
     [Fact]
@@ -38,8 +38,8 @@ public class LongestSubstringPalindromeTests
         // then from index 1 finds "b" (length 1). First one wins.
         var result = LongestSubstringPalindrome.Solve("ab");
 
-        result.Should().HaveLength(1);
-        result.Should().Be("a");
+        result.Length.ShouldBe(1);
+        result.ShouldBe("a");
     }
 
     [Fact]
@@ -50,9 +50,9 @@ public class LongestSubstringPalindromeTests
         // "bab" is already length 3 so it is not replaced.
         var result = LongestSubstringPalindrome.Solve("babad");
 
-        result.Should().HaveLength(3);
-        IsPalindrome(result).Should().BeTrue();
-        result.Should().Be("bab");
+        result.Length.ShouldBe(3);
+        IsPalindrome(result).ShouldBeTrue();
+        result.ShouldBe("bab");
     }
 
     [Fact]
@@ -60,7 +60,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("cbbd");
 
-        result.Should().Be("bb");
+        result.ShouldBe("bb");
     }
 
     [Fact]
@@ -68,7 +68,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("racecar");
 
-        result.Should().Be("racecar");
+        result.ShouldBe("racecar");
     }
 
     [Fact]
@@ -76,7 +76,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("abba");
 
-        result.Should().Be("abba");
+        result.ShouldBe("abba");
     }
 
     [Fact]
@@ -85,7 +85,7 @@ public class LongestSubstringPalindromeTests
         // "abacxy" -> longest palindrome is "aba" at the start
         var result = LongestSubstringPalindrome.Solve("abacxy");
 
-        result.Should().Be("aba");
+        result.ShouldBe("aba");
     }
 
     [Fact]
@@ -94,7 +94,7 @@ public class LongestSubstringPalindromeTests
         // "xyzaba" -> longest palindrome is "aba" at the end
         var result = LongestSubstringPalindrome.Solve("xyzaba");
 
-        result.Should().Be("aba");
+        result.ShouldBe("aba");
     }
 
     [Fact]
@@ -107,7 +107,7 @@ public class LongestSubstringPalindromeTests
         // Use "pqabbarst" -> "abba" at index 2 is the longest (length 4).
         var result = LongestSubstringPalindrome.Solve("pqabbarst");
 
-        result.Should().Be("abba");
+        result.ShouldBe("abba");
     }
 
     [Fact]
@@ -115,7 +115,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("aaaa");
 
-        result.Should().Be("aaaa");
+        result.ShouldBe("aaaa");
     }
 
     [Fact]
@@ -123,7 +123,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("bbbbbbb");
 
-        result.Should().Be("bbbbbbb");
+        result.ShouldBe("bbbbbbb");
     }
 
     [Fact]
@@ -133,7 +133,7 @@ public class LongestSubstringPalindromeTests
         // Use "abacaba" -> expanding from center index 3 ('c') finds "abacaba" (length 7)
         var result = LongestSubstringPalindrome.Solve("abacaba");
 
-        result.Should().Be("abacaba");
+        result.ShouldBe("abacaba");
     }
 
     [Fact]
@@ -142,7 +142,7 @@ public class LongestSubstringPalindromeTests
         // "forgeeksskeegfor" contains "geeksskeeg" (length 10) as a palindrome
         var result = LongestSubstringPalindrome.Solve("forgeeksskeegfor");
 
-        result.Should().Be("geeksskeeg");
+        result.ShouldBe("geeksskeeg");
     }
 
     [Fact]
@@ -150,7 +150,7 @@ public class LongestSubstringPalindromeTests
     {
         var result = LongestSubstringPalindrome.Solve("a");
 
-        result.Should().Be("a");
+        result.ShouldBe("a");
     }
 
     [Fact]
@@ -159,8 +159,8 @@ public class LongestSubstringPalindromeTests
         // "abcde" has no palindrome longer than 1
         var result = LongestSubstringPalindrome.Solve("abcde");
 
-        result.Should().HaveLength(1);
-        result.Should().Be("a");
+        result.Length.ShouldBe(1);
+        result.ShouldBe("a");
     }
 
     [Fact]
@@ -169,7 +169,7 @@ public class LongestSubstringPalindromeTests
         // "aabcde" -> "aa" at the start is the longest palindrome (length 2)
         var result = LongestSubstringPalindrome.Solve("aabcde");
 
-        result.Should().Be("aa");
+        result.ShouldBe("aa");
     }
 
     [Fact]
@@ -178,7 +178,7 @@ public class LongestSubstringPalindromeTests
         // "xyzcc" -> "cc" at the end (length 2)
         var result = LongestSubstringPalindrome.Solve("xyzcc");
 
-        result.Should().Be("cc");
+        result.ShouldBe("cc");
     }
 
     [Fact]
@@ -187,7 +187,7 @@ public class LongestSubstringPalindromeTests
         // "abcddcba" is a full even-length palindrome of length 8
         var result = LongestSubstringPalindrome.Solve("abcddcba");
 
-        result.Should().Be("abcddcba");
+        result.ShouldBe("abcddcba");
     }
 
     [Fact]
@@ -198,7 +198,7 @@ public class LongestSubstringPalindromeTests
         // The odd one (length 5) wins
         var result = LongestSubstringPalindrome.Solve("aabaa");
 
-        result.Should().Be("aabaa");
+        result.ShouldBe("aabaa");
     }
 
     [Fact]
@@ -208,7 +208,7 @@ public class LongestSubstringPalindromeTests
         // "racecar" wins at length 7
         var result = LongestSubstringPalindrome.Solve("xabbayracecar");
 
-        result.Should().Be("racecar");
+        result.ShouldBe("racecar");
     }
 
     [Fact]
@@ -217,7 +217,7 @@ public class LongestSubstringPalindromeTests
         // "abcddxyz" -> "dd" is the longest palindrome
         var result = LongestSubstringPalindrome.Solve("abcddxyz");
 
-        result.Should().Be("dd");
+        result.ShouldBe("dd");
     }
 
     [Fact]
@@ -226,7 +226,7 @@ public class LongestSubstringPalindromeTests
         // "pqrlevelstu" -> "level" is the longest palindrome (length 5)
         var result = LongestSubstringPalindrome.Solve("pqrlevelstu");
 
-        result.Should().Be("level");
+        result.ShouldBe("level");
     }
 
     [Fact]
@@ -242,11 +242,10 @@ public class LongestSubstringPalindromeTests
         {
             var result = LongestSubstringPalindrome.Solve(input);
 
-            result.Should().NotBeEmpty(because: $"input \"{input}\" has at least one character");
-            IsPalindrome(result).Should().BeTrue(
-                because: $"the result \"{result}\" from input \"{input}\" must be a palindrome");
-            input.Should().Contain(result,
-                because: $"the result \"{result}\" must be a substring of input \"{input}\"");
+            result.ShouldNotBeEmpty($"input \"{input}\" has at least one character");
+            IsPalindrome(result).ShouldBeTrue(
+                $"the result \"{result}\" from input \"{input}\" must be a palindrome");
+            input.ShouldContain(result);
         }
     }
 }

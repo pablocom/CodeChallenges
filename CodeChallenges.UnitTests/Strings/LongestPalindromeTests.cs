@@ -11,7 +11,7 @@ public class LongestPalindromeTests
 
         var result = LongestPalindromeFinder.LongestPalindrome(word);
 
-        result.Should().Be("a");
+        result.ShouldBe("a");
     }
 
     [Fact]
@@ -21,7 +21,7 @@ public class LongestPalindromeTests
 
         var result = LongestPalindromeFinder.LongestPalindrome(word);
 
-        result.Should().Match(x => x == "aba" || x == "bab");
+        result.ShouldBeOneOf("aba", "bab");
     }
 
     [Fact]
@@ -31,6 +31,6 @@ public class LongestPalindromeTests
 
         var result = LongestPalindromeFinder.LongestPalindrome(word);
 
-        result.Should().Be("bb");
+        result.ShouldBe("bb");
     }
 }

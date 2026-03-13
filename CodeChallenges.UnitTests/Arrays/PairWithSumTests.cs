@@ -13,7 +13,7 @@ public sealed class HasPairWithSumTests
     public void ReturnsTrueIfTwoElementsSumAGivenNumber_AscOrderedNumbers(int[] numbers, int sum, bool expectedResult)
     {
         var result = HasPairWithSum.SolveForAscOrderedNumbers(numbers, sum);
-        result.Should().Be(expectedResult);
+        result.ShouldBe(expectedResult);
     }
     
     [Theory]
@@ -23,6 +23,6 @@ public sealed class HasPairWithSumTests
     public void ReturnsTrueIfTwoElementsSumAGivenNumber_UnorderedNumbers(int[] numbers, int sum, bool expectedResult)
     {
         var result = HasPairWithSum.SolveForUnorderedNumbers(numbers, sum);
-        result.Should().Be(expectedResult);
+        result.ShouldBe(expectedResult);
     }
 }

@@ -12,7 +12,7 @@ public sealed class NodesEqualToAverageOfSubtreeTests
 
         var result = NodesEqualToAverageOfSubtree.Solve(root);
 
-        result.Should().Be(1);
+        result.ShouldBe(1);
     }
 
     [Fact]
@@ -33,7 +33,7 @@ public sealed class NodesEqualToAverageOfSubtreeTests
 
         var result = NodesEqualToAverageOfSubtree.Solve(root);
 
-        result.Should().Be(5);
+        result.ShouldBe(5);
     }
 
     [Fact]
@@ -49,7 +49,7 @@ public sealed class NodesEqualToAverageOfSubtreeTests
 
         var result = NodesEqualToAverageOfSubtree.Solve(root);
 
-        result.Should().Be(2);
+        result.ShouldBe(2);
     }
 
     [Fact]
@@ -64,6 +64,6 @@ public sealed class NodesEqualToAverageOfSubtreeTests
 
         var result = NodesEqualToAverageOfSubtree.Solve(root);
 
-        result.Should().Be(1);
+        result.ShouldBe(1);
     }
 }

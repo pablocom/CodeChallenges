@@ -7,7 +7,7 @@ public class CombinationSumTests
     [Theory]
     [MemberData(nameof(TestCases))]
     public void Solve(int[] candidates, int target, int[][] expected) =>
-        CombinationSum.Solve(candidates, target).Should().BeEquivalentTo(expected);
+        CombinationSum.Solve(candidates, target).ShouldBe(expected);
 
     public static TheoryData<int[], int, int[][]> TestCases => new()
     {

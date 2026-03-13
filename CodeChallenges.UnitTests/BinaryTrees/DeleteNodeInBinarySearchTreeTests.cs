@@ -18,7 +18,7 @@ public class DeleteNodeInBinarySearchTreeTests
 
         var root = new DeleteNodeInBinarySearchTree().DeleteNode(tree, 3);
 
-        root!.left!.val.Should().Be(4);
+        root!.left!.val.ShouldBe(4);
     }
 
     [Fact]
@@ -35,6 +35,6 @@ public class DeleteNodeInBinarySearchTreeTests
 
         var root = new DeleteNodeInBinarySearchTree().DeleteNode(tree, 5);
 
-        root!.left!.val.Should().Be(7);
+        root!.left!.val.ShouldBe(7);
     }
 }

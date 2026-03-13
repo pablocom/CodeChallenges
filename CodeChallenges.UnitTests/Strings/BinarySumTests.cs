@@ -14,6 +14,6 @@ public sealed class BinarySumTests
     {
         var result = BinarySum.Solve(a, b);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

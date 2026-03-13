@@ -10,7 +10,7 @@ public class DetonateMaximumBombsTests
     {
         var result = DetonateMaximumBombs.Solve(bombs);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 
     public static IEnumerable<object[]> GetBombTestCases()

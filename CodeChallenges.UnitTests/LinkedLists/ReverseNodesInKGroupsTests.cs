@@ -13,7 +13,7 @@ public sealed class ReverseNodesInKGroupsTests
 
         var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
 
-        result.Should().Equal([2, 1, 4, 3, 5]);
+        result.ShouldBe([2, 1, 4, 3, 5]);
     }
 
     [Fact]
@@ -24,7 +24,7 @@ public sealed class ReverseNodesInKGroupsTests
 
         var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
 
-        result.Should().Equal([1, 2, 3, 4, 5]);
+        result.ShouldBe([1, 2, 3, 4, 5]);
     }
 
     [Fact]
@@ -35,7 +35,7 @@ public sealed class ReverseNodesInKGroupsTests
 
         var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
 
-        result.Should().Equal([2, 1, 4, 3, 6, 5]);
+        result.ShouldBe([2, 1, 4, 3, 6, 5]);
     }
 
     [Fact]
@@ -46,7 +46,7 @@ public sealed class ReverseNodesInKGroupsTests
 
         var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
 
-        result.Should().Equal([1, 2, 3, 4, 5, 6]);
+        result.ShouldBe([1, 2, 3, 4, 5, 6]);
     }
 
     [Fact]
@@ -57,7 +57,7 @@ public sealed class ReverseNodesInKGroupsTests
 
         var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
 
-        result.Should().Equal([3, 2, 1, 6, 5, 4, 7]);
+        result.ShouldBe([3, 2, 1, 6, 5, 4, 7]);
     }
 
     [Fact]
@@ -68,6 +68,6 @@ public sealed class ReverseNodesInKGroupsTests
 
         var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
 
-        result.Should().Equal([4, 3, 2, 1, 5, 6, 7]);
+        result.ShouldBe([4, 3, 2, 1, 5, 6, 7]);
     }
 }

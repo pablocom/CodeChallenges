@@ -12,7 +12,7 @@ public class ForSumTests
 
         var solution = new FourSum().Solve(input, target);
 
-        solution.Should().BeEquivalentTo(new int[][] { [-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1] });
+        solution.ShouldBe(new int[][] { [-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1] });
     }
     
     [Fact]
@@ -23,6 +23,6 @@ public class ForSumTests
 
         var solution = new FourSum().Solve(input, target);
 
-        solution.Should().BeEquivalentTo(new int[][] { [2, 2, 2, 2] });
+        solution.ShouldBe(new int[][] { [2, 2, 2, 2] });
     }
 }

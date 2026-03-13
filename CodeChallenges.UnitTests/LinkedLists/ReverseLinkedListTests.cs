@@ -21,6 +21,6 @@ public sealed class ReverseLinkedListTests
 
         var result = ReverseLinkedList.Solve(head!);
 
-        result.Should().BeEquivalentTo(expectedHead);
+        result.ShouldBe(expectedHead);
     }
 }

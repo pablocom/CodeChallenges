@@ -12,6 +12,6 @@ public class RomanToIntTests
     {
         var solution = new RomanToInt().Solve(roman);
 
-        solution.Should().Be(arabic);
+        solution.ShouldBe(arabic);
     }
 }

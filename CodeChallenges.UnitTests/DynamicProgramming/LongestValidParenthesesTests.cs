@@ -16,5 +16,5 @@ public class LongestValidParenthesesTests
     [InlineData(")))",    0)]
     [InlineData("()",     2)]
     public void Solve(string input, int expected) =>
-        _sut.Solve(input).Should().Be(expected);
+        _sut.Solve(input).ShouldBe(expected);
 }

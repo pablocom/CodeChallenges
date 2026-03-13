@@ -12,7 +12,7 @@ namespace CodeChallenges.UnitTests.Arrays
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            solution.Should().Be(2);
+            solution.ShouldBe(2);
         }
 
         [Fact]
@@ -23,7 +23,7 @@ namespace CodeChallenges.UnitTests.Arrays
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            solution.Should().Be(0);
+            solution.ShouldBe(0);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace CodeChallenges.UnitTests.Arrays
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            solution.Should().Be(2);
+            solution.ShouldBe(2);
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace CodeChallenges.UnitTests.Arrays
 
             var solution = new ThreeSumClosest().Solve(array, target);
 
-            solution.Should().Be(0);
+            solution.ShouldBe(0);
         }
     }
 }

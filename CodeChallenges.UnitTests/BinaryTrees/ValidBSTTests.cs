@@ -16,7 +16,7 @@ public sealed class ValidBstTests
 
         var result = ValidBST.IsValidBinarySearchTreeBfs(root);
 
-        result.Should().BeTrue();
+        result.ShouldBeTrue();
     }
 
 }

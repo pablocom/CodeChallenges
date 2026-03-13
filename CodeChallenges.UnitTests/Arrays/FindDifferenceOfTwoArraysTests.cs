@@ -9,8 +9,8 @@ public sealed class FindDifferenceOfTwoArraysTests
     {
         var result = FindDifferenceOfTwoArrays.Solve([1, 2, 3], [2, 4, 6]);
 
-        result[0].Should().BeEquivalentTo([1, 3]);
-        result[1].Should().BeEquivalentTo([4, 6]);
+        result[0].ShouldBe([1, 3]);
+        result[1].ShouldBe([4, 6]);
     }
 
     [Fact]
@@ -18,8 +18,8 @@ public sealed class FindDifferenceOfTwoArraysTests
     {
         var result = FindDifferenceOfTwoArrays.Solve([1, 2, 3], [1, 2, 3]);
 
-        result[0].Should().BeEmpty();
-        result[1].Should().BeEmpty();
+        result[0].ShouldBeEmpty();
+        result[1].ShouldBeEmpty();
     }
 
     [Fact]
@@ -27,8 +27,8 @@ public sealed class FindDifferenceOfTwoArraysTests
     {
         var result = FindDifferenceOfTwoArrays.Solve([1, 3, 5], [2, 4, 6]);
 
-        result[0].Should().BeEquivalentTo([1, 3, 5]);
-        result[1].Should().BeEquivalentTo([2, 4, 6]);
+        result[0].ShouldBe([1, 3, 5]);
+        result[1].ShouldBe([2, 4, 6]);
     }
 
     [Fact]
@@ -36,8 +36,8 @@ public sealed class FindDifferenceOfTwoArraysTests
     {
         var result = FindDifferenceOfTwoArrays.Solve([1, 2, 2, 3], [2, 3, 4]);
 
-        result[0].Should().BeEquivalentTo([1]);
-        result[1].Should().BeEquivalentTo([4]);
+        result[0].ShouldBe([1]);
+        result[1].ShouldBe([4]);
     }
 
     [Fact]
@@ -45,7 +45,7 @@ public sealed class FindDifferenceOfTwoArraysTests
     {
         var result = FindDifferenceOfTwoArrays.Solve([1, 2, 3], [1, 2, 3, 4]);
 
-        result[0].Should().BeEmpty();
-        result[1].Should().BeEquivalentTo([4]);
+        result[0].ShouldBeEmpty();
+        result[1].ShouldBe([4]);
     }
 }

@@ -23,6 +23,6 @@ public class MergeTwoSortedListsTests
 
         var result = MergeTwoSortedLists.Merge(list1, list2);
 
-        result.Should().BeEquivalentTo(expectedList);
+        result.ShouldBe(expectedList);
     }
 }

@@ -15,6 +15,6 @@ public sealed class SetMismatchTests
     {
         var result = SetMismatch.Solve(nums);
 
-        result.Should().BeEquivalentTo(expected);
+        result.ShouldBe(expected);
     }
 }

@@ -18,6 +18,6 @@ public sealed class ValidMountainTests
     {
         var result = ValidMountain.Solve(numbers);
 
-        result.Should().Be(expected);
+        result.ShouldBe(expected);
     }
 }

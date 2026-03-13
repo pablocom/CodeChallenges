@@ -22,7 +22,7 @@ public sealed class LowestCommonAncestorInBinaryTreeTests
         var result = new LowestCommonAncestorInBinaryTree()
             .LowestCommonAncestor(root, root.left!, root.right!);
 
-        result.Should().Be(root);
+        result.ShouldBe(root);
     }
 
     [Fact]
@@ -42,7 +42,7 @@ public sealed class LowestCommonAncestorInBinaryTreeTests
         var result = new LowestCommonAncestorInBinaryTree()
             .LowestCommonAncestor(root, root.left!.left!, root.left!.right!);
 
-        result.Should().Be(root.left);
+        result.ShouldBe(root.left);
     }
 
     [Fact]
@@ -57,6 +57,6 @@ public sealed class LowestCommonAncestorInBinaryTreeTests
         var result = new LowestCommonAncestorInBinaryTree()
             .LowestCommonAncestor(root, root.right!.left!, root.right!.right!);
 
-        result.Should().Be(root.right);
+        result.ShouldBe(root.right);
     }
 }
