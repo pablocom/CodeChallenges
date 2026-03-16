@@ -5,15 +5,16 @@ namespace CodeChallenges.UnitTests.Assessments;
 
 public class AmazonDemoTest
 {
-    private static class Result
+    private static class Result 
     {
         public static List<int> MinimalHeaviestSetA(List<int> arr)
         {
             var span = CollectionsMarshal.AsSpan(arr);
 
             long sum = 0;
-            for (var i = 0; i < span.Length; i++)
-                sum += span[i];
+            foreach (var t in span)
+                sum += t;
+            
             
             span.Sort();
 

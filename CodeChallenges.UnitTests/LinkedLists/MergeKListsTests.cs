@@ -3,21 +3,42 @@ using CodeChallenges.UnitTests.Builders;
 
 namespace CodeChallenges.UnitTests.LinkedLists;
 
-public class MergeKListsTests
+public sealed class MergeKListsTests
 {
-    [Fact]
-    public void Test1()
+    public static TheoryData<int[][], int[]> Scenarios => new()
     {
-        var lists = new ListNode[]
-        {
-            ListNodeBuilder.From([1, 4, 5]).Build()!,
-            ListNodeBuilder.From([1, 3, 4]).Build()!,
-            ListNodeBuilder.From([2, 6]).Build()!,
-        };
-        int[] expectedSolution = [1, 1, 2, 3, 4, 4, 5, 6];
+        { [[1, 4, 5], [1, 3, 4], [2, 6]], [1, 1, 2, 3, 4, 4, 5, 6] },
+        { [[1]],                           [1]                       },
+        { [[-1, 0, 1], [-3, -2]],          [-3, -2, -1, 0, 1]       },
+    };
 
-        var solution = new MergeKListsSolution().MergeKLists(lists);
+    [Theory, MemberData(nameof(Scenarios))]
+    public void SolveWithMinHeap(int[][] inputLists, int[] expected)
+    {
+        var lists = inputLists.Select(values => ListNodeBuilder.From(values).Build()!).ToArray();
 
-        solution.ShouldBe(expectedSolution);
+        var result = MergeKSortedLists.Solve(lists);
+
+        result.ShouldBe(expected);
+    }
+
+    [Theory, MemberData(nameof(Scenarios))]
+    public void SolveOptimized(int[][] inputLists, int[] expected)
+    {
+        var lists = inputLists.Select(values => ListNodeBuilder.From(values).Build()!).ToArray();
+
+        var result = MergeKSortedLists.SolveOptimized(lists);
+
+        result.ShouldBe(expected);
+    }
+
+    [Theory, MemberData(nameof(Scenarios))]
+    public void SolveWithDivideAndConquer(int[][] inputLists, int[] expected)
+    {
+        var lists = inputLists.Select(values => ListNodeBuilder.From(values).Build()!).ToArray();
+
+        var result = new MergeKListsSolution().MergeKLists(lists);
+
+        result.ShouldBe(expected);
     }
 }
