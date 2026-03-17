@@ -6,7 +6,7 @@ public class LeetCodeTreeNode
     public LeetCodeTreeNode? left { get; set; }
     public LeetCodeTreeNode? right { get; set; }
 
-    public LeetCodeTreeNode(int val = 0, LeetCodeTreeNode left = null, LeetCodeTreeNode right = null)
+    public LeetCodeTreeNode(int val = 0, LeetCodeTreeNode? left = null, LeetCodeTreeNode? right = null)
     {
         this.val = val;
         this.left = left;

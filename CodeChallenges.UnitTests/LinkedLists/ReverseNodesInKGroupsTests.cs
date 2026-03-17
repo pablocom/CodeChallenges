@@ -11,7 +11,7 @@ public sealed class ReverseNodesInKGroupsTests
         var input = ListNodeBuilder.From([1, 2, 3, 4, 5]).Build();
         var k = 2;
 
-        var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
+        var result = ReverseNodesInKGroups.ReverseKGroup(input!, k);
 
         result.ShouldBe([2, 1, 4, 3, 5]);
     }
@@ -22,7 +22,7 @@ public sealed class ReverseNodesInKGroupsTests
         var input = ListNodeBuilder.From([1, 2, 3, 4, 5]).Build();
         var k = 1;
 
-        var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
+        var result = ReverseNodesInKGroups.ReverseKGroup(input!, k);
 
         result.ShouldBe([1, 2, 3, 4, 5]);
     }
@@ -33,7 +33,7 @@ public sealed class ReverseNodesInKGroupsTests
         var input = ListNodeBuilder.From([1, 2, 3, 4, 5, 6]).Build();
         var k = 2;
 
-        var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
+        var result = ReverseNodesInKGroups.ReverseKGroup(input!, k);
 
         result.ShouldBe([2, 1, 4, 3, 6, 5]);
     }
@@ -44,7 +44,7 @@ public sealed class ReverseNodesInKGroupsTests
         var input = ListNodeBuilder.From([1, 2, 3, 4, 5, 6]).Build();
         var k = 7;
 
-        var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
+        var result = ReverseNodesInKGroups.ReverseKGroup(input!, k);
 
         result.ShouldBe([1, 2, 3, 4, 5, 6]);
     }
@@ -55,7 +55,7 @@ public sealed class ReverseNodesInKGroupsTests
         var input = ListNodeBuilder.From([1, 2, 3, 4, 5, 6, 7]).Build();
         var k = 3;
 
-        var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
+        var result = ReverseNodesInKGroups.ReverseKGroup(input!, k);
 
         result.ShouldBe([3, 2, 1, 6, 5, 4, 7]);
     }
@@ -66,7 +66,7 @@ public sealed class ReverseNodesInKGroupsTests
         var input = ListNodeBuilder.From([1, 2, 3, 4, 5, 6, 7]).Build();
         var k = 4;
 
-        var result = ReverseNodesInKGroups.ReverseKGroup(input, k);
+        var result = ReverseNodesInKGroups.ReverseKGroup(input!, k);
 
         result.ShouldBe([4, 3, 2, 1, 5, 6, 7]);
     }
