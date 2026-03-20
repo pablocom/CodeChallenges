@@ -1,5 +1,7 @@
 namespace CodeChallenges.Solutions.DynamicProgramming;
 
+
+
 public static class MaximalSquare
 {
     public static int Solve(char[][] matrix)

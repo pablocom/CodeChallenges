@@ -1,42 +1,37 @@
-using CodeChallenges.Solutions.DataStructures;
-
 namespace CodeChallenges.Solutions.Arrays;
 
 public static class TopKFrequent
 {
     public static int[] Solve(int[] nums, int k)
     {
-        var occurrencesByNumber = new Dictionary<int, NumberAppearances>();
+        var occurrencesByNumber = new Dictionary<int, int>();
 
-        foreach (var num in nums)
+        foreach (var number in nums)
         {
-            if (!occurrencesByNumber.TryAdd(num, new(num, 1)))
-                occurrencesByNumber[num].Appearances++;
+            if (occurrencesByNumber.TryGetValue(number, out _))
+                occurrencesByNumber[number]++;
+            else
+                occurrencesByNumber.Add(number, 1);
         }
 
-        var numberAppearancesMaxHeap = new MaxHeap<NumberAppearances>(occurrencesByNumber.Values.ToArray());
+        var minHeap = new PriorityQueue<int, int>(k);
 
-        var result = new List<int>(k);
+        foreach (var keyValuePair in occurrencesByNumber)
+        {
+            if (minHeap.Count < k)
+            {
+                minHeap.Enqueue(keyValuePair.Key, keyValuePair.Value);
+                continue;
+            }
 
-        for (var i = k; i > 0; i--) 
-            result.Add(numberAppearancesMaxHeap.PopMax().Number);
+
+            if (minHeap.TryPeek(out _, out var priority) && priority < keyValuePair.Value)
+            {
+                minHeap.Dequeue();
+                minHeap.Enqueue(keyValuePair.Key, keyValuePair.Value);
+            }
+        }
         
-        return result.ToArray();
-    }
-    
-    private sealed class NumberAppearances : IComparable<NumberAppearances>
-    {
-        public int Number { get; }
-        public int Appearances { get; set; }
-
-        public NumberAppearances(int number, int appearances)
-        {
-            Number = number;
-            Appearances = appearances;
-        }
-
-        public int CompareTo(NumberAppearances other) => Appearances.CompareTo(other.Appearances);
-
-        public override int GetHashCode() => Number.GetHashCode();
+        return minHeap.UnorderedItems.Select(x => x.Element).ToArray();
     }
 }
